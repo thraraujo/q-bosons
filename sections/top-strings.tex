@@ -1,0 +1,35 @@
+\section{Topological strings}
+
+Moreover, we also have 
+\begin{equation}
+ S(N, q, \{\bm{t}\}, \{\bar{\bm{t}}\}) 
+ = \sum_{\lambda \subseteq [N, \infty)} s_\lambda(\bm{t})  s_\lambda(\bar{\bm{t}}) 
+\end{equation}
+that is a trivial case of a hypergeometric tau function~\cite{orlov:2001}. 
+
+The partition function of D-branes on \(\mathbb{C}^3\)
+is similar, see\cite{Saulina:2004da}. 
+\begin{equation}
+  Z_D(q, a) = Z(q) \prod_{n=1}^\infty \frac{1}{1- e^a q^{n - 1/2}}\; .
+\end{equation}
+We  can also write this extra factor in terms of Schur polynomials as
+with \(x= (e^a, 0, 0, \dots)\) and \(y = (q^{1/2}, q^{3/2}, \dots)\),
+therefore
+\begin{equation}
+\prod_{n=1}^\infty \frac{1}{1- e^a q^{n - 1/2}} = \sum_\lambda s_{\lambda}(e^a, 0, 0, \dots)
+s_{\lambda}(q^{1/2}, q^{3/2}, \dots)\; .
+\end{equation}
+And using the homogeneity of the Schur polynomials, we have
+\begin{equation}
+s_{\lambda}(e^a, 0, 0, \dots) = e^{|\lambda|a} s_{\lambda}(1, 0, 0, \dots)\; . 
+\end{equation}
+One can also observe that this equation is the homogeneous polynomial at the point
+\(z = e^a\) and \(x=(q^{1/2}, q^{3/2}, \dots)\).
+
+In fact, the partition function for \(M\) D-branes in this geometry is given by 
+\begin{equation}
+Z_{MD} = M(q) \prod_{i<j}(1 - q^{N_i - N_j}) \prod_{i=1}^M \prod_{n_i=1}^{N_i} (1 - q^{n_i})^{-1}\; .
+\end{equation}
+For just one brane, we recover something similar to Bogoliubov. So, it seems
+that \(M\) counts the types of bosons, while \(N_0\) is the soliton sector. 
+

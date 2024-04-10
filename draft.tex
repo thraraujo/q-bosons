@@ -1,0 +1,775 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{/home/thiago/.config/dot-files/latex/globaldef}
+\input{/home/thiago/.config/dot-files/latex/definitions.tex}
+
+\bibliography{bib-database.bib}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Comments on \(Q\)-Bosons, deformed fermions and their relations
+    with integrable hierarchies}
+
+\author{Thiago Araujo}
+
+\address{\noindent 
+Instituto de Fíısica Teórica, UNESP-Universidade Estadual Paulista
+R. Dr. Bento T. Ferraz 271, Bl. II, Sao Paulo 01140-070, SP, Brazil\\
+and
+Instituto de Física\\ Universidade de S\~ao Paulo\\ 
+Rua do Matão Travessa 1371, 05508-090\\ São Paulo, SP. Brazil
+}
+
+\email{\texttt{\href{tharaujo@if.usp.br}{tharaujo@if.usp.br}}}
+
+\keywords{integrability, spin-chains}
+\subjclass[2020]{82B20, 82B23}
+\date{\today}
+
+\begin{abstract}
+  In this work, we study aspects of the \(Q\)-boson model, and 
+its relations with integrable hierarchies. 
+% \vspace{4pt}
+ \noindent \textbf{Keywords:} Integrability, Q-bosons, Schur
+\end{abstract}
+
+\maketitle
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
+\section{q-Bosons and the Phase Model}
+%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
+
+This section intruduces the \(q\)-boson and phase
+models~\cite{Bogoliubov:1992, Bogoliubov:1997soj, Bogoliubov2005,
+  Bogoliubov:1997soj, Tsilevich:2006}. We mainly follow the notation
+of~\cite{Wheeler:2010vmq}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Phase model}
+Consider the \((M+1)\) set of operators \(\{\phi_i,
+\phi^\dagger,\mathcal{N}_i\}_{i=0}^M\) such that
+\begin{equation}
+ [\mathcal{N}_i, \phi_j] = - \phi_i \delta_{i,j} \quad
+ [\mathcal{N}_i, \phi_j^\dagger] =  \phi_i^\dagger \delta_{i,j}  \quad 
+ [\phi_i, \phi_j^\dagger] =  \pi_i \delta_{i,j}  
+\end{equation}
+where \(\pi_i =(\ket{0} \bra{0})_i\) is the vacuum projection operator.
+These operators can be written as
+\begin{equation}
+\phi = \sum_{n\geq 0}\ket{n}\bra{n+1}\quad 
+\phi^\dagger = \sum_{n\geq 0}\ket{n+1}\bra{n} \quad 
+N = \sum_{n\geq 0}n\ket{n}\bra{n}\; ,
+\end{equation}
+and it is easy to see that \(\phi^\dagger \phi = \bm{1} - \ket{0}
+\ket{0}\) and \(\phi\phi^\dagger = \bm{1}\).
+
+The Hamiltonian is given by
+\begin{equation}
+  H = - \frac{1}{2} \sum_{n =0}^M \left(\phi_n^\dagger \phi_{n+1}
+  + \phi_n \phi_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; .
+\end{equation}
+where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\), and we also
+impose periodic boundary conditions \(\phi_{M+1} = \phi_0\) and
+\(\phi_{M+1}^\dagger = \phi_0^\dagger\).
+
+These operators appear in the context of quantum optics, and for
+this reason it is referred as the \emph{phase model}. It 
+corresponds to the strongly correlated \(q\)-bosons
+model~\cite{Bogoliubov:1997soj} the we will define soon.
+
+\subsubsection{Partitions representation}
+Let us define the i\(^{th}\)-vacuum \(\ket{0}_i\) by the the conditions 
+\(\phi_i\ket{0}_i\). The representation of this Hilbert space, denoted by
+\(\mathcal{F}_i\), is given by \(\ket{n_i}_i = \phi_i^\dagger \ket{0}_i\). 
+
+Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
+\otimes \cdots \otimes  \ket{0}_M\),
+the Fock space is defined as 
+\begin{equation}
+  \mathcal{F} = \bigotimes_{i=0}^M \mathcal{F}_i = 
+  \left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
+  \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; .
+\end{equation}
+where the states \(\ket{\vec{n}}\) are defined as 
+\begin{equation}
+  \ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots \otimes \ket{n_M} 
+ : =  (\phi_0^\dagger)^{n_0} (\phi_1^\dagger)^{n_1} \cdots  (\phi_M^\dagger)^{n_M} \ket{\bm{0}} \; ,
+\end{equation}
+where we write \(\phi_i^\dagger \equiv \bm{1} \otimes  \cdots \otimes
+\phi_i^\dagger \otimes \cdots \otimes \bm{1}\).
+We will assume that these states are normalized, that is
+\(\bracket{\vec{n}}{\vec{m}}=\delta_{\vec{n}, \vec{m}}\). 
+
+Finally, the actions of the operators \(\mathcal{N}_i\) and \(\pi_i\) are
+\begin{equation}
+    \pi_i\ket{\vec{n}}  = \delta_{n_i, 0} \ket{\vec{n}} \qquad 
+    \mathcal{N}_i\ket{\vec{n}} = n_i \ket{\vec{n}}\; .
+\end{equation}
+ 
+Given a state \(\ket{\vec{n}} = \ket{n_0, n_1, \dots, n_M}\), we
+associate a partition \( \lambda = (0^{n_0} 1^{n_1} 2^{n_2} \cdots
+M^{n_M})\). Observe that this correspondence is not unique, since the
+partition \(\lambda\) ignores the number \(n_0\) of particles in the
+site \(0\). From the total number of particles, we can, on the other hand,
+determine the number of particles \(n_0 = N - \ell(\lambda)\), where
+\(\ell(\lambda)\) is the number of rows in the Young diagram defined
+by \(\lambda\). This is very important, since in our consideations 
+below, the \(N\) particle sector is fixed, thanks to the integrability of 
+the model, therefore, the number \(n_0\) is known once we define the 
+partition \(\lambda\). 
+
+In fact, from the correspondence above, Wheeler~\cite{Wheeler:2010vmq}
+defines a map \(\mathcal{M}_\psi: \mathcal{F}\to
+\mathcal{F}^{(0)}_\psi\), where \(\mathcal{F}^{(0)}_\psi\) is the
+space Fock space of charged free fermions built upon the neutral
+(fermionic) vacuum. We will discuss a map from the bosonic space to
+the space of symmetric functions.
+
+\subsubsection{Bethe Ansatz}
+The \(L\)-matrix is given by 
+\begin{equation}
+  L_{an} = 
+\begin{pmatrix}
+x^{ - 1/2} & \phi_n^\dagger \\ \phi_n & x^{1/2}
+\end{pmatrix}_a\; , 
+\end{equation}
+from where we can build the monodromy matrix 
+\begin{equation}
+  T_a(x) = L_{aM}(x) \cdots L_{a0}(x) = 
+\begin{pmatrix}
+A(x) & B(x) \\ C(x) & D(x)
+\end{pmatrix}_a\; .
+\end{equation}
+
+With these expressions, one can finally build the Bethe states and their dual 
+\begin{equation}
+  \ket{\Psi(y_1, \dots, y_N)} = \prod_{j=1}^N B(y_j) \ket{\bm{0}}\qquad 
+  \bra{\Psi(y_1, \dots, y_N)} = \bra{\bm{0}}\prod_{j=1}^N C(y_j) \; .
+\end{equation}
+When the set \(\{ y_j \ | \ j =1, \dots , N\}\) satisfies the Bethe equations 
+\begin{equation}
+  y^{N + M}_i = (-1)^{N-1} \prod_{\substack{j = 1 \\ j \neq i}}^N y_j\; , \qquad i = 1, \dots, N\; , 
+\end{equation}
+we says that the Bethe states are \emph{on-sheel}. In what follows, we will 
+only consider \emph{off-shell} states. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{q-Bosons}
+The Hamiltonian for the q-boson model is
+given by
+\begin{equation}
+  \mathcal{H} = -\frac{1}{2} \sum_{n=0}^M
+  \left(b_n^\dagger b_{n+1} + b_n b_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; ,
+\end{equation}
+where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\), and as in
+the case of the phase mode, we impose periodic boundary conditions
+\(b_{M+1} = b_0\) and \(b_{M+1}^\dagger = b_0^\dagger\). The set of
+operators \(\{b_i, b^\dagger,\mathcal{N}_i\}_{i=0}^M\) form the
+\(M+1\) copies of independent q-boson algebras:
+\begin{equation}
+[\mathcal{N}_i, b_j^\dagger]=\delta_{i,j} b_i^\dagger\; , \quad 
+[\mathcal{N}_i, b_j]=-\delta_{i,j}b_i\; , \quad
+[B_i, B_j^\dagger]= \delta_{i,j} q^{-2\mathcal{N}_i}  \equiv \delta_{i,j} Q^{\mathcal{N}_i}\; , 
+\end{equation}
+where we write the deformation parameter as \(Q = q^{-2}\). 
+In the limit \(Q\to 1\), the q-bosons are ordinary bosons. 
+In the limit \(q\to \infty\), we recover the phase model we discussed above. 
+
+\subsubsection{Representation}
+
+\subsubsection{Bethe Ansatz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Bethe Ansatz for the q-boson}
+
+The \(L\)-operator for the q-boson is given by
+\begin{equation}
+  L_n(\lambda) =
+  \begin{pmatrix}
+    e^\lambda & \chi B_n^\dagger \\ \chi B_n & e^{-\lambda}
+  \end{pmatrix}
+\end{equation}
+where \(\lambda \in \mathbb{C}\) is the spectral parameter and \(\chi
+= \sqrt{1 - q^{-2}}\). From this expression, we have the monodromy matrix
+\begin{equation}
+  T(\lambda) = \overleftarrow{\prod_{n = 1}^M} L_n(\lambda) =
+  \begin{pmatrix}
+    A(\lambda) & B(\lambda) \\ C(\lambda) & D(\lambda)
+  \end{pmatrix}
+\end{equation}
+The eigenstates of the Hamiltonian are of the form
+\begin{equation}
+\ket{ \psi_N(\lambda_1, \dots, \lambda_N)} = \prod_{j=1}^N B(\lambda_j) \ket{0}\; , 
+\end{equation}
+where the parameters \(\{\lambda_i\}_{i=1}^N\) satisfies the Bethe
+Algebraic Equation
+\begin{equation}
+  e^{2M\lambda_j} = \prod_{k\neq j}^N \frac{f(\lambda_k, \lambda_j)}{f(\lambda_j, \lambda_k)}\quad \textrm{with} \quad
+  f(\lambda, \mu) = \frac{\sinh(\lambda-\mu+\gamma)}{ \sinh(\lambda- \mu)}
+  \quad j = 1,\dots \ldots , N\; .
+\end{equation}
+where 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Bethe Ansatz for the phase model}
+
+Taking the limit \(\gamma\to \infty\) we obtain the ABA for the phase model.
+In particular, we find
+\begin{equation}
+  L_n(\lambda) =
+  \begin{pmatrix}
+    e^{ip/2} & \phi_n^\dagger \\ \phi_n & e^{-ip/2}
+  \end{pmatrix}
+\end{equation}
+where we write \(\lambda = i p/2\). The Algebraic Bethe Equations are
+\begin{equation}
+\exp \left(i (M + N) p_j \right) = (-1)^{N-1} \exp \left( i \sum_{k=1}^N p_k \right)\quad j = 1, \dots, N\; ,
+\end{equation}
+that can be solved explicitly as
+\begin{equation}
+  \label{}
+p_j = \frac{ 2 \pi I_j + \sum_{k=1}^N p_k}{M+N}\; , 
+\end{equation}
+where \(i_j \in \mathbb{z}\) ( \( + 1/2\)) if \(n\) is odd (even).
+
+In what follows, we consider the transformation \(x^{-1} = e^{ip}\), see~\cite{Wheeler:2010vmq},
+in such a way that the \(L\)-operator becomes
+\begin{equation}
+  L_{an}(\lambda) =
+  \begin{pmatrix}
+    x^{-1/2} & \phi_n^\dagger \\ \phi_n & x^{1/2} 
+  \end{pmatrix}_a
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Bethe states} 
+
+Now we also consider the Bethe states (and their dual) 
+\begin{equation}
+\ket{\Psi(\bm{x})} = \prod_{j=1}^N B(x_j) \ket{\bm{0}}\quad \; ,
+\bra{\Psi(\bm{x})} = \bra{\bm{0}}\prod_{j=1}^N C(x_j) \; ,
+\end{equation}
+where we have written \(\bm{x} = (x_1, \dots, x_N)\), and the monodromy matrix
+is given by
+\begin{equation}
+  T_a(x) = \prod_{j=1}^M L_{a j}(x) = 
+  \begin{pmatrix}
+    A(x) & B(x) \\
+    C(x) & D(x)
+  \end{pmatrix}_a \; .
+\end{equation}
+Folowing~\cite{Wheeler:2010vmq}, we define \(\mathbb{B} = x^{M/2} B(x)\) and 
+\(\mathbb{C} = x^{M/2} C(x^{-1})\). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Scalar product}
+
+Bogoliubov~\cite{Bogoliubov2005}, in the notation~\cite{Wheeler:2010vmq},
+has shown that the the scalar product of two vectors in the
+\(N\)-particles sector in a chain of length \(M + 1\) is
+\begin{equation}
+\begin{split}
+\label{eq:scalar}
+  S(N, M|\bm{x}, \bm{y}) & =
+  \bra{\bm{0}} \prod_{j=1}^N \mathbb{C}(x_j) \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}} \\ 
+ & = \frac{ \det H(\bm{x},\bm{y})}{ \prod_{i<j}(x_i - x_j)(y_i - y_j)} \; ,
+\end{split}
+\end{equation}
+where \(H\) is an \(N\times N\) matrix with components
+\begin{equation}
+  H_{ij} = H(x_i, y_j) 
+  =\frac{1 - (x_i y_j)^{ M + N}}{1 - x_i y_j }\; .
+\end{equation}
+
+This scalar product is related to the counting of plane
+partitions, with
+\begin{equation}
+ S(N, M| \bm{x}, \bm{y}) 
+ = \sum_{\lambda \subseteq (N, N, M)} s_{\lambda}(\bm{x}) s_{\lambda} (\bm{y})\; .
+\end{equation}
+In the limit \(M, N \to \infty\), one can use the Cauchy identity
+\begin{equation}
+  \sum_{\lambda } s_{\lambda}(\bm{x}) s_{\lambda}(\bm{y})
+  = \prod_{i,j>0} \frac{1}{1- x_iy_j}\; ,
+\end{equation}
+and specialize this expression to \( x_i = y_i = q^{i-1/2} \) to find
+the MacMahon function
+\begin{equation}
+  \sum_{\lambda } s_{\lambda}(\bm{q}_\star) s_{\lambda}(\bm{q}_\star) = \prod_{i,j>0} \frac{1}{1- q^{i +j -1}}\; ,
+\end{equation}
+where \(\bm{q}_{\star} = (q^{1/2}, q^{3/2}, \dots)\). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{KP and Toda tau functions}
+
+Wheeler has shown in~\cite{Wheeler:2010vmq} that the the scalar
+product~(\ref{eq:scalar}) is a KP tau function with respect to the
+Miwa coordinates \(t_m = \frac{1}{m}\sum_j x_j^m\) (\(t'_m =
+\frac{1}{m}\sum_j y_j^m\)), where the Schur functions
+\(s_{\lambda}(\bm{y}) = c_\lambda\) ( \(s_{\lambda}(\bm{x}) =
+c'_\lambda\)) become Plücker coordinates, and vice-versa.
+The proof for this statement is relies on the map \(\mathcal{M}_\psi\)
+between the space \(\mathcal{V}\) os Bethe states and Fock
+space \(\mathcal{F}_\psi\) of free fermions. 
+
+In fact, there is an easier way to see this fact. First one may see that 
+\begin{equation}
+ S(N,M,\bm{y}|\{\bm{t}\}) 
+ = \sum_{\lambda} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+ \equiv \sum_{\lambda} c_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+\end{equation}
+is a tau function of the KP hierarchy, since
+\(c_\lambda(\bm{y}) = \det (h_{\lambda_i-i +j}(\bm{y}))\) are Plücker
+coordinates~\cite{Miwa2000, Foda:2009zz}. Therefore, the truncation
+\begin{equation}
+ S(N,M,\bm{y}|\{\bm{t}\}) 
+ = \sum_{\lambda \subseteq [N, \infty)} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+\end{equation}
+is also a tau function. According to~\cite{Alexandrov:2012tr,
+  Kharchev:1991gd, Zabrodin:2010ii}, the truncation of the tau
+function corresponds to the inclusion of a projection operator
+\(\mathrm{P}^+\) in the expectation value of the tau function.
+% See section 3.3.2 of~\cite{Alexandrov:2012tr}, 
+
+\subsubsection{Scalar product}
+We also argue that this is also a tau function of the 2D toda hierarchy. 
+We can write the Cauchy's identity as
+\begin{subequations}
+\begin{equation}
+  \sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
+    = \exp \left( \sum_{m\geq1} m t_m t'_m \right) \; .
+\end{equation}
+where \(\bm{t}\) and \(\bm{t}'\) are two independent sets of Miwa coordinates.
+It is a trivial tau function of the 2D Toda hierarchy, since one can write it as
+\begin{equation}
+\sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
+ = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} e^{-\bm{J}_-(\bm{t}')} \ket{\bm{0}}
+\end{equation}
+and from the free-fermions representation of the tau functions,
+see~\cite{Alexandrov:2012tr}, we have that it is a tau function of the
+Toda hierarchy with trivial element \(1 \in GL(\infty)\).
+\end{subequations}
+
+Therefore, the truncation 
+\begin{equation}
+ S(N,M|\{\bm{t}\},\{\bm{t}'\}) = 
+  \sum_{\lambda \subseteq [N,N,M]} s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
+\end{equation}
+is a also a restricted tau function. These proofs follow from simple
+properties of tau functions, and it should be contrated with the rich
+formalism in~\cite{Wheeler:2010vmq}. Moreover, from~\cite{Zabrodin:2010ii}
+we have that the this tau function can be written as the matrix integral
+\begin{equation}
+  S(N,M|\{\bm{t}\}, \{\bm{t}'\}) =
+  \frac{1}{N!} \prod_{\ell=1}^N \oint_{\Gamma_\ell} \frac{dz_\ell}{2 \pi i z_\ell}
+  e^{\xi_+(\bm{t}_+, z_\ell) - \xi_-(\bm{t}_-, z_{\ell}^{-1})} \Delta(z)\Delta(z^{-1})
+\end{equation}
+
+When the Bethe equations are satisfied, we have that \(x_j = y_j = e^{ip_j}\),
+therefore \(t_{-m} = - t_m^\star\), and the the phase model is equivalent to
+an ensemble of \(N\) 2D Coulomb particles on a circle. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection{Correlation functions}
+Bogoliubov has also shown that the correlation functions
+\begin{subequations}
+\begin{equation}
+  P(m|\bm{x}, \bm{y}) = \bra{0} \prod_{j=1}^N C(x) \prod_{j=1}^{N-1} B(y) \phi_m^\dagger \ket{0}
+\end{equation}
+can be written as
+\begin{equation}
+  P(m|\bm{x}, \bm{y}) = \frac{(-1)^{N-1}}{(\sqrt{y_N}^{N-1}}
+  \left( \prod_{t<N} \frac{x_N - y_t}{y_t} \right) \frac{\det Q}{\det H} S(N,M|\bm{x}, \bm{y})
+\end{equation}
+\end{subequations}
+where the \(N\times N\) matrix \(Q\) has components 
+\begin{equation}
+ Q_{jN} = x_j^{(M + N - 1- 2m)/2} \quad  \textrm{and} \quad 
+ Q_{jk} = H_{jk} \; , 
+\end{equation}
+where \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\). 
+Since the components \(Q_{jN}\) are independent of the coordinates \(y\), 
+we cannot write the above expression in terms of a Toda hierarchy tau
+function. 
+
+We already know that 
+\begin{equation}
+   S(N,M|\bm{x}, \bm{y}) =  \Delta(x) \Delta(y) \det H \; ,
+\end{equation}
+therefore we define
+\begin{equation}
+  \mathbb{P}(m|\bm{x}, \bm{y}) =\frac{\det Q}{\Delta(x)}\; ,
+\end{equation}
+and we are going to treat the coordinates \(\{ \bm{y} \}\) as
+a set of \(N\) fixed constants, in a such a way that we write \(N\)
+functions \(\bm{F}(z) = (F_1, \dots, F_N)\) defined as
+\begin{equation}
+  F_j (z) = H(z, y_j) \quad \textrm{if} \ j \neq N\; , \qquad \textrm{and}\qquad 
+   F_N (z)  = z^{(M + N - 1 - 2m)/2} 
+\end{equation}
+Moreover, we have that
+\begin{equation}
+  H(z, y_j) = \frac{1 - (y_j z)^{M + N}}{1 - y_j z} = \sum_{n=0}^{N + M - 1} (y_j z)^n\; , 
+\end{equation}
+therefore, we write
+\begin{equation}
+  F_j(z) =  \sum_{n=0}^{M + N -1} f_{j, n} z^n
+\end{equation}
+where we will also assume the \(M + N \in 2 \mathbb{Z}\). With these definitions,
+we conclude that
+\begin{equation}
+  \mathbb{P}(m|\bm{x}, \bm{y}) =\frac{\det_{jk} F_j(x_k)}{\Delta(x)}\; ,
+\end{equation}
+and we write~\cite{Takasaki:2010qm}, 
+\begin{equation}
+  \det_{jk} F_j(x_k) = \det_{jk} \left(  \sum_{n=0}^{M + N -1} f_{j, n} x_k^n \right) \; .
+\end{equation}
+With the aid of the Cauchy-Binet formula, we write  
+\begin{equation}
+  \mathbb{P}(m|\bm{x}, \bm{y}) = \sum_{0\leq \ell_N\leq \dots \leq \ell_1 \leq N+M}
+  \frac{\det_{jk}(f_{j, \ell_k}) \det_{jk}(x_k^{\ell_j})}{\Delta(x)}\; ,
+\end{equation}
+and from the definition of the Schur polynomials and the
+Jacobi-Trudi expression of Plücker coordinates, we can write this last
+expression as 
+\begin{equation}
+  \mathbb{P}(m|\bm{x}, \bm{y}) = \sum_{\lambda} c_\lambda(\bm{y}) s_\lambda(\bm{x}) \; ,
+\end{equation}
+where \(c_\lambda(f_{j, \ell_k})\),  \(\ell_k = \lambda_k - k +N\), define point
+in the finite dimensional Grassmannian manifold \(\mathrm{Gr}(N, N+M)\). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection{Not everything is a tau-function}
+It is also worth noticing that not everything is a tau function. Consider the state
+\begin{equation}
+  \ket{\mathcal{Y}} =
+ \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j}\quad \sum_j n_j = N\; .
+\end{equation}
+We have~\cite{Bogoliubov2005} the correlation function 
+\begin{equation}
+  \prod_{j=1}^N x^{M/2} \bra{\mathcal{Y}} \prod_{j=1}^N B(\bm{x}) \ket{\bm{0}} = 
+  \sum_{\lambda\subseteq (N,N,M)} s_\lambda(\bm{x})\; . 
+\end{equation}
+This sum of Schur polynomials are not tau functions of the KP hierarchy.
+
+We can easily see this fact, if we consider the the Fermionic
+construction. Since
+\begin{equation}
+\tau(\bm{t}) = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} G \ket{\bm{0}}
+\end{equation}
+where \(G\in GL(\infty)\), and 
+\begin{equation}
+  \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} = \sum_\lambda \bra{\mu} s_\lambda(\bm{t})\; , 
+\end{equation}
+therefore
+\begin{equation}
+\tau(\bm{t}) = \sum_{\lambda} \bra{\lambda} G \ket{\bm{0}} s_\lambda(\bm{t})
+\end{equation}
+and we need \(1 = \bra{\lambda} G \ket{\bm{0}} \). Then, 
+\begin{equation}
+  \ket{\Psi_0} = G\ket{\bm{0}} = \sum_\lambda \ket{\lambda}\; ,
+\end{equation}
+is a coherent state, and we conclude that
+\begin{equation}
+G = 1 +  \sum_{d\geq 1} \prod_{j=1}^d \psi^\star_{a_j} \psi_{-b_j}\ \notin \ GL(\infty) \;. 
+\end{equation}
+It is interesting to notice that this state appears as the ground
+state of the crystal melting problem in~\cite{Dijkgraaf:2008ua}.
+
+Therefore, the restriction for diagrams with \(\ell(\lambda_1) \leq N\) is
+not a tau function either.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Scalar products for the Q-bosons}
+
+Here I would like to start considering the q-boson problem. It has
+been shown~\cite{Wheeler:2010vmq, Sulkowski:2008mx, Tsilevich:2006}
+that the scalar product of two off-shell Bethe states in the q-boson
+model is given by
+\begin{equation}
+S_Q(N,M | \bm{x}, \bm{y}) = \bra{\bm{0}} \prod_{j=1}^N C(x_j, Q)
+\prod_{k=1}^N B(y_k, Q) \ket{\bm{0}}
+= \sum_{\lambda \subseteq
+  (N,N,M)} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
+\end{equation}
+where \(P_\lambda\) denote the Hall-Littlewood polynomials.
+
+It turns out that this expansion is  also related to the Cauchy identity for 
+Hall-Littlewood polynomials~\cite{Macdonald:1998}
+\begin{equation}
+\sum_{\lambda} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
+= \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k}\; ,
+\end{equation}
+and using the results in~\cite[see chap.3, sec. 4, eq. (4.7)]{Macdonald:1998}, 
+we can expand this identity as 
+\begin{equation}
+\label{eq:cachy-hl}
+ \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k} = 
+\sum_{\lambda} S_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y}) =
+\sum_{\lambda} S_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x}) \; ,
+\end{equation}
+where the polynomials, the big-Schur~\cite{Wheeler:2018}, are given by 
+a Jacobi-Trudi formula
+\begin{equation}
+  S_{\lambda} (\bm{y}, Q) = \det(q_{\lambda_i -i + j}(\bm{y}, Q))\; , 
+\end{equation}
+and the coefficients \(q_m\) can be obtained from the following expression
+\begin{equation}
+ \sum_{m} q_m(\bm{y}, Q) z^m =
+ \prod_{j} \frac{1-Q y_j z}{1 - y_j z}
+\end{equation}
+where \(z\) is a formal variable. It has been argued
+in~\cite{Foda:2008hn} that if we interpret the \(Q\)-Schur functions
+as Plücker coordiantes, the identity~(\ref{eq:cachy-hl}) is a KP-tau
+function.
+
+Therefore, we see that the scalar product 
+\begin{equation}
+  S_Q(N,M | \bm{x}, \bm{y})
+  = \sum_{\lambda \subseteq (N,N,M)} S_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y})
+  = \sum_{\lambda \subseteq (N,N,M)} S_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x})\; ,
+\end{equation}
+is a restricted KP tau function with respect to both set of coordinates,
+that is \(\bm{x}\) and \(\bm{y}\).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Supersymmetric Schur polynomials}
+
+Let us also decompose 
+\begin{equation}
+ \sum_{m} q_m(\bm{y}, Q) z^m =
+ \prod_j (1 + y_j (-Q z)) \prod_k (1 - y_k z)^{-1} = 
+ \sum_{j, k} e_j(\bm{y}) h_k(\bm{y}) (- Q)^j z^{j+k}\; .
+\end{equation}
+And reorganizing this sum, we conclude that 
+\begin{equation}
+  q_m(\bm{y}, Q)  = \sum_{j=0}^m e_j(\bm{y}) h_{m-j}(\bm{y}) (- Q)^j =
+ \sum_{j=0}^m e_j(-Q\bm{y}) h_{m-j}(\bm{y}) \; ,
+\end{equation}
+where in the last equality we have used the homogeneity of the elementary symmetric polynomials,
+and \( -Q\bm{y} = (-Qy_1, -Qy_2, \dots)\). 
+
+%One can also define the set of coordinates \(\bm{\xi} =
+%\{\xi_i(\bm{x}, Q)\}\), in such a way that
+%\begin{equation}
+% \sum_{m} q_m(\bm{x}, Q) z^m := \sum_{m} h_m(\bm{\xi}) z^m =
+% \prod_k \frac{1}{(1 - \xi_k z)} \;.
+%\end{equation}
+%In this sense, the \(Q\)-Schur function is an ordinary Schur function
+%with respect the variables \(\bm{\xi}\).
+
+It is easier to consider the following expansions 
+\begin{subequations}
+\begin{equation}
+  \begin{split}
+    \prod_{j=1}^N (1 - (Q y_i)z) & = \prod_{j=1}^N e^{ \ln  (1 - (Q y_i)z)} = 
+    \prod_{j=1}^N \exp \left( - \sum_{n>0} \frac{Q^n y^n_j}{n} z^n \right) \\ 
+    & = \exp \left( - \sum_{n>0} \sum_{j=1}^N \frac{Q^n y^n_j}{n} z^n \right)  =
+    \exp \left( - \sum_{n>0} t^{(Q)}_n z^n \right)  
+  \end{split}
+\end{equation}
+where \(t^{(Q)}_n = \frac{Q^n}{n} \sum_j y_j^n = Q^n t'_n\), and 
+\begin{equation}
+    \prod_{j=1}^N \frac{1}{(1 - y_iz)} = \prod_{j=1}^N e^{- \ln  (1 - y_iz)} = 
+    \prod_{j=1}^N \exp \left( \sum_{n>0} \frac{y_j}{n} z^n \right)=
+    \exp \left(\sum_{n>0} t_n z^n \right) \; . 
+\end{equation}
+\end{subequations}
+
+Therefore 
+\begin{equation}
+ \sum_{m} q_m(\bm{y}, Q) z^m =
+ \prod_j \frac{1 + y_j (-Q z)}{1 - y_k z}
+ = \exp \left( \sum_{n\geq 1} (t'_n - t_n^{(Q)})z^n \right)
+ \equiv \exp \left( \sum_{n\geq 1} T_n z^n \right)\; ,
+\end{equation}
+with \(T_n = (1 - Q^n) t'_n\). Then, we conclude that \(q_m(\bm{y}, Q)\)
+are homogeneous polynomials with respect the Miwa coordinates
+\(\bm{T} = (T_1, T_2, \dots)\). All in all, we conclude that 
+\begin{equation}
+  S_\lambda(\bm{t}', Q) = \det \left(h_{\lambda_i - i +j}(\bm{T})\right) = s_\lambda(\bm{T})\; .
+\end{equation}
+
+Supersymmetric Schur functions, see~\cite{Zinnjustin2009}, \(s_\lambda(\bm{\alpha}/\bm{\beta})\)
+are defined as ordinary schur functions evaluated at Miwa coodinates
+of the form
+\begin{equation}
+  T_n = \frac{1}{n} \left( \sum_{i=1}^{\dim(\alpha)} \alpha_i^n
+       - \sum_{i=1}^{\dim(\beta)} (-\beta_i)^n\right)\; ,
+\end{equation}
+and comparing with the results above, we can see that the big Schur functions
+\(S_\lambda(\bm{t}', Q)\)\; , is the supersymmetric Schur functions for \(\bm{\alpha} = \bm{y}\) 
+and \(\bm{\beta} = - Q \bm{y}\), that is 
+\begin{equation}
+  S_\lambda(\bm{t}', Q) = s_\lambda[\bm{y}/(- Q\bm{y})]\; .
+\end{equation}
+
+Putting these facts together, we immediately conclude that since 
+\begin{equation}
+  \sum_\lambda s_\lambda(\bm{T}) s_\lambda (\bm{t}) \; ,
+\end{equation}
+is a Toda hierarchy tau function, we obviously have that 
+\begin{equation}
+  S_Q(N,M| \bm{x}, \bm{y}) \equiv S_Q(N,M| \bm{t}, \bm{T})
+  = \sum_{\lambda \subseteq [N,N,M]} s_\lambda(\bm{T}) s_\lambda(\bm{t})\; , 
+\end{equation}
+is also a restricted tau function of the Toda hierarchy.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Toda hierarchy}
+
+One of the greatest advantages of the expressions above is that we do not 
+need to consider the t-Schur fermions.
+
+It would be very interesting to have some basic understanding of what
+is happenning in the fermionic representation of this tau function.
+Let us expand these polynomials in a Schur polynomials basis, that is
+\begin{equation}
+P_\lambda(\bm{x}, Q) = \sum_{\mu} K^{-1}_{\lambda \mu}(Q) s_\lambda(\bm{x})\; , 
+\end{equation}
+where \(K^{-1}_{\mu\nu}(Q) \in \mathbb{Z}[Q]\) are inverse
+Kostka–Foulkes coefficients, and \(K^{-1}_{\lambda\mu} = 0 \) if
+\(|\lambda|\neq |\mu|\)~\cite{Macdonald:1998, Wheeler:2018}.
+
+Expanding now the \(Q\)-Schur functions as
+\begin{equation}
+  S_\lambda(\bm{x}, Q) = \sum_{\mu} c_{\lambda\mu}(Q) s_\mu(\bm{x})\; ,
+\end{equation}
+we can fix the coefficients \(c_{\lambda\mu}\) in terms of Kostka-Foulkes
+polynomials as follows. Since~\cite{Macdonald:1998} 
+\begin{equation}
+  \frac{1}{b_\mu}\langle P_\mu(\bm{x}, Q), P_\mu(\bm{x}, Q)\rangle = \langle
+  S_\mu(\bm{x}, Q), s_\mu(\bm{x})\rangle = \delta_{\mu\nu}\; ,  
+\end{equation}
+we have
+\begin{equation}
+  \begin{split}
+\delta_{\mu\nu} & = \sum_\lambda c_{\mu\lambda}  \langle s_\lambda(\bm{x}), s_\mu(\bm{x})\rangle\\
+& = \sum_\lambda \sum_{\pi_1, \pi_2} c_{\mu\lambda}  K_{\lambda \pi_1} K_{\mu \pi_2}
+\langle P_{\pi_1}(\bm{x}, Q), P_{\pi_2}(\bm{x}, Q)\rangle \\ 
+& = \sum_\lambda \sum_{\pi} c_{\mu\lambda} b_{\mu}^{-1}  K_{\lambda \pi} K_{\mu \pi}\; ,
+  \end{split}
+\end{equation}
+and we conclude that 
+\begin{equation}
+\label{eq:indices}
+c_{\mu \nu} = \sum_\pi K_{\mu\pi}^{-1} b_\mu (K_{\nu\pi}^{-1})^T\; .
+\end{equation}
+\marginpar[left]{\tiny Fix these \\ indices later.}
+
+Hence, we conclude that 
+\begin{equation}
+\sum_{\mu} S_{\mu}(\bm{x},Q) s_{\nu}(\bm{y}) = 
+\sum_{\mu , \nu} c_{\mu\nu} s_{\mu}(\bm{x}) s_{\nu}(\bm{y}) 
+\end{equation}
+and everything boils down to the analysis of the
+indices~(\ref{eq:indices}).
+
+Do they satisfy Plücker relations? We already know that the
+big Schur functions themselves are KP-tau
+functions, see also~\cite{Necoechea:2019wbg}, therefore, the coefficients
+\((c_\lambda)_\mu \equiv c_{\lambda\mu}\) must satisfy Plücker relations
+for the KP hierarchy.
+
+From the above considerations, we can define 2 set of functions \(F_i(x)\) and
+\(G_i(y)\) such that
+\begin{equation}
+ F_i(x) = \sum_{n} F_{i,n} x^n \qquad 
+ G_i(y) = \sum_{n} G_{i,n} y^n\; ,
+\end{equation}
+in such a way that 
+\begin{equation}
+  c_{\mu\nu} = \det(F_{i, m_j} | G_{i, n_k})\; ,
+\end{equation}
+and we conclude that the scalar product is, indeed, a Toda tau function. 
+\marginpar[left]{\tiny Improve this\\ discussion}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{!! Fermionic construction}
+
+Let us now consider the fermionic construction of this tau function. We write 
+the limit \(N,M\to \infty\) of the scalar product
+\begin{subequations}
+\begin{equation}
+  S_Q(\bm{T}, \bm{t}') = \sum_{\mu} s_\mu(\bm{T}) s_\mu(\bm{t}')
+\end{equation}
+that is quite quite trivial from the viewpoint of the free fermion construction, 
+\begin{equation}
+  S_Q(\bm{T}, \bm{t}') = \bra{\bm{0}} e^{\bm{J}_+(\bm{T})} e^{\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
+\end{equation}
+
+Moreover, we also know that
+\begin{equation}
+  S_Q(\bm{t}, \bm{t}') = \sum_{\mu\nu} c_{\mu\nu} s_\mu(\bm{t}) s_\mu(\bm{t}')
+\end{equation}
+where \(n t = \sum_j x^n_j\) and \(n t' = \sum_j y^n_j\) are Miwa coordinates, then  
+\begin{equation}
+  S_Q(\bm{t}, \bm{t}') = \bra{\bm{0}} e^{J_+(\bm{t})} G_Q  e^{J_-(\bm{t}')} \ket{\bm{0}}
+\end{equation}
+and \(G_Q \in GL(\infty)\) that depends on \(Q\). We could also think of \(G_Q\)
+as a twist
+\(G_Q = e^{Q H} G e^{-Q H}\), with the action of \(H\in \mathfrak{gl}(\infty)\)
+on ordinary fermions generating the Q-fermions. 
+\marginpar[left]{\tiny Investigate this\\ twists}
+\end{subequations}
+
+It seems that we have some different representations for this tau function, 
+and it is worth investigating what is happening here. That is what we want 
+to do now. 
+
+
+%\input{./sections/fermions.tex}
+%
+%\input{./sections/schurpol.tex}
+%
+%\input{./sections/transfer.tex}
+%
+%\input{./sections/t-fermions.tex}
+%
+%\input{./sections/top-strings.tex}
+
+%\addcontentsline{toc}{section}{References}
+\printbibliography
+
+\end{document}
+ 
