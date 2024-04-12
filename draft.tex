@@ -10,8 +10,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Comments on \(Q\)-Bosons, deformed fermions and their relations
-    with integrable hierarchies}
+\title[\(Q\)-Bosons and relations with integrable hierarchies]{Comments on \(Q\)-Bosons,
+and their relations with integrable hierarchies}
 
 \author{Thiago Araujo}
 
@@ -25,20 +25,21 @@ Rua do Matão Travessa 1371, 05508-090\\ São Paulo, SP. Brazil
 
 \email{\texttt{\href{tr.araujo@unesp.br}{tr.araujo@unesp.br}}}
 
+\begin{abstract}
+In this work, we study aspects of the \(Q\)-boson model, and 
+its relations with integrable hierarchies. 
+\vspace{4pt}
+\noindent \textbf{Keywords:} Integrability, Q-bosons, Schur
+
 \keywords{integrability, spin-chains}
 \subjclass[2020]{82B20, 82B23}
 \date{\today}
 
-\begin{abstract}
-  In this work, we study aspects of the \(Q\)-boson model, and 
-its relations with integrable hierarchies. 
-% \vspace{4pt}
- \noindent \textbf{Keywords:} Integrability, Q-bosons, Schur
 \end{abstract}
 
 \maketitle
 
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{3}
 \tableofcontents
 
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
@@ -153,137 +154,17 @@ A(x) & B(x) \\ C(x) & D(x)
 \end{pmatrix}_a\; .
 \end{equation}
 
-With these expressions, one can finally build the Bethe states and their dual 
+With these expressions, one can finally build the Bethe states
 \begin{equation}
-  \ket{\widehat{\Psi}(y_1, \dots, y_N)} = \prod_{j=1}^N B(y_j) \ket{\bm{0}}\qquad 
-  \bra{\widehat{\Psi}(y_1, \dots, y_N)} = \bra{\bm{0}}\prod_{j=1}^N C(y_j) \; .
+  \ket{\Psi(y_1, \dots, y_N)} = \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}}
 \end{equation}
-When the set \(\{ y_j \ | \ j =1, \dots , N\}\) satisfies the Bethe equations 
+where \(\mathbb{B}(x) = x^{M/2} B(x)\). When the set \(\{ y_j \ | \ j
+=1, \dots , N\}\) satisfies the Bethe equations
 \begin{equation}
   y^{N + M}_i = (-1)^{N-1} \prod_{\substack{j = 1 \\ j \neq i}}^N y_j\; , \qquad i = 1, \dots, N\; , 
 \end{equation}
 we says that the Bethe states are \emph{on-sheel}. In what follows, we will 
 only consider \emph{off-shell} states. 
-
-\subsubsection{Coordinate expansion}
-From the map defined in~\cite{Wheeler:2010vmq}, we can associate to
-each state \(\ket{\lambda}\), a Schur function \(s_\lambda(\vec{x})\),
-where the dummy coordinates are \(\vec{x} = (x_1, \dots, x_N)\), with
-\(N = \sum_{j=0}^M n_j\). Therefore, we can work in the ring of
-symmetric functions \(\Lambda_M\), with basis given by Schur functions
-\(s_\lambda\) and Young diagrams such that \(\max(\lambda_1) = M\),
-and \(\max(\ell(\lambda)) = N\).
-
-That also means that the operator \(B\) should also be realized in the
-space \(\Lambda_M\), see~\cite{Tsilevich:2006}. The operators
-\(\phi^\dagger_j\) and \(\phi_j\) are, respectively, \(1\)-particle
-creation and annihilation at the site \(j\). In terms of partitions,
-we can think of them as insertion and removal of a row of length
-\(j\). That is, given the state \(\ket{\lambda} =\ket{1^{n_1} 2^{n_2}\cdots}\), 
-we have
-\begin{equation}
-\begin{split}
-  \phi^\dagger_j \ket{\lambda} & = \ket{1^{n_1} 2^{n_2}\cdots j^{j+1}\cdots} \equiv \ket{\lambda \oplus (j)}\\
-  \phi_j \ket{\lambda} & = \ket{1^{n_1} 2^{n_2}\cdots j^{j-1}\cdots}
-  \equiv \ket{\lambda \ominus (j)}\; , 
-\end{split}
-\end{equation}
-Once again, we see that the case \(j=0\) is meaningless in the
-partition construction. Given two partitions \(\lambda\) and \(\mu\),
-we say that \(\lambda\) interlaces \(\mu\) if \(\lambda_i \geq \mu_i \geq \lambda_{i+1}\), 
-and we write \(\lambda\succ \mu\). Therefore, it is easy to see that the partition 
-\(\lambda\oplus (j)\) interlaces \(\lambda\), and \(\lambda\)
-interlaces \(\lambda \ominus (j)\). We write this condition as 
-\(\lambda \oplus (j) \succ \lambda \succ \lambda \ominus (j)\).
-
-Now, we can use the explicit expression for the \(L\)-matrix to build
-the monodromy matrix, and extract the operator \(B(x)\) as
-\begin{subequations}
-\begin{equation}
-  B(x)_a = T_a(x)_{12} = \sum_{j_1, \dots, j_M = 1,2} L_{a j_M}(x) L_{j_M j_{M-1}}(x)\cdots  L_{j_1 2}(x)\; ,
-\end{equation}
-and it is easy to see that it has the form  
-\begin{equation}
-  B(x) \equiv x^{-M/2} \mathbb{B}(x) = x^{-M/2} \sum_{k=0}^M x^k \mathcal{B}_k \; .
-\end{equation}
-The problem now is to find the action of the operators \(\mathcal{B}_k\) on
-states \(\ket{\lambda}\).
-\end{subequations}
-Let us consider some simple cases.
-
-\textbullet \ M=0: We have just one site in the  
-chain, and all particles site at the site \(0\), as we have discussed many times, 
-does not contribute to the partition representation.
-
-\textbullet \ M=1: Now we have 1 row Young diagrams \(\lambda = (1^{n_1})\), where each row
-corresponds to a boson. It is easy to show that 
-\begin{equation}
- \mathbb{B}_{M=1}(x) =  x \phi_1^\dagger + \phi_0^\dagger \; ,
-\end{equation}
-therefore, \(\mathcal{B}_0 = \phi_0^\dagger\) and  \(\mathcal{B}_1 = \phi_1^\dagger\). 
-From this expression, we have 
-\begin{equation}
-  \mathcal{B}_0\ket{(1^{n_1})} = \ket{(1^{n_1})} \qquad  
-  \mathcal{B}_1\ket{(1^{n_1})} = \ket{(1^{n_1+1})} \; .
-\end{equation}
-All in all, we conclude that 
-\begin{equation}
- \mathbb{B}_{M=1}(x)\ket{\lambda}  =  \ket{\lambda} + x\ket{\lambda \oplus (1)} \;.
-\end{equation}
-
-\textbullet \ M=2: Now we have 2 row Young diagrams \(\lambda = (1^{n_1}2^{n_2})\).
-Now, one can show that
-\begin{equation}
-  \mathbb{B}_{M=2}(x) = x^2 \phi_2^\dagger + x \left( \phi_1^\dagger
-  + \phi_2^\dagger \phi_1 \phi_0^\dagger \right) + \phi_0^\dagger \; ,
-\end{equation}
-therefore,
-\begin{equation}
-\mathcal{B}_0 = \phi_0^\dagger \qquad 
-\mathcal{B}_1 = \phi_1^\dagger + \phi_2^\dagger \phi_1 \phi_0^\dagger \qquad 
-\mathcal{B}_2 = \phi_2^\dagger \; .
-\end{equation}
-
-Consequently. we find
-\begin{subequations}
-\begin{equation}
-\begin{split}
-  \mathcal{B}_0\ket{(1^{n_1}2^{n_2})} & = \ket{(1^{n_1} 2^{n_2})} \qquad  
-  \mathcal{B}_1\ket{(1^{n_1}2^{n_2})} = \ket{(1^{n_1+1} 2^{n_2})} + \ket{(1^{n_1-1} 2^{n_2 + 1})} \\
-  \mathcal{B}_2\ket{(1^{n_1}2^{n_2})} & = \ket{(1^{n_1}2^{n_2+1})}\; .
-\end{split}
-\end{equation}
-\end{subequations}
-Observe that the action of the operator \(\mathbb{B}_k(x)\) on \(\ket{\lambda}\)
-generates diagrams \(\ket{\mu}\) such that \(k = |\mu| - |\lambda|\). 
-\begin{equation}
-  \mathbb{B}_{M=2}(x) \ket{\lambda}  =
-  \sum_{\lambda \prec \mu \subseteq [2,\ell(\lambda) + 1]} x^{|\mu|-|\lambda|} \ket{\mu}\; .
-\end{equation}
-
-One can keep doing this game, and we reach to the general conclusion that 
-\begin{equation}
-  \mathbb{B}(x) \ket{\lambda}  =
-  \sum_{\lambda \prec \mu \subseteq [M,\ell(\lambda) + 1]} x^{|\mu|-|\lambda|} \ket{\mu}\; .
-\end{equation}
-
-Therefore, we conclude that the action of the operators
-\(\mathcal{B}_k\) on \(\ket{\lambda}\) generates diagrams
-\(\ket{\mu}\) that are obtained from \(\lambda\) by adding \(k\) boxes,
-not in different columns. From the viewpoint of symmetric functions, this rule
-is exactly the Pieri's rule~\cite{Macdonald:1998}, that states that
-we have that
-\begin{equation}
-  s_{(k)} s_\lambda = \sum_{\mu \succ \lambda} s_\mu\;.
-\end{equation}
-
-Therefore, we have the map from the spin chain Hilbert space to the
-ring of symmetric functions given by \(\imath : \mathcal{B}_k \mapsto
-s_{(k)}\) where \(s_{(k)}\) is the Schur function with 1 row of length
-\(k\).
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -353,15 +234,22 @@ Once again, we will consider \emph{off-shell} Bethe states.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
-\section{Toda tau functions and the phase model}
+\section{Tau functions in the phase model}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-Bogoliubov~\cite{Bogoliubov2005}, in the notation~\cite{Wheeler:2010vmq},
-has shown that the the scalar product of two vectors in the
-\(N\)-particles sector in a chain of length \(M + 1\) is
+This section discusses presence of integrable hierarchies in the phase
+model.  We argue that it is also a Toda hierachy tau function, and we
+discuss some consequences of this fact, in particular, its connection
+with a matrix model. Moreover, we also point the presence of
+correlation functions in this model that also satisfy the KP hierarchy
+equations. We finally argue how these results also imply that these
+scalar products are also KP hierarchy tau functions, what is expected from 
+the results of Wheeler~\cite{Wheeler:2010vmq}.
+
+Bogoliubov~\cite{Bogoliubov2005}, has shown that the scalar product of
+two vectors in the \(N\)-particles sector in a chain of length \(M+1\)
+is
 \begin{equation}
 \begin{split}
 \label{eq:scalar}
@@ -376,87 +264,113 @@ where \(H\) is an \(N\times N\) matrix with components
   =\frac{1 - (x_i y_j)^{ M + N}}{1 - x_i y_j }\; .
 \end{equation}
 
-This scalar product is related to the counting of plane
-partitions, with
-\begin{equation}
- S(N, M| \bm{x}, \bm{y}) 
- = \sum_{\lambda \subseteq (N, N, M)} s_{\lambda}(\bm{x}) s_{\lambda} (\bm{y})\; .
-\end{equation}
-In the limit \(M, N \to \infty\), one can use the Cauchy identity
-\begin{equation}
-  \sum_{\lambda } s_{\lambda}(\bm{x}) s_{\lambda}(\bm{y})
-  = \prod_{i,j>0} \frac{1}{1- x_iy_j}\; ,
-\end{equation}
-and specialize this expression to \( x_i = y_i = q^{i-1/2} \) to find
-the MacMahon function
-\begin{equation}
-  \sum_{\lambda } s_{\lambda}(\bm{q}_\star) s_{\lambda}(\bm{q}_\star) = \prod_{i,j>0} \frac{1}{1- q^{i +j -1}}\; ,
-\end{equation}
-where \(\bm{q}_{\star} = (q^{1/2}, q^{3/2}, \dots)\). 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{KP and Toda tau functions}
-
-Wheeler has shown in~\cite{Wheeler:2010vmq} that the the scalar
-product~(\ref{eq:scalar}) is a KP tau function with respect to the
-Miwa coordinates \(t_m = \frac{1}{m}\sum_j x_j^m\) (\(t'_m =
-\frac{1}{m}\sum_j y_j^m\)), where the Schur functions
-\(s_{\lambda}(\bm{y}) = c_\lambda\) ( \(s_{\lambda}(\bm{x}) =
-c'_\lambda\)) become Plücker coordinates, and vice-versa.
-The proof for this statement is relies on the map \(\mathcal{M}_\psi\)
-between the space \(\mathcal{V}\) os Bethe states and Fock
-space \(\mathcal{F}_\psi\) of free fermions. 
-
-In fact, there is an easier way to see this fact. First one may see that 
+\subsection{Toda tau functions}
+In this section, we argue that the scalar product defined above is a tau function 
+of the Toda hierarchy. Let us first write the function \(H(z,w)\) as the geometric sum 
 \begin{equation}
- S(N,M,\bm{y}|\{\bm{t}\}) 
- = \sum_{\lambda} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
- \equiv \sum_{\lambda} c_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+  H(z,w) = \frac{1 - (zw)^{M+N}}{1 - zw} = \sum_{k=1}^{M+N} (zw)^{k-1} \; , 
 \end{equation}
-is a tau function of the KP hierarchy, since
-\(c_\lambda(\bm{y}) = \det (h_{\lambda_i-i +j}(\bm{y}))\) are Plücker
-coordinates~\cite{Miwa2000, Foda:2009zz}. Therefore, the truncation
+in such a way that 
+we can write
 \begin{equation}
- S(N,M,\bm{y}|\{\bm{t}\}) 
- = \sum_{\lambda \subseteq [N, \infty)} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+  \det_{i,j} \left(H(x_i, y_j)\right) = \det_{i,j} \left( \sum_{k=1}^{M+N} x_i^{k-1} y_j^{k-1}\right)
 \end{equation}
-is also a tau function. According to~\cite{Alexandrov:2012tr,
-  Kharchev:1991gd, Zabrodin:2010ii}, the truncation of the tau
-function corresponds to the inclusion of a projection operator
-\(\mathrm{P}^+\) in the expectation value of the tau function.
-% See section 3.3.2 of~\cite{Alexandrov:2012tr}, 
+and we can thing of this expression as the product of a \(N\times (N+M)\) matrix \(\mathcal{X}\)
+and another \((M + N)\times N\) matrix \(\mathcal{Y}\), given by
+\begin{equation}
+  \mathcal{X} = 
+  \begin{pmatrix}
+  x_1^0 & x_1^1 & \dots & x_1^{M+N-1} \\  
+  x_2^0 & x_2^1 & \dots & x_2^{M+N-1} \\  
+  \vdots \\
+  x_N^0 & x_N^1 & \dots & x_N^{M+N-1} 
+  \end{pmatrix}\quad \textrm{and} \quad 
+  \mathcal{Y} = 
+  \begin{pmatrix}
+  y_1^0 & y_2^0 & \dots & y_N^0 \\  
+  y_1^1 & y_2^1 & \dots & y_N^1 \\  
+  \vdots & \vdots & & \vdots \\
+  y_1^{N+M-1} & y_2^{M+N-1} & \dots & y_N^{M+N-1} 
+  \end{pmatrix}
+\end{equation}
+therefore 
+\begin{equation}
+  \det_{i,j} \left(H(x_i, y_j)\right) =  \det_{i,j} \left( \mathcal{X}\mathcal{Y}\right)
+= \sum_{0 \leq \ell_{N} \leq \dots \leq \ell_1\leq N+M }  \det_{ik}(x_i^{\ell_k})  \det_{ik}(y_j^{\ell_k})\; .
+\end{equation}
+If we now define \(\ell_j = \lambda_k - k + N\), and
+using~(\ref{eq:scalar}), we have
+\begin{equation}
+S(N, M|\bm{x}, \bm{y}) = \sum_{\lambda\subseteq [N,M]}
+\frac{\det_{ik}(x_i^{\lambda_k - k + N})}{\Delta(\bm{x})} \frac{ \det_{ik}(y_j^{\lambda_k - k + N})}{\Delta(\bm{y})}
+= \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{x}) s_\lambda(\bm{y}) \; .
+\end{equation}
+where \(\Delta(\bm{x})\) and \(\Delta(\bm{x})\) are Vandermonde
+determinants. This formula agrees with the Schur expansion defined
+in~\cite{Bogoliubov2005}.
 
-\subsubsection{Scalar product}
-We also argue that this is also a tau function of the 2D toda hierarchy. 
-We can write the Cauchy's identity as
-\begin{subequations}
+Let us write the Miwa coordinates 
+\begin{equation}
+  t_p = \frac{1}{p}\sum_{j=1}^N x_j^p\qquad 
+  t'_p = \frac{1}{p}\sum_{j=1}^N y_j^p\; ,
+\end{equation}
+therefore, we have 
+\begin{equation}
+  S(N, M|\bm{t}, \bm{t}') = \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
+\end{equation}
+This expression is known to be a tau function for \(M, N\to \infty\).
+In fact, using the free fermions representation~\cite{Alexandrov:2012tr},
+it can be written as
+\begin{equation}
+\sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
+ = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} e^{-\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
+\end{equation}
+It is a tau function of the Toda hierarchy with trivial element \(1 \in GL(\infty)\).
+In fact, it is nothing but the Cauchy's identity
 \begin{equation}
   \sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
     = \exp \left( \sum_{m\geq1} m t_m t'_m \right) \; .
 \end{equation}
 where \(\bm{t}\) and \(\bm{t}'\) are two independent sets of Miwa coordinates.
-It is a trivial tau function of the 2D Toda hierarchy, since one can write it as
-\begin{equation}
-\sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
- = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} e^{-\bm{J}_-(\bm{t}')} \ket{\bm{0}}
-\end{equation}
-and from the free-fermions representation of the tau functions,
-see~\cite{Alexandrov:2012tr}, we have that it is a tau function of the
-Toda hierarchy with trivial element \(1 \in GL(\infty)\).
-\end{subequations}
 
-Therefore, the truncation 
+Putting all these facts together, the truncation for finite \(M\) and
+\(N\) are also tau functions of the Toda hierarchy. More specifically,
+according to~\cite{Alexandrov:2012tr, Kharchev:1991gd,
+  Zabrodin:2010ii}, the truncation of the tau function corresponds to
+the inclusion of a projection operator \(\mathrm{P}^+\) in the
+expectation value of the tau function written in the fermionic
+representation.
+
+\subsubsection{KP tau function}
+Finally, one may also observe that if we fix one set of coordinates,
+say \(\bm{y}\), then we write
 \begin{equation}
- S(N,M|\{\bm{t}\},\{\bm{t}'\}) = 
-  \sum_{\lambda \subseteq [N,N,M]} s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
+ S(N,M|\{\bm{t}\}) 
+ = \sum_{\lambda} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+ \equiv \sum_{\lambda} c_\lambda(\bm{y})  s_\lambda(\bm{t}) \; ,
 \end{equation}
-is a also a restricted tau function. These proofs follow from simple
-properties of tau functions, and it should be contrated with the rich
-formalism in~\cite{Wheeler:2010vmq}. Moreover, from~\cite{Zabrodin:2010ii}
-we have that the this tau function can be written as the matrix integral
+with coefficients \(c_\lambda(\bm{y}) = \det (h_{\lambda_i-i +j}(\bm{y}))\).
+But now, it is a trivial to notice that these are Plücker
+coordinates in the Jacobi-Trudi form, see~\cite{Miwa2000, Alexandrov:2012tr}. 
+
+Therefore, the expression
+\begin{equation}
+ S(N,M|\{\bm{t}\}) = \sum_{\lambda \subseteq [N, \infty)} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+\end{equation}
+is also a KP tau function: A fact that we already know
+from~\cite{Wheeler:2010vmq}, where the author has proved this
+statement using the free fermions formalism.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Matrix models}
+
+Moreover, from~\cite{Zabrodin:2010ii} we have that the this tau
+function can be written as the matrix integral
 \begin{equation}
   S(N,M|\{\bm{t}\}, \{\bm{t}'\}) =
   \frac{1}{N!} \prod_{\ell=1}^N \oint_{\Gamma_\ell} \frac{dz_\ell}{2 \pi i z_\ell}
@@ -467,12 +381,26 @@ When the Bethe equations are satisfied, we have that \(x_j = y_j = e^{ip_j}\),
 therefore \(t_{-m} = - t_m^\star\), and the the phase model is equivalent to
 an ensemble of \(N\) 2D Coulomb particles on a circle. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In fact, we can also write
+\begin{equation}
+  H(z,w) = \sum_{k=0}^{M+N} h_k(zw)^{k-1} \; , 
+\end{equation}
+with \(h_k=1\) if \(k\in [0, M+N-1]\) and \(0\) otherwise. In this
+case, one can define a diagonal \((N+M)\times (N+M)\) matrix
+\(\mathcal{H} = \textrm{diag}(h_0, \dots, h_{M+N-1})\). Therefore, if
+we repeat the arguments above, we find
+\begin{equation}
+S(N, M|\bm{t}, \bm{t}') = \sum_{\lambda} h_\lambda s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
+\end{equation}
+where \(h_\lambda = 1\) if \(\lambda \subset [N,M]\) and it vanishes otherwise. 
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\subsubsection{Correlation functions}
+\subsection{Correlation functions}
 Bogoliubov has also shown that the correlation functions
 \begin{subequations}
 \begin{equation}
@@ -585,7 +513,6 @@ state of the crystal melting problem in~\cite{Dijkgraaf:2008ua}.
 Therefore, the restriction for diagrams with \(\ell(\lambda_1) \leq N\) is
 not a tau function either.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -845,6 +772,7 @@ to do now.
 %\input{./sections/top-strings.tex}
 
 %\addcontentsline{toc}{section}{References}
+
 \printbibliography
 
 \end{document}
