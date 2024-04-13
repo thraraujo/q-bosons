@@ -146,7 +146,8 @@ The \(L\)-matrix is given by
 x^{ - 1/2} & \phi_n^\dagger \\ \phi_n & x^{1/2}
 \end{pmatrix}_a\; , 
 \end{equation}
-from where we can build the monodromy matrix 
+where \(x \in \mathbb{S}^1\). From where we can build the monodromy
+matrix
 \begin{equation}
   T_a(x) = L_{aM}(x) \cdots L_{a0}(x) = 
 \begin{pmatrix}
@@ -156,11 +157,14 @@ A(x) & B(x) \\ C(x) & D(x)
 
 With these expressions, one can finally build the Bethe states
 \begin{equation}
-  \ket{\Psi(y_1, \dots, y_N)} = \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}}
+  \ket{\Psi(y_1, \dots, y_N)} = \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}} \qquad 
+  \bra{\Psi(y_1, \dots, y_N)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j) 
 \end{equation}
-where \(\mathbb{B}(x) = x^{M/2} B(x)\). When the set \(\{ y_j \ | \ j
+where \(\mathbb{B}(x) = x^{M/2} B(x)\) and \(\mathbb{C}(x) = x^{M/2} C(1/x)\).
+When the set \(\{ y_j \ | \ j
 =1, \dots , N\}\) satisfies the Bethe equations
 \begin{equation}
+\label{eq:bethe_eq}
   y^{N + M}_i = (-1)^{N-1} \prod_{\substack{j = 1 \\ j \neq i}}^N y_j\; , \qquad i = 1, \dots, N\; , 
 \end{equation}
 we says that the Bethe states are \emph{on-sheel}. In what follows, we will 
@@ -304,6 +308,7 @@ therefore
 If we now define \(\ell_j = \lambda_k - k + N\), and
 using~(\ref{eq:scalar}), we have
 \begin{equation}
+\label{eq:scalar_exp}
 S(N, M|\bm{x}, \bm{y}) = \sum_{\lambda\subseteq [N,M]}
 \frac{\det_{ik}(x_i^{\lambda_k - k + N})}{\Delta(\bm{x})} \frac{ \det_{ik}(y_j^{\lambda_k - k + N})}{\Delta(\bm{y})}
 = \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{x}) s_\lambda(\bm{y}) \; .
@@ -312,10 +317,11 @@ where \(\Delta(\bm{x})\) and \(\Delta(\bm{x})\) are Vandermonde
 determinants. This formula agrees with the Schur expansion defined
 in~\cite{Bogoliubov2005}.
 
-Let us write the Miwa coordinates 
+Let us define two sets of Miwa coordinates \(\bm{t} = (t_1, t_2, \dots)\)
+and \(\bm{t}' = (t'_{-1}, t'_{-2}, \dots)\) by
 \begin{equation}
   t_p = \frac{1}{p}\sum_{j=1}^N x_j^p\qquad 
-  t'_p = \frac{1}{p}\sum_{j=1}^N y_j^p\; ,
+  t'_{-p} = \frac{1}{p}\sum_{j=1}^N y_j^p\; ,
 \end{equation}
 therefore, we have 
 \begin{equation}
@@ -332,7 +338,7 @@ It is a tau function of the Toda hierarchy with trivial element \(1 \in GL(\inft
 In fact, it is nothing but the Cauchy's identity
 \begin{equation}
   \sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
-    = \exp \left( \sum_{m\geq1} m t_m t'_m \right) \; .
+    = \exp \left( \sum_{m\geq1} m t_m t'_{-m} \right) \; .
 \end{equation}
 where \(\bm{t}\) and \(\bm{t}'\) are two independent sets of Miwa coordinates.
 
@@ -343,6 +349,60 @@ according to~\cite{Alexandrov:2012tr, Kharchev:1991gd,
 the inclusion of a projection operator \(\mathrm{P}^+\) in the
 expectation value of the tau function written in the fermionic
 representation.
+
+As a final remark, we can also write
+\begin{equation}
+  H(z,w) = \sum_{k=0}^{M+N} h_k(zw)^{k-1} \; , 
+\end{equation}
+with \(h_k=1\) if \(k\in [0, M+N-1]\) and \(0\) otherwise. In this
+case, one can define a diagonal \((N+M)\times (N+M)\) matrix
+\(\mathcal{H} = \textrm{diag}(h_0, \dots, h_{M+N-1})\). Therefore, if
+we repeat the arguments above, we find
+\begin{equation}
+S(N, M|\bm{t}, \bm{t}') = \sum_{\lambda} h_\lambda s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
+\end{equation}
+where \(h_\lambda = 1\) if \(\lambda \subset [N,M]\) and it vanishes
+otherwise.  In this case, we have that this tau function is of the
+type considered in~\cite{orlov:2001}. Evidently that it is a trivial
+example, but we expect that in the case of the \(q\)-Boson model,
+where \(q\) is finite, the diagonal terms \(h_\lambda\) are more
+interesting. We will discuss this case next section.
+
+\subsubsection{Dyson gases}
+
+It is also interesting to consider the particular case when \(M\to
+\infty\), but with a finite number of particles \(N\). The
+partititions \(\lambda \in [N, \infty]\) satisfy the condition
+\(\ell(\lambda) \leq N\), therefore, the scalar
+product~(\ref{eq:scalar_exp}) becomes
+\begin{equation}
+  S_N(\bm{t}, \bm{t}') = \sum_{\substack{\lambda \\ \ell(\lambda) \leq N}}
+  s_\lambda(\bm{t})  s_\lambda(\bm{t}') \; .
+\end{equation}
+From~\cite{Zabrodin:2010ii}, we know that this expression can be
+written as the matrix integral
+\begin{equation}
+  S_N(\bm{t}, \bm{t}') =
+  \frac{1}{N!} \prod_{\ell=1}^N \oint_{\Gamma_\ell} \frac{dz_\ell}{2 \pi i z_\ell}
+  e^{\xi(\bm{t}, z_\ell) - \xi(\bm{t}', z_{\ell}^{-1})} \Delta(z)\Delta(z^{-1})\; ,
+\end{equation}
+where
+\begin{equation}
+\xi(\bm{t}, z) = \sum_{k\geq 0} t_k z^k \qquad
+\xi(\bm{t}', 1/z) = \sum_{k\geq 0} t'_{-k} z^{-k} \; . 
+\end{equation}
+See also~\cite{Kharchev:1991gd} for a detailed proof of this relation,
+and~\cite{Orlov:2005} for other details. 
+
+What is very interesting about this result is what it implies when we 
+impose the Bethe equations~(\ref{eq:bethe_eq}). Suppose that 
+\(x_j = e^{-ip_j} \in \mathbb{S}^1\), and we set \(\bm{t}' = - \bm{t}^\star\).
+In this particular case, we have
+\begin{equation}
+\xi(\bm{t}, z) - \xi(\bm{t}', 1/z)  = 2 \ \textrm{Re}\left(\sum_k t_k z^k\right)\; .
+\end{equation}
+Then, the phase model is equivalent to an ensemble of \(N\)
+2D Coulomb particles on a circle. 
 
 \subsubsection{KP tau function}
 Finally, one may also observe that if we fix one set of coordinates,
@@ -358,44 +418,11 @@ coordinates in the Jacobi-Trudi form, see~\cite{Miwa2000, Alexandrov:2012tr}.
 
 Therefore, the expression
 \begin{equation}
- S(N,M|\{\bm{t}\}) = \sum_{\lambda \subseteq [N, \infty)} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
+ S(N,M|\bm{t}) = \sum_{\lambda \subseteq [N,M]} s_\lambda(\bm{y})  s_\lambda(\bm{t}) \; ,
 \end{equation}
 is also a KP tau function: A fact that we already know
 from~\cite{Wheeler:2010vmq}, where the author has proved this
 statement using the free fermions formalism.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Matrix models}
-
-Moreover, from~\cite{Zabrodin:2010ii} we have that the this tau
-function can be written as the matrix integral
-\begin{equation}
-  S(N,M|\{\bm{t}\}, \{\bm{t}'\}) =
-  \frac{1}{N!} \prod_{\ell=1}^N \oint_{\Gamma_\ell} \frac{dz_\ell}{2 \pi i z_\ell}
-  e^{\xi_+(\bm{t}_+, z_\ell) - \xi_-(\bm{t}_-, z_{\ell}^{-1})} \Delta(z)\Delta(z^{-1})
-\end{equation}
-
-When the Bethe equations are satisfied, we have that \(x_j = y_j = e^{ip_j}\),
-therefore \(t_{-m} = - t_m^\star\), and the the phase model is equivalent to
-an ensemble of \(N\) 2D Coulomb particles on a circle. 
-
-
-In fact, we can also write
-\begin{equation}
-  H(z,w) = \sum_{k=0}^{M+N} h_k(zw)^{k-1} \; , 
-\end{equation}
-with \(h_k=1\) if \(k\in [0, M+N-1]\) and \(0\) otherwise. In this
-case, one can define a diagonal \((N+M)\times (N+M)\) matrix
-\(\mathcal{H} = \textrm{diag}(h_0, \dots, h_{M+N-1})\). Therefore, if
-we repeat the arguments above, we find
-\begin{equation}
-S(N, M|\bm{t}, \bm{t}') = \sum_{\lambda} h_\lambda s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
-\end{equation}
-where \(h_\lambda = 1\) if \(\lambda \subset [N,M]\) and it vanishes otherwise. 
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -419,7 +446,7 @@ where the \(N\times N\) matrix \(Q\) has components
 \end{equation}
 where \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\). 
 Since the components \(Q_{jN}\) are independent of the coordinates \(y\), 
-we cannot write the above expression in terms of a Toda hierarchy tau
+we cannot write the above expression as a Toda hierarchy tau
 function. 
 
 We already know that 
