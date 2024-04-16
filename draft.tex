@@ -88,10 +88,11 @@ this reason it is referred as the \emph{phase model}. It
 corresponds to the strongly correlated \(q\)-bosons
 model~\cite{Bogoliubov:1997soj} the we will define soon.
 
-\subsubsection{Partitions representation}
-Let us define the i\(^{th}\)-vacuum \(\ket{0}_i\) by the the conditions 
-\(\phi_i\ket{0}_i\). The representation of this Hilbert space, denoted by
-\(\mathcal{F}_i\), is given by \(\ket{n_i}_i = \phi_i^\dagger \ket{0}_i\). 
+\subsubsection{Representation}
+Let us define the i\(^{th}\)-vacuum \(\ket{0}_i\) by \(\phi_i\ket{0}_i
+= 0\).  The representation of this Hilbert space, denoted by
+\(\mathcal{F}_i\), is given by \(\ket{n_i}_i = \phi_i^\dagger
+\ket{0}_i\).
 
 Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
 \otimes \cdots \otimes  \ket{0}_M\),
@@ -108,7 +109,7 @@ where the states \(\ket{\vec{n}}\) are defined as
 \end{equation}
 where we write \(\phi_i^\dagger \equiv \bm{1} \otimes  \cdots \otimes
 \phi_i^\dagger \otimes \cdots \otimes \bm{1}\).
-We will assume that these states are normalized, that is
+These states are normalized, that is
 \(\bracket{\vec{n}}{\vec{m}}=\delta_{\vec{n}, \vec{m}}\). 
 
 Finally, the actions of the operators \(\mathcal{N}_i\) and \(\pi_i\) are
@@ -186,7 +187,7 @@ operators \(\{b_i, b^\dagger,\mathcal{N}_i\}_{i=0}^M\) form the
 \begin{equation}
 [\mathcal{N}_i, b_j^\dagger]=\delta_{i,j} b_i^\dagger\; , \quad 
 [\mathcal{N}_i, b_j]=-\delta_{i,j}b_i\; , \quad
-[B_i, B_j^\dagger]= \delta_{i,j} q^{-2\mathcal{N}_i}  \equiv \delta_{i,j} Q^{\mathcal{N}_i}\; , 
+[b_i, b_j^\dagger]= \delta_{i,j} q^{-2\mathcal{N}_i}  \equiv \delta_{i,j} Q^{\mathcal{N}_i}\; , 
 \end{equation}
 where we write the deformation parameter as \(Q = q^{-2}\). 
 In the limit \(Q\to 1\), the q-bosons are ordinary bosons, and 
@@ -194,44 +195,92 @@ the limit \(Q\to 0\) (\(q\to \infty\)) gives the phase model we have discussed a
 
 \subsubsection{Representation}
 We build the representation of the q-boson algebra with some modifications of the phase 
-model we have just discussed. We suppose that the action of the operators \(\{b_i, b_i^\dagger\}\) 
-satisfies 
+model we have just discussed. Let us define the i\(^{th}\)-vacuum \(\ket{0}_i\) by
+\(b_i\ket{0}_i = 0\). The representation of this Hilbert space, denoted by
+\(\mathcal{F}_i^Q\), is given by \(\ket{n_i}_i \propto b_i^\dagger \ket{0}_i\).
+
+Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
+\otimes \cdots \otimes  \ket{0}_M\),
+the Fock space is defined as 
+\begin{equation}
+  \mathcal{F}_{Q} = \bigotimes_{i=0}^M \mathcal{F}_i^Q = 
+  \left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
+  \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; .
+\end{equation}
+where the actions of the operators \(\{b_i, b_i^\dagger\}\) are given by 
+the following relations
 \begin{subequations}
 \begin{alignat}{3}
-    & b_0\ket{n_0} =(1 - \delta_{0, n_0}) \frac{1 - Q^{n_0}}{(1 - Q)^{1/2}}\ket{n_0 - 1}
+    & b_0\ket{n_0} =(1 - \delta_{0, n_0}) \frac{(1 - Q^{n_0})}{(1 - Q)^{1/2}}\ket{n_0 - 1}
     &\hspace{0.5cm}& b_0^\dagger \ket{n_0} =  \frac{1}{(1 - Q)^{1/2}}\ket{n_0 + 1}  \\
     & b_i\ket{n_i} = \frac{(1 - \delta_{0, n_i})}{(1 - Q)^{1/2}}\ket{n_i - 1}
-    && b_i^\dagger \ket{n_0} =  \frac{(1 - Q^{n_i+1})}{(1 - Q)^{1/2}}\ket{n_0 + 1}\quad i\neq 0
+    && b_i^\dagger \ket{n_0} =  \frac{(1 - Q^{n_i+1})}{(1 - Q)^{1/2}}\ket{n_0 + 1}\quad i\neq 0\; .
 \end{alignat}
 \end{subequations}
-where the modes \(\{b_0, b_0^\dagger \}\) satisfies a slightly different relation.
+Observe that the modes \(\{b_0, b_0^\dagger \}\) satisfies a slightly
+different relation.
+
+Therefore, the states \(\ket{\vec{n}} \in \mathcal{F}_Q\) are defined as 
+\begin{equation}
+  \ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots \otimes \ket{n_M} 
+ : =  (b_0^\dagger)^{n_0} (b_1^\dagger)^{n_1} \cdots  (b_M^\dagger)^{n_M} \ket{\bm{0}} \; ,
+\end{equation}
+where we write \(\phi_i^\dagger \equiv \bm{1} \otimes  \cdots \otimes
+\phi_i^\dagger \otimes \cdots \otimes \bm{1}\).
+Moreover, the norm of these states satisfy 
+\begin{equation}
+  \bracket{\vec{n}}{\vec{m}} = \frac{[m_0]!}{\prod_{i=1}^M[m_i]!} \delta_{\vec{n}\vec{m}}\qquad 
+    [n]! =
+    \left\{
+    \begin{array}{ll}
+    \prod_{i=1}^n(1 - Q^i) & \textrm{if}\ \ n\neq 0 \\
+    1 & \textrm{otherwise}
+  \end{array}\right.\; .
+\end{equation}
+As before, we can associate to a given states \(\ket{\vec{n}} =
+\ket{n_0, n_1, \dots, n_M}\), a partition -- or Young diagram --
+\(\lambda = (1^{n_1} 2^{n_2} \cdots M^{n_M})\), but now we assume that 
+there is a proportionaly  factor relating these two objects, 
+\begin{equation}
+  \ket{\lambda}  = b_\lambda(Q) \ket{\vec{n}}  \ \; , \qquad b_\lambda(Q) = \prod_i [p_i(\lambda)]! 
+\end{equation}
+where \(p_i(\lambda)\) denotes the number of parts of size \(i\) in
+the partition. These partition states satisfy \(
+\bracket{\lambda}{\mu} = b_\lambda(Q) \delta_{\lambda,\mu}\). Once
+again, we see that the correspondence is not unique since the number
+of oscilators at the site \(i=\) are completely ignored in the
+partition notation.  An finally, if the number of particles is fixed,
+then \(n_0 = N - \ell(\lambda)\).
 
 \subsubsection{Bethe Ansatz}
 The \(L\)-operator for the q-boson is given by
 \begin{equation}
-  L_n(x, Q) =
+  L_{an}(x, Q) =
   \begin{pmatrix}
-    x^{-1/2} & (1 - Q)^{1/2} b_n^\dagger \\ (1 - Q)^{1/2} b_n & x^{1/2}
-  \end{pmatrix}\; .
+    x^{-1/2} & (1 - Q)^{\frac{1}{2}} b_n^\dagger \\ (1 - Q)^{\frac{1}{2}} b_n & x^{1/2}
+  \end{pmatrix}_a\; .
 \end{equation}
 The monodromy matrix is 
 \begin{equation}
-  T_a(x,Q) = L_{am}(x, q)  \dots  L_{a0}(x, q) = 
+  T_a(x,Q) = L_{am}(x, Q)  \dots  L_{a0}(x, Q) = 
   \begin{pmatrix}
-    A(x) & B(x) \\ C(x) & D(x)
-  \end{pmatrix}\; .
+    A(x, Q) & B(x, Q) \\ C(x, Q) & D(x, Q)
+  \end{pmatrix}_a\; .
 \end{equation}
 
 The eigenstates of the Hamiltonian are of the form
 \begin{equation}
-  \ket{\Psi(y_1, \dots, y_N; Q)} = \prod_{j=1}^N B(y_j, Q) \ket{\bm{0}}\qquad 
-  \bra{\Psi(y_1, \dots, y_N; Q)} = \bra{\bm{0}}\prod_{j=1}^N C(y_j, Q) \; .
+  \ket{\Psi(y_1, \dots, y_N; Q)} = \prod_{j=1}^N \mathbb{B}(y_j, Q) \ket{\bm{0}}\qquad 
+  \bra{\Psi(y_1, \dots, y_N; Q)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j, Q) \; .
 \end{equation}
-When the set \(\{ y_j \ | \ j =1, \dots , N\}\) satisfies the Bethe equations 
+where \(\mathbb{B}(x, Q) = x^{M/2} B(x, Q)\) and \(\mathbb{C}(x, Q) =
+x^{M/2} C(1/x, Q)\).  When the set of parameters \(\{ y_j \ | \ j =1, \dots , N\}\)
+satisfies the Bethe equations
 \begin{equation}
   y^{N + M}_i =\prod_{\substack{j = 1 \\ j \neq i}}^N\frac{Q y_i - y_j}{y_i - Q y_j}\; , \qquad i = 1, \dots, N\; , 
 \end{equation}
-Once again, we will consider \emph{off-shell} Bethe states. 
+we say that the states \(\ket{\Psi(y_1, \dots, y_N; Q)}\) are \emph{on-shell} Bethe states, otherwise, 
+we have \emph{off-shell} Bethe states. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -240,7 +289,7 @@ Once again, we will consider \emph{off-shell} Bethe states.
 \section{Tau functions in the phase model}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-This section discusses presence of integrable hierarchies in the phase
+This section discusses the presence of integrable hierarchies in the phase
 model.  We argue that it is also a Toda hierachy tau function, and we
 discuss some consequences of this fact, in particular, its connection
 with a matrix model. Moreover, we also point the presence of
@@ -538,7 +587,7 @@ Therefore, we can write the correlation function~(\ref{eq:correlation}) as
 \end{equation}
 where we have used that \(\phi^\dagger \ket{\bm{0}} = \ket{(m)}\), and in the second line
 we sum over all partitions, since \(s_{\mu/(m)} = 0\), \(\forall \) \(\mu \not \supset (m)\).
-This expression also shows that the expresison \(P_m\) can also be written as a tau function. 
+This expression also shows that the expression \(P_m\) can also be written as a tau function. 
 
 \subsubsection{Skew Schur polynomials expansion}
 More generally, let us consider the correlation functions 
@@ -623,10 +672,11 @@ equivalent to the Number operators \(\mathcal{N}\), annihilation
 charge is equivalent to the vaccum projection \(\pi =
 \ket{\bm{0}}\bra{\bm{0}}\). Therefore, the elements
 \begin{equation}
-  G \in GL(\infty) \mapsto
-  \mathcal{G} = \exp \left(\sum_{i=1}^M \sum_{a=1}^3  c_{i, a} T_i^{a}  + c \pi_i\right)
+   GL(\infty) \ni G \mapsto
+   \mathcal{G} = \exp \left[\sum_{i=1}^M \left( \sum_{a=1}^3
+   c_{i, a} T_i^{a}  + c \pi_i \right)\right]\; ,
 \end{equation}
-\(T^{(a)}_i \in \{ \mathcal{N}_i, \phi_i, \phi_i^\dagger \}_{i=1}^M\). 
+where \(T^{a}_i \in \{ \mathcal{N}_i, \phi_i, \phi_i^\dagger \}_{i=1}^M\). 
 
 The operators \(\mathbb{B}(x)\) and \(\mathbb{C}(x)\), 
 for a large enough chain \(M\to \infty\),
@@ -652,7 +702,7 @@ hierarchies, given by
 \begin{equation}
   \tau_s(\bm{x}, \bm{y}) = \bra{s} \prod_{i} \Gamma_+(x_i) G \prod_j \Gamma_+(x_j) \ket{s}\; ,
 \end{equation}
-are maped into objects of the form 
+are mapped into objects of the form 
 \begin{equation}
 \begin{split}
   \tau_0(\bm{x}, \bm{y}) & = \bra{\Psi(\bm{x})} \mathcal{G} \ket{\Psi(\bm{y})} \\
@@ -681,28 +731,46 @@ And it is just a sum of skew Schur polynomials.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Scalar products for the Q-bosons}
+\section{Tau functions in the Q-bosons model}
 
-Here I would like to start considering the q-boson problem. It has
-been shown~\cite{Wheeler:2010vmq, Sulkowski:2008mx, Tsilevich:2006}
-that the scalar product of two off-shell Bethe states in the q-boson
-model is given by
+We now move out attention to the case of the q-bosons. The 
+analysis is parallel to what we did before, but the  specific 
+details are very different. We start with the study of the norm of  
+two off-shell Bethe states. 
+
+It has been shown~\cite{Tsilevich:2006} conf. \cite{Sulkowski:2008mx,
+  Wheeler:2010vmq}, that the Bethe states \(\ket{\Psi(\bm{x})}\) have 
+coordiante expansion given by
+\begin{equation}
+  \ket{\psi(\bm{x})} = \sum_{\mu \subset [N,M]} P_\mu(\bm{x}, Q) \ket{\mu}  \qquad 
+  \bra{\psi(\bm{x})} = \sum_{\mu \subset [N,M]} P_\mu(\bm{x}, Q) \bra{\mu}\; ,
+\end{equation}
+where \(P_\lambda\) denote the Hall-Littlewood polynomials.  In this
+form, scalar product of two off-shell Bethe states in the q-boson
+model is easily calculated to be
 \begin{equation}
 S_Q(N,M | \bm{x}, \bm{y}) = \bra{\bm{0}} \prod_{j=1}^N C(x_j, Q)
 \prod_{k=1}^N B(y_k, Q) \ket{\bm{0}}
 = \sum_{\lambda \subseteq
   (N,N,M)} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
 \end{equation}
-where \(P_\lambda\) denote the Hall-Littlewood polynomials.
-
-It turns out that this expansion is  also related to the Cauchy identity for 
-Hall-Littlewood polynomials~\cite{Macdonald:1998}
+where we use that \(\bracket{\lambda}{\mu} = b_\lambda(Q)
+\delta_{\lambda, \mu}\).  It turns out that this expansion is also
+related to the Cauchy identity for Hall-Littlewood
+polynomials~\cite{Macdonald:1998}
 \begin{equation}
+\label{eq:cauchy_hl}
 \sum_{\lambda} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
 = \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k}\; ,
 \end{equation}
-and using the results in~\cite[see chap.3, sec. 4, eq. (4.7)]{Macdonald:1998}, 
-we can expand this identity as 
+
+Ourt goal is to consider some elementary properties of Hall-Littlewood polynomials 
+to understand aspects of this expansion. 
+
+\subsection{Scalar product: Big Schur functions}
+
+Let us now consider the results in~\cite[see chap.3, sec. 4, eq. (4.7)]{Macdonald:1998}.
+We can expand the Cauchy identity~(\ref{eq:cauchy_hl}) as
 \begin{equation}
 \label{eq:cachy-hl}
  \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k} = 
@@ -737,7 +805,7 @@ that is \(\bm{x}\) and \(\bm{y}\).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Supersymmetric Schur polynomials}
+\subsection{Scalar product: Supersymmetric Schur polynomials}
 
 Let us also decompose 
 \begin{equation}
@@ -925,20 +993,6 @@ It seems that we have some different representations for this tau function,
 and it is worth investigating what is happening here. That is what we want 
 to do now. 
 
-
-%\input{./sections/fermions.tex}
-%
-%\input{./sections/schurpol.tex}
-%
-%\input{./sections/transfer.tex}
-%
-%\input{./sections/t-fermions.tex}
-%
-%\input{./sections/top-strings.tex}
-
-%\addcontentsline{toc}{section}{References}
-
 \printbibliography
 
 \end{document}
- 
