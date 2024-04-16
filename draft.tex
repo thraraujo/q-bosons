@@ -5,22 +5,24 @@
 
 \bibliography{bib-database.bib}
 
+\usepackage{amsaddr} % affiliation in the first page
+
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title[\(Q\)-Bosons and relations with integrable hierarchies]{Comments on \(Q\)-Bosons,
+\title[\(Q\)-Bosons and relations with integrable hierarchies]{\(Q\)-Bosons
 and their relations with integrable hierarchies}
 
 \author{Thiago Araujo}
 
 \address{\noindent 
-Instituto de Física Teórica, UNESP-Universidade Estadual Paulista
+Instituto de Física Teórica, UNESP-Universidade Estadual Paulista,
 R. Dr. Bento T. Ferraz 271, Bl. II, Sao Paulo 01140-070, SP, Brazil\\
-and
-Instituto de Física\\ Universidade de S\~ao Paulo\\ 
-Rua do Matão Travessa 1371, 05508-090\\ São Paulo, SP. Brazil
+\&
+Instituto de Física, Universidade de S\~ao Paulo,
+Rua do Matão Travessa 1371, 05508-090 São Paulo, SP. Brazil
 }
 
 \email{\texttt{\href{tr.araujo@unesp.br}{tr.araujo@unesp.br}}}
@@ -28,18 +30,14 @@ Rua do Matão Travessa 1371, 05508-090\\ São Paulo, SP. Brazil
 \begin{abstract}
 In this work, we study aspects of the \(Q\)-boson model, and 
 its relations with integrable hierarchies. 
-\vspace{4pt}
-\noindent \textbf{Keywords:} Integrability, Q-bosons, Schur
-
-\keywords{integrability, spin-chains}
-\subjclass[2020]{82B20, 82B23}
-\date{\today}
-
 \end{abstract}
 
+%\date{\today}
+\keywords{Integrability, Bethe, Schur}
+\subjclass[2020]{82B20, 82B23}
 \maketitle
 
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
@@ -264,6 +262,7 @@ is
 \end{equation}
 where \(H\) is an \(N\times N\) matrix with components
 \begin{equation}
+\label{eq:h-matrix}
   H_{ij} = H(x_i, y_j) 
   =\frac{1 - (x_i y_j)^{ M + N}}{1 - x_i y_j }\; .
 \end{equation}
@@ -368,19 +367,19 @@ example, but we expect that in the case of the \(q\)-Boson model,
 where \(q\) is finite, the diagonal terms \(h_\lambda\) are more
 interesting. We will discuss this case next section.
 
-\subsubsection{Dyson gases}
+\subsubsection{Matrix Models}
 
-It is also interesting to consider the particular case when \(M\to
+It is also interesting to notice that the particular case when \(M\to
 \infty\), but with a finite number of particles \(N\). The
-partititions \(\lambda \in [N, \infty]\) satisfy the condition
-\(\ell(\lambda) \leq N\), therefore, the scalar
+partitions \(\lambda \in [N, \infty]\) satisfy the condition
+\(\ell(\lambda) \leq N\). Therefore, the scalar
 product~(\ref{eq:scalar_exp}) becomes
 \begin{equation}
   S_N(\bm{t}, \bm{t}') = \sum_{\substack{\lambda \\ \ell(\lambda) \leq N}}
   s_\lambda(\bm{t})  s_\lambda(\bm{t}') \; .
 \end{equation}
 From~\cite{Zabrodin:2010ii}, we know that this expression can be
-written as the matrix integral
+written as the following integral
 \begin{equation}
   S_N(\bm{t}, \bm{t}') =
   \frac{1}{N!} \prod_{\ell=1}^N \oint_{\Gamma_\ell} \frac{dz_\ell}{2 \pi i z_\ell}
@@ -401,14 +400,29 @@ In this particular case, we have
 \begin{equation}
 \xi(\bm{t}, z) - \xi(\bm{t}', 1/z)  = 2 \ \textrm{Re}\left(\sum_k t_k z^k\right)\; .
 \end{equation}
-Then, the phase model is equivalent to an ensemble of \(N\)
-2D Coulomb particles on a circle. 
+Then, the phase model is equivalent to an ensemble of \(N\) 2D Coulomb
+particles on a circle. In this case, we have that the quantities
+\(\lambda_{\ell}\) are eigenvalues of a matrix \(U\).
+
+Moreover, Zabrodin~\cite{Zabrodin:2010ii}, see citations therein, we also know
+that under the rescaling \(t_k \to T_k/ \hbar\), \(t'_k \to T_{-k}/ \hbar\)
+and \(N = T_0/ \hbar\), we get the dispersion limit tau function 
+\begin{equation}
+  F_0(\bm{T}) = \log S_{T_0}(\bm{T}, \bm{T}') + \mathcal{O}(\hbar)\; ,
+\end{equation}
+a free energy, from the viewpoit of the matrix integral partition
+function.  It is not clear how one can use this fact to determine
+properties of the integrable model, but it might be possible to study
+the analytic structure of the free energy \(F_0\) to gain some
+understanding on the Bether roots \(\bm{x}\).  This problem is
+currently under further investigation, and we hope to report some new
+results elsewhere.
 
 \subsubsection{KP tau function}
 Finally, one may also observe that if we fix one set of coordinates,
 say \(\bm{y}\), then we write
 \begin{equation}
- S(N,M|\{\bm{t}\}) 
+ S(N,M|\bm{t}) 
  = \sum_{\lambda} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
  \equiv \sum_{\lambda} c_\lambda(\bm{y})  s_\lambda(\bm{t}) \; ,
 \end{equation}
@@ -428,15 +442,25 @@ statement using the free fermions formalism.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Correlation functions}
-Bogoliubov has also shown that the correlation functions
+In~\cite{Bogoliubov2005}, Bogoliubov has also shown that the
+correlation functions
 \begin{subequations}
 \begin{equation}
-  P(m|\bm{x}, \bm{y}) = \bra{0} \prod_{j=1}^N C(x) \prod_{j=1}^{N-1} B(y) \phi_m^\dagger \ket{0}
+\begin{split}
+\label{eq:correlation}
+  P_m(N, M|\bm{x}, \bm{y}\setminus \{y_N\})
+  & = \bra{0} \prod_{j=1}^N \mathbb{C}(x_j)
+  \prod_{k=1}^{N-1} \mathbb{B}(y_k) \phi_m^\dagger \ket{0}\\
+  & =  \prod_{j=1}^N x_{j}^{M/2} \prod_{k=1}^{N-1} y_{j}^{M/2}
+  \bra{0} \prod_{j=1}^N C(1/x_j) \prod_{k=1}^{N-1} B(y_k) \phi_m^\dagger \ket{0}
+\end{split}
 \end{equation}
 can be written as
 \begin{equation}
-  P(m|\bm{x}, \bm{y}) = \frac{(-1)^{N-1}}{(\sqrt{y_N}^{N-1}}
-  \left( \prod_{t<N} \frac{x_N - y_t}{y_t} \right) \frac{\det Q}{\det H} S(N,M|\bm{x}, \bm{y})
+  P_m(N, M|\bm{x}, \bm{y}\setminus \{y_N\}) = 
+  \frac{(-1)^{N-1}}{y_N^{(N-1)/2}} \prod_{j=1}^N x_{j}^{M/2}
+  \prod_{k=1}^{N-1} y_{j}^{M/2}
+  \left( \prod_{t<N} \frac{y_N - y_t}{y_t} \right) \frac{\det Q}{\det H} S(N,M|\bm{x}, \bm{y})
 \end{equation}
 \end{subequations}
 where the \(N\times N\) matrix \(Q\) has components 
@@ -444,64 +468,114 @@ where the \(N\times N\) matrix \(Q\) has components
  Q_{jN} = x_j^{(M + N - 1- 2m)/2} \quad  \textrm{and} \quad 
  Q_{jk} = H_{jk} \; , 
 \end{equation}
-where \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\). 
+where \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\) in~(\ref{eq:h-matrix}). 
 Since the components \(Q_{jN}\) are independent of the coordinates \(y\), 
 we cannot write the above expression as a Toda hierarchy tau
 function. 
 
-We already know that 
+We already know from~(\ref{eq:scalar}) that 
 \begin{equation}
    S(N,M|\bm{x}, \bm{y}) =  \Delta(x) \Delta(y) \det H \; ,
 \end{equation}
-therefore we define
+therefore we have
 \begin{equation}
-  \mathbb{P}(m|\bm{x}, \bm{y}) =\frac{\det Q}{\Delta(x)}\; ,
+  P_m(N, M|\bm{x}, \bm{y}\setminus{y_N})  \propto
+  \frac{\det Q}{\Delta(x)} \equiv \mathcal{P}_m(N,M|\bm{x}, \bm{y})\; ,
 \end{equation}
 and we are going to treat the coordinates \(\{ \bm{y} \}\) as
-a set of \(N\) fixed constants, in a such a way that we write \(N\)
+a set of \(N\) fixed parameters. Furthermore, we write \(N\)
 functions \(\bm{F}(z) = (F_1, \dots, F_N)\) defined as
 \begin{equation}
   F_j (z) = H(z, y_j) \quad \textrm{if} \ j \neq N\; , \qquad \textrm{and}\qquad 
-   F_N (z)  = z^{(M + N - 1 - 2m)/2} 
+   F_N (z)  = z^{(M + N - 1 - 2m)/2} \; .
 \end{equation}
-Moreover, we have that
+As before, we expand \(F_j(z)\) as the geometric sum
 \begin{equation}
-  H(z, y_j) = \frac{1 - (y_j z)^{M + N}}{1 - y_j z} = \sum_{n=0}^{N + M - 1} (y_j z)^n\; , 
+  F_j(z) = \frac{1 - (y_j z)^{M + N}}{1 - y_j z} = \sum_{n=0}^{N + M - 1} (y_j z)^n
+  \equiv \sum_{n=0}^{M + N -1} f_{j, n} z^n\; , 
 \end{equation}
-therefore, we write
+where we will also assume the \(M + N - 1 \in 2 \mathbb{Z}\).
+
+With these definitions, we conclude that
 \begin{equation}
-  F_j(z) =  \sum_{n=0}^{M + N -1} f_{j, n} z^n
+\mathcal{P}_m(N,M|\bm{x}, \bm{y}) =\frac{\det_{jk} F_j(x_k)}{\Delta(x)}\; .
 \end{equation}
-where we will also assume the \(M + N \in 2 \mathbb{Z}\). With these definitions,
-we conclude that
-\begin{equation}
-  \mathbb{P}(m|\bm{x}, \bm{y}) =\frac{\det_{jk} F_j(x_k)}{\Delta(x)}\; ,
-\end{equation}
-and we write~\cite{Takasaki:2010qm}, 
+From the expansion 
 \begin{equation}
   \det_{jk} F_j(x_k) = \det_{jk} \left(  \sum_{n=0}^{M + N -1} f_{j, n} x_k^n \right) \; .
 \end{equation}
-With the aid of the Cauchy-Binet formula, we write  
+and with the aid of the Cauchy-Binet formula, we write  
 \begin{equation}
-  \mathbb{P}(m|\bm{x}, \bm{y}) = \sum_{0\leq \ell_N\leq \dots \leq \ell_1 \leq N+M}
-  \frac{\det_{jk}(f_{j, \ell_k}) \det_{jk}(x_k^{\ell_j})}{\Delta(x)}\; ,
+    \mathcal{P}_m(N,M|\bm{x}, \bm{y})
+  = \sum_{0\leq \ell_N\leq \dots \leq \ell_1 \leq N+M}
+  \frac{\det_{jk}(f_{j, \ell_k}) \det_{jk}(x_k^{\ell_j})}{\Delta(x)}\; . 
 \end{equation}
-and from the definition of the Schur polynomials and the
-Jacobi-Trudi expression of Plücker coordinates, we can write this last
-expression as 
+Now we basically use the definition of the Schur polynomials and the
+Jacobi-Trudi expression of Plücker coordinates, see~\cite{Alexandrov:2012tr}. 
+Finally, this last expression becomes
 \begin{equation}
-  \mathbb{P}(m|\bm{x}, \bm{y}) = \sum_{\lambda} c_\lambda(\bm{y}) s_\lambda(\bm{x}) \; ,
+\mathcal{P}_m(N,M|\bm{x}, \bm{y}) =
+\sum_{\lambda} c_\lambda(\bm{y}) s_\lambda(\bm{x}) \; ,
 \end{equation}
-where \(c_\lambda(f_{j, \ell_k})\),  \(\ell_k = \lambda_k - k +N\), define point
-in the finite dimensional Grassmannian manifold \(\mathrm{Gr}(N, N+M)\). 
+where \(c_\lambda \equiv \det_{jk}(y_j^{\ell_k})\),  \(\ell_k = \lambda_k - k +N\). Therefore,
+we have that this expression is a KP tau function. 
+
+From the coordinate expansion of the Bethe
+vectors~\cite{Bogoliubov2005, Tsilevich:2006}, it is easy to show that
+\begin{equation}
+\prod_{j=1}^N \mathbb{B}(x_j)\ket{\lambda}  = \sum_{\mu \supset \lambda } s_{\mu/\lambda}(\bm{x})\ket{\mu}\qquad 
+ \bra{\lambda} \prod_{j=1}^N \mathbb{C}(x_j) = \sum_{\mu \supset \lambda } s_{\mu/\lambda}(\bm{x})\bra{\mu}
+\end{equation}
+where \(s_{\mu/\lambda}\) are Schur polynomials~\cite{Macdonald:1998}.
+Therefore, we can write the correlation function~(\ref{eq:correlation}) as 
+\begin{equation}
+\begin{split}
+  P_m(N, M|\bm{x}, \bm{y}\setminus \{y_N\})
+  & = \sum_\lambda \sum_{\mu \supset (m)} s_{\lambda}(\bm{x}) s_{\mu/(m)}(\bm{y}\setminus\{y_N\})\\
+  & = \sum_\mu s_{\mu/(m)}(\bm{y}\setminus\{y_N\}) s_{\mu}(\bm{x})\; .
+\end{split}
+\end{equation}
+where we have used that \(\phi^\dagger \ket{\bm{0}} = \ket{(m)}\), and in the second line
+we sum over all partitions, since \(s_{\mu/(m)} = 0\), \(\forall \) \(\mu \not \supset (m)\).
+This expression also shows that the expresison \(P_m\) can also be written as a tau function. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsubsection{Schur functions expansion for other correlation functions}
+More generally, let us consider the correlation functions 
+\begin{equation}
+\begin{split}
+  P_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y}) & =
+  \bra{\lambda_1} \prod_{j=1}^N \mathbb{C}(x_j)
+  \prod_{k=1}^{N'} \mathbb{B}(y_k)\ket{\lambda_2} \\
+  & = \sum_{\mu} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; .
+\end{split}
+\end{equation}
+where \((N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0)\) and 
+we have also used that the expression for any Young diagram
+\(\mu\) that does not contain \(\lambda_1\) and \(\lambda_2\)
+vanishes. Using the elementary property of skew Schur
+polynomials~\cite{Macdonald:1998}
+\begin{equation}
+  \sum_{\mu} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) = \prod_{i,j}\frac{1}{1 - x_i y_j}
+ \sum_\nu s_{\lambda_1/\nu}(\bm{x}) s_{\lambda_2/\nu}(\bm{y})\; ,
+\end{equation}
+and the Cauchy's identity, we have 
+\begin{equation}
+\begin{split}
+  P_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y}) & =
+ \sum_\mu s_{\mu}(\bm{x}) s_{\mu}(\bm{y})
+ \sum_\nu s_{\lambda_1/\nu}(\bm{x}) s_{\lambda_2/\nu}(\bm{y})\; .
+\end{split}
+\end{equation}
+Therefore, this correlation function is nothing but the off-shell
+norm~(\ref{eq:scalar}) times a finite sum over skew Schur functions.
+This expression shows that the existence of these tau functions is not
+a trivial fact of this model.
 
-\subsubsection{Not everything is a tau-function}
-It is also worth noticing that not everything is a tau function. Consider the state
+In fact, it is worth considering other quantities that are not
+necessarily tau functions. Consider the state
 \begin{equation}
   \ket{\mathcal{Y}} =
  \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j}\quad \sum_j n_j = N\; .
