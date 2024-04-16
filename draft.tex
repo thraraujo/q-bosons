@@ -438,6 +438,7 @@ is also a KP tau function: A fact that we already know
 from~\cite{Wheeler:2010vmq}, where the author has proved this
 statement using the free fermions formalism.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -539,10 +540,7 @@ where we have used that \(\phi^\dagger \ket{\bm{0}} = \ket{(m)}\), and in the se
 we sum over all partitions, since \(s_{\mu/(m)} = 0\), \(\forall \) \(\mu \not \supset (m)\).
 This expression also shows that the expresison \(P_m\) can also be written as a tau function. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{Schur functions expansion for other correlation functions}
+\subsubsection{Skew Schur polynomials expansion}
 More generally, let us consider the correlation functions 
 \begin{equation}
 \begin{split}
@@ -552,7 +550,7 @@ More generally, let us consider the correlation functions
   & = \sum_{\mu} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; .
 \end{split}
 \end{equation}
-where \((N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0)\) and 
+where \(N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0\) and 
 we have also used that the expression for any Young diagram
 \(\mu\) that does not contain \(\lambda_1\) and \(\lambda_2\)
 vanishes. Using the elementary property of skew Schur
@@ -574,45 +572,111 @@ norm~(\ref{eq:scalar}) times a finite sum over skew Schur functions.
 This expression shows that the existence of these tau functions is not
 a trivial fact of this model.
 
-In fact, it is worth considering other quantities that are not
-necessarily tau functions. Consider the state
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{More tau functions}
+Based on the discussion we had so far, and on the general map between 
+the Phase model and the free fermions, one can understand the general form 
+of tau functions in this phase model context. 
+
+Let us consider the vertex operator construction~\cite{Okounkov2001},
+see also~\cite{Alexandrov:2012tr, Wheeler:2010vmq}. Consider the
+vacuum \(\ket{\bm{0}}\), a ``Dirac sea'', defined by the conditions \(\psi_m\ket{\bm{0}}
+= \psi_n^\star\ket{\bm{0}} =0 \) for \(m<0\) and \(n \geq 0\), where 
+\(\psi_n\) are components of a holomorphic free fermionic field. 
+In this formalism, the partition states are given by 
+\begin{equation}
+  \ket{\mu} = \textrm{sign}(\sigma) \prod_{j=1}^d \psi_{a_j} \psi^\star_{-b_j}\ket{\bm{0}}\; ,
+\end{equation}
+where \(\textrm{sign}(\sigma) = \pm 1\) are defined in a such a way
+that the Shur coefficients of the vertex operators, defined below,
+have positive coefficients.
+
+The pairs \((a_j|b_j)_{j=1}^d\) define the Frobenius notation of the
+partition \(\mu = (\mu_1, \mu_2, \dots, \mu_\ell)\), that is given by
+\(a_j = \mu_j - j\) and \(b_j = \mu^T_j - j\), where \(d\) is the
+number of boxes in the diagonal of the Young diagram, and \(\mu^T\) is
+its conjugate, or transpose.  From these definitions, we have the
+equivalence
+\begin{equation}
+  \prod_{k\geq 1} (\phi_k^\dagger)^{n_k} \mapsto \textrm{sign}(\sigma) \prod_{j=1}^d
+  \psi_{a_j} \psi^\star_{-b_j} \qquad |\mu| = \sum_k k n_k = \sum_j(a_j + b_j) + d\; .
+\end{equation}
+
+Finally, the \(\mathfrak{gl}(\infty)\) has generators given by the
+bilinears \(X = \sum_{j, j \in \mathbb{Z}} x_{ij} \bm{\colon} \psi_i \psi_j^\star\bm{\colon}
++ c\), where \(c\in \mathbb{C}\), \(x_{ij} =
+0\) for large \(|j -i|\), say \(\geq M\), and the colons denote the normal ordering
+\begin{equation}
+  \bm{\colon} \psi_i \psi_j^\ast \bm{\colon} =  \psi_i \psi_j^\ast
+  - \bra{0} \psi_i \psi_j^\ast \ket{0} \; .
+\end{equation}
+The group \(GL(\infty)\) is defined through the \(\exp:
+\mathfrak{gl}(\infty) \to GL(\infty)\) as usual.
+
+Observe that these elements have finitely many non zero elements, and
+that these include diagonal terms \(\bm{\colon} \psi_i
+\psi_i^\star\bm{\colon}\), upper and lower triangular terms. These are
+equivalent to the Number operators \(\mathcal{N}\), annihilation
+\(\phi\) and creation \(\phi^\dagger\) , respectivelly.  The central
+charge is equivalent to the vaccum projection \(\pi =
+\ket{\bm{0}}\bra{\bm{0}}\). Therefore, the elements
+\begin{equation}
+  G \in GL(\infty) \mapsto
+  \mathcal{G} = \exp \left(\sum_{i=1}^M \sum_{a=1}^3  c_{i, a} T_i^{a}  + c \pi_i\right)
+\end{equation}
+\(T^{(a)}_i \in \{ \mathcal{N}_i, \phi_i, \phi_i^\dagger \}_{i=1}^M\). 
+
+The operators \(\mathbb{B}(x)\) and \(\mathbb{C}(x)\), 
+for a large enough chain \(M\to \infty\),
+are related to the vertex operators
+\(\Gamma_-(x)\) and \(\Gamma_+(x)\), respectivelly, as
+\begin{equation}
+  \begin{split}
+    \mathbb{B}(x) \mapsto \Gamma_-(x) & = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{-n}\right) \\
+    \mathbb{C}(x) \mapsto \Gamma_+(x) & = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{n}\right) \; ,
+  \end{split}
+\end{equation}
+where \(J_n \) is written, in terms of free fermions, as \(J_n =
+\sum_{j\in \mathbb{Z}} \bm{\colon} \psi_j \psi_{j+n}^\ast
+\bm{\colon}\),
+These set of operators generate a Heisenberg subalgebra
+\(\widehat{\mathfrak{gl}}(1) \subset \mathfrak{gl}(\infty)\) given by
+\begin{equation}
+  [J_m, J_n] = m \delta_{n+m,0}\; .
+\end{equation}
+
+Putting all these facts together, we have that the tau functions of the Toda 
+hierarchies, given by
+\begin{equation}
+  \tau_s(\bm{x}, \bm{y}) = \bra{s} \prod_{i} \Gamma_+(x_i) G \prod_j \Gamma_+(x_j) \ket{s}\; ,
+\end{equation}
+are maped into objects of the form 
+\begin{equation}
+\begin{split}
+  \tau_0(\bm{x}, \bm{y}) & = \bra{\Psi(\bm{x})} \mathcal{G} \ket{\Psi(\bm{y})} \\
+  \\ & = \bra{\bm{0}} \prod_{i} \mathbb{C}(x_i)
+  \mathcal{G} \prod_j \mathbb{B}(y_j) \ket{\bm{0}}\; ,
+\end{split}
+\end{equation}
+where we necessarily have \(s=0\) in the phase model
+
+
+\subsubsection{Schur polynomials expansion of some correlation functions}
+In fact, it is worth noticing that other quantities, that are not tau
+functions, might have interesting Schur polynomials expansion.
+Consider the state calculated in~\cite{Bogoliubov2005}
 \begin{equation}
   \ket{\mathcal{Y}} =
- \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j}\quad \sum_j n_j = N\; .
+ \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j} = \sum_\mu \ket{\mu} \qquad \sum_j n_j = N\; .
 \end{equation}
-We have~\cite{Bogoliubov2005} the correlation function 
+Then
 \begin{equation}
-  \prod_{j=1}^N x^{M/2} \bra{\mathcal{Y}} \prod_{j=1}^N B(\bm{x}) \ket{\bm{0}} = 
-  \sum_{\lambda\subseteq (N,N,M)} s_\lambda(\bm{x})\; . 
+ \bra{\mathcal{Y}} \prod_{j=1}^N B(\bm{x}) \ket{\nu} = 
+  \sum_{\lambda\subseteq (N,N,M)} s_{\lambda/\nu}(\bm{x})\; . 
 \end{equation}
-This sum of Schur polynomials are not tau functions of the KP hierarchy.
-
-We can easily see this fact, if we consider the the Fermionic
-construction. Since
-\begin{equation}
-\tau(\bm{t}) = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} G \ket{\bm{0}}
-\end{equation}
-where \(G\in GL(\infty)\), and 
-\begin{equation}
-  \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} = \sum_\lambda \bra{\mu} s_\lambda(\bm{t})\; , 
-\end{equation}
-therefore
-\begin{equation}
-\tau(\bm{t}) = \sum_{\lambda} \bra{\lambda} G \ket{\bm{0}} s_\lambda(\bm{t})
-\end{equation}
-and we need \(1 = \bra{\lambda} G \ket{\bm{0}} \). Then, 
-\begin{equation}
-  \ket{\Psi_0} = G\ket{\bm{0}} = \sum_\lambda \ket{\lambda}\; ,
-\end{equation}
-is a coherent state, and we conclude that
-\begin{equation}
-G = 1 +  \sum_{d\geq 1} \prod_{j=1}^d \psi^\star_{a_j} \psi_{-b_j}\ \notin \ GL(\infty) \;. 
-\end{equation}
-It is interesting to notice that this state appears as the ground
-state of the crystal melting problem in~\cite{Dijkgraaf:2008ua}.
-
-Therefore, the restriction for diagrams with \(\ell(\lambda_1) \leq N\) is
-not a tau function either.
+And it is just a sum of skew Schur polynomials.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
