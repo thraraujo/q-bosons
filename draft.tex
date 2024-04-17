@@ -644,8 +644,8 @@ have positive coefficients.
 
 The pairs \((a_j|b_j)_{j=1}^d\) define the Frobenius notation of the
 partition \(\mu = (\mu_1, \mu_2, \dots, \mu_\ell)\), that is given by
-\(a_j = \mu_j - j\) and \(b_j = \mu^T_j - j\), where \(d\) is the
-number of boxes in the diagonal of the Young diagram, and \(\mu^T\) is
+\(a_j = \mu_j - j\) and \(b_j = \mu'_j - j\), where \(d\) is the
+number of boxes in the diagonal of the Young diagram, and \(\mu'\) is
 its conjugate, or transpose.  From these definitions, we have the
 equivalence
 \begin{equation}
@@ -700,7 +700,7 @@ These set of operators generate a Heisenberg subalgebra
 Putting all these facts together, we have that the tau functions of the Toda 
 hierarchies, given by
 \begin{equation}
-  \tau_s(\bm{x}, \bm{y}) = \bra{s} \prod_{i} \Gamma_+(x_i) G \prod_j \Gamma_+(x_j) \ket{s}\; ,
+  \tau_s(\bm{x}, \bm{y}) = \bra{s} \prod_{i} \Gamma_+(x_i) G \prod_j \Gamma_-(x_j) \ket{s}\; ,
 \end{equation}
 are mapped into objects of the form 
 \begin{equation}
@@ -731,7 +731,9 @@ And it is just a sum of skew Schur polynomials.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 \section{Tau functions in the Q-bosons model}
+%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
 We now move out attention to the case of the q-bosons. The 
 analysis is parallel to what we did before, but the  specific 
@@ -749,6 +751,7 @@ where \(P_\lambda\) denote the Hall-Littlewood polynomials.  In this
 form, scalar product of two off-shell Bethe states in the q-boson
 model is easily calculated to be
 \begin{equation}
+\label{eq:scalar-hl}
 S_Q(N,M | \bm{x}, \bm{y}) = \bra{\bm{0}} \prod_{j=1}^N C(x_j, Q)
 \prod_{k=1}^N B(y_k, Q) \ket{\bm{0}}
 = \sum_{\lambda \subseteq
@@ -769,10 +772,12 @@ to understand aspects of this expansion.
 
 \subsection{Scalar product: Big Schur functions}
 
-Let us now consider the results in~\cite[see chap.3, sec. 4, eq. (4.7)]{Macdonald:1998}.
-We can expand the Cauchy identity~(\ref{eq:cauchy_hl}) as
+Let us first consider the result originally derived
+in~\cite{Foda:2008hn} that shows how the scalar
+product~(\ref{eq:scalar-hl}) is a tau function of the KP hierarchy.
+From~\cite[see chap.3, sec. 4, eq. (4.7)]{Macdonald:1998}, we can
+expand the Cauchy identity~(\ref{eq:cauchy_hl}) as
 \begin{equation}
-\label{eq:cachy-hl}
  \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k} = 
 \sum_{\lambda} S_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y}) =
 \sum_{\lambda} S_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x}) \; ,
@@ -787,12 +792,9 @@ and the coefficients \(q_m\) can be obtained from the following expression
  \sum_{m} q_m(\bm{y}, Q) z^m =
  \prod_{j} \frac{1-Q y_j z}{1 - y_j z}
 \end{equation}
-where \(z\) is a formal variable. It has been argued
-in~\cite{Foda:2008hn} that if we interpret the \(Q\)-Schur functions
-as Plücker coordiantes, the identity~(\ref{eq:cachy-hl}) is a KP-tau
-function.
-
-Therefore, we see that the scalar product 
+where \(z\) is a formal variable. It has been argued in that if we
+interpret the \(Q\)-Schur functions as Plücker coordiantes, the
+expression
 \begin{equation}
   S_Q(N,M | \bm{x}, \bm{y})
   = \sum_{\lambda \subseteq (N,N,M)} S_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y})
@@ -803,11 +805,11 @@ that is \(\bm{x}\) and \(\bm{y}\).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Scalar product: Supersymmetric Schur polynomials}
 
-Let us also decompose 
+We now aargue that~(\ref{eq:scalar-hl}) is also a tau function of the
+Toda hierarchy in disguise. Let us decompose 
 \begin{equation}
  \sum_{m} q_m(\bm{y}, Q) z^m =
  \prod_j (1 + y_j (-Q z)) \prod_k (1 - y_k z)^{-1} = 
@@ -857,14 +859,18 @@ Therefore
 \end{equation}
 with \(T_n = (1 - Q^n) t'_n\). Then, we conclude that \(q_m(\bm{y}, Q)\)
 are homogeneous polynomials with respect the Miwa coordinates
-\(\bm{T} = (T_1, T_2, \dots)\). All in all, we conclude that 
+\(\bm{T} = (T_1, T_2, \dots)\). Then
 \begin{equation}
   S_\lambda(\bm{t}', Q) = \det \left(h_{\lambda_i - i +j}(\bm{T})\right) = s_\lambda(\bm{T})\; .
 \end{equation}
+All in all, we conclude that the big Schur functions
+\(S_\lambda(\bm{t}', Q)\) are ordinary Schur functions with respect
+the coordinates \(\bm{T}\).
 
-Supersymmetric Schur functions, see~\cite{Zinnjustin2009}, \(s_\lambda(\bm{\alpha}/\bm{\beta})\)
-are defined as ordinary schur functions evaluated at Miwa coodinates
-of the form
+In fact, we can do even better. Supersymmetric (or Hook) Schur
+functions~\cite{Berele:1983}, see also see~\cite{Macdonald:1998, Moens:2003},
+\(s_\lambda(\bm{\alpha}/\bm{\beta})\) are defined as ordinary schur
+functions evaluated at Miwa coodinates of the form
 \begin{equation}
   T_n = \frac{1}{n} \left( \sum_{i=1}^{\dim(\alpha)} \alpha_i^n
        - \sum_{i=1}^{\dim(\beta)} (-\beta_i)^n\right)\; ,
@@ -885,15 +891,141 @@ is a Toda hierarchy tau function, we obviously have that
   S_Q(N,M| \bm{x}, \bm{y}) \equiv S_Q(N,M| \bm{t}, \bm{T})
   = \sum_{\lambda \subseteq [N,N,M]} s_\lambda(\bm{T}) s_\lambda(\bm{t})\; , 
 \end{equation}
-is also a restricted tau function of the Toda hierarchy.
+is also a restricted tau function of the Toda hierarchy with respect
+to \(\bm{t}\) and \(\bm{T}\).
+
+There is something very interesting about this expression. Let us
+expand the supersymmetric Schur polynomials in terms of ordinary Schur
+functions as~\cite[Sec. I.5, exerc. 23]{Macdonald:1998}
+\begin{equation}
+  s_{\lambda}(\bm{x}/\bm{y}) = \sum_\mu s_{(\lambda/\mu)'}(\bm{y}) s_\mu(\bm{x})\; ,
+\end{equation}
+where the prime denotes the conjugate diagram. Then
+\begin{equation}
+  \label{eq:tau-hl}
+  \sum_{\lambda } s_\lambda(\bm{y}/ (- Q\bm{y})) s_\lambda(\bm{x}) =
+  \sum_{\lambda,\mu } s_{(\lambda/\mu)'}(- Q\bm{y}) s_\lambda(\bm{x}) s_\mu(\bm{y})\; .
+\end{equation}
+From this expression one can reach to some conclusions, and make some 
+conjectures regarding this expansion. 
+
+\begin{remark}
+Observe that the skew Schur polynomials have
+determinant expressions, therefore we have that the
+\(\bm{y}\)-dependent coefficients \(c_{\mu \lambda} = s_{(\lambda/\mu)'}(-Q\bm{y})\)
+ have Jacobi-Trudi expressions. We may think of these objects as coordinate dependent 
+Pl\"ucker coordinates. 
+\end{remark}
+
+We also know that the left-hand side of~(\ref{eq:tau-hl}) is a tau
+function with respect the coodinates \(\bm{T}\equiv \{\bm{y}\cup(- Q
+\bm{y})\}\) and \(\bm{t}\). Moreover, from the Vertex operator
+formalism, we write the Schur polynomials as
+\begin{equation}
+  s_{\lambda}(\bm{x}) = \bra{\lambda} e^{J_-}\ket{\bm{0}}\qquad
+  s_{\mu}(\bm{y}) = \bra{\bm{0}} e^{J_+}\ket{\mu}\; ,
+\end{equation}
+we have
+\begin{equation}
+  \sum_{\lambda,\mu } s_\mu(\bm{y})c_{\mu\lambda}(Q,\bm{y}) s_\lambda(\bm{x}) = 
+  \sum_{\lambda,\mu } \bra{\bm{0}} e^{J_+}\ket{\mu} c_{\mu\lambda}(Q,\bm{y})
+  \bra{\lambda} e^{J_-}\ket{\bm{0}} \; ,
+\end{equation}
+therefore 
+\begin{equation}
+  c_{\mu\lambda}(Q, \bm{y}) = \bra{\mu} G_Q(\bm{y}) \ket{\lambda}\; ,
+\end{equation}
+where \(G_Q(\bm{y}) \in GL(\infty)\). We can find the expression for
+this group element as follows. 
+
+Remember that \(T_m = t'_m - Q^m t'_m\), therefore we write
+\begin{subequations}
+\begin{equation}
+  \bra{\bm{0}} e^{J_+(\bm{t})} e^{J_-(\bm{T})} \ket{\bm{0}} = 
+\bra{\bm{0}} e^{J_+(\bm{t})} e^{J_-(\bm{t}')  - J_-(\bm{t}^{(Q)})} \ket{\bm{0}} 
+\end{equation}
+From the Heisenberg algebra, we conclude that \([J_-(\bm{t}),
+  J_-(\bm{t}')] = 0\), therefore
+\begin{equation}
+  \bra{\bm{0}} e^{J_+(\bm{t})} e^{J_-(\bm{T})} \ket{\bm{0}} = 
+\bra{\bm{0}} e^{J_+(\bm{t})} e^{-J_-(\bm{t}^{(Q)})} e^{J_-(\bm{t}')}  \ket{\bm{0}} 
+\end{equation}
+\end{subequations}
+from where we finally conclude that 
+\begin{equation}
+  G_{Q}(\bm{y}) = \exp \left(-J_-(\bm{t}^{(Q)})\right) \qquad
+  t^{(Q)}_n = \frac{Q^n}{n}\sum_j y_j^n\; . 
+\end{equation}
+
+In general, we do not expect that expectation values with coordinate dependent 
+group elements \(G_{Q}(\bm{y})\) are tau functions. But in the above example,
+the coordinates combine among themselves and generate a tau function with respect 
+the coordiantes \(\bm{T}\) and \(\bm{t}\). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Toda hierarchy}
+\subsection{Determinant formula}
+
+We would like to refine the expressions above. Let us now consider a determinant  
+expression for the scalar product~(\ref{eq:scalar-hl}). Let us continue with 
+the case where \(M\) and \(N\) are very large, but finite. In this case, we write  
+this scalar product as 
+\begin{equation}
+  S_Q(N,M | \bm{x}, \bm{y})  
+= \prod_{j_1, j_2} (1-Q x_{j_1} y_{j_2}) \prod_{k_2, k_2}(1 - x_{k_1} y_{k_2})^{-1}\; .
+\end{equation}
+
+Using the Cauchy's identity for Schur polynomials, that is 
+\begin{equation}
+  \sum_\lambda s_\lambda(\bm{x}) s_\lambda(\bm{y}) = \prod_{i,j} \frac{1}{1 - x_i y_j}\; ,
+\end{equation}
+and using the results we have derives in the Phase model, we have that 
+\begin{equation}
+  \prod_{i,j}\frac{1}{1 - x_i y_j}  \equiv S(N,M|\bm{x}, \bm{y}) = 
+  \frac{\det_{j,k}H(\bm{x},\bm{y})}{\Delta(\bm{x}) \Delta(\bm{y})}\; .
+\end{equation}
+where \(H\) is the matrix~(\ref{eq:h-matrix}). Therefore
+\begin{equation}
+  S_Q(N,M | \bm{x}, \bm{y})  
+= \frac{S(N,M|\bm{x}, \bm{y})}{S(N,M|\bm{x}, Q\bm{y})}\; , 
+\end{equation}
+and we see that the scalar product of the q-boson model is the quotient of 
+scalar products of the phase model. Moreover
+\begin{equation}
+  S_Q(N,M | \bm{x}, \bm{y})  
+  = \frac{\Delta(Q\bm{y})}{\Delta(\bm{y})}
+  \frac{\det H(\bm{x}, \bm{y})}{\det H(\bm{x},Q \bm{y})} \; .
+\end{equation}
+Using that \(\Delta(Q\bm{y})/ \Delta(\bm{y}) = \prod_{j=1}^{N-1} Q^j\), we have 
+\begin{equation}
+  S_Q(N,M | \bm{x}, \bm{y}) =  Q^{N(N-1)/2}\;
+  \frac{\det H(\bm{x}, \bm{y})}{\det H(\bm{x}, Q \bm{y})} \; .
+\end{equation}
+
+Let us denote \(H(\bm{x}, Q\bm{y}) = H_{Q}\), therefore
+\begin{equation}
+  S_Q(N,M | \bm{x}, \bm{y}) = Q^{N(N-1)/2} \det H_{Q}^{-1} \det H
+= Q^{N(N-1)/2} \det \mathcal{H}(\bm{x}, \bm{y}) \; ,
+\end{equation}
+where \(\mathcal{H} = H_{Q}^{-1} H\) is a matrix with components 
+\(\mathcal{H}_{i,j} \equiv \mathcal{H}(x_i, y_j)\) where
+\begin{equation}
+  \mathcal{H}(z, w) = \sum_{k} \frac{(1 - z y_k)}{(1 - Q z y_k)} 
+\frac{(1 - Q x_k w)}{(1 - x_k w)}\; .
+\end{equation}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Kostka-Foulkes expansion}
 
 One of the greatest advantages of the expressions above is that we do not 
-need to consider the t-Schur fermions.
+need to consider the t-fermions.
 
 It would be very interesting to have some basic understanding of what
 is happenning in the fermionic representation of this tau function.
