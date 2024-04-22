@@ -12,8 +12,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title[\(Q\)-Bosons and relations with integrable hierarchies]{\(Q\)-Bosons
-and their relations with integrable hierarchies}
+\title{\(Q\)-Boson model and relations with integrable hierarchies}
 
 \author{Thiago Araujo}
 
@@ -49,14 +48,17 @@ its relations with integrable hierarchies.
 \section{Phase Model and q-Bosons}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-This section introduces the \(q\)-boson and phase
+This section introduces the \emph{phase} and \emph{\(q\)-boson}
 models~\cite{Bogoliubov:1992, Bogoliubov:1997soj, Bogoliubov2005,
-  Bogoliubov:1997soj, Tsilevich:2006}, and consists of a general
-review of the literature. Consequently, there is nothing particularly
-original, except its presentation.  In spite of that, I believe that
-it has some pedagoginal value, and a good collection of references.
-Here we follow some conventions of~\cite{Wheeler:2010vmq}, but with a
-presentation that is closer to~\cite{Tsilevich:2006}.
+  Tsilevich:2006}. It serves as a comprehensive review of existing
+literature, offering insights into established concepts. While the
+content may not be entirely original, its presentation adds value,
+particularly from a pedagogical standpoint. Additionally, it provides
+a well-curated collection of references for further exploration.
+
+In structuring this discussion, we adopt certain conventions
+from~\cite{Wheeler:2010vmq}, while aligning our presentation style
+more closely with that of~\cite{Tsilevich:2006}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,40 +86,40 @@ The Hamiltonian is given by
   H = - \frac{1}{2} \sum_{n =0}^M \left(\phi_n^\dagger \phi_{n+1}
   + \phi_n \phi_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; .
 \end{equation}
-where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\), and
-periodic boundary conditions \(\phi_{M+1} = \phi_0\) and
-\(\phi_{M+1}^\dagger = \phi_0^\dagger\).
+where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\) is the total
+number operator, and we also impose periodic boundary conditions
+\(\phi_{M+1} = \phi_0\) and \(\phi_{M+1}^\dagger = \phi_0^\dagger\).
 
-These operators appear in the context of quantum optics, and for
-this reason it is referred as the \emph{phase model}. It 
-corresponds to the strongly correlated \(q\)-bosons
-model~\cite{Bogoliubov:1997soj} the we will define soon.
+These operators appear in the context of quantum optics, and for this
+reason, it is referred to as the \emph{phase model}. It corresponds to
+the strongly correlated limit of the \(q\)-bosons
+model~\cite{Bogoliubov:1997soj}, which we will define shortly.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Representation}
-Let us define the i\(^{th}\)-vacuum \(\ket{0}_i\) by \(\phi_i\ket{0}_i
-= 0\).  The representation of this Hilbert space, denoted by
-\(\mathcal{F}_i\), is given by \(\ket{n_i}_i = \phi_i^\dagger
-\ket{0}_i\).
+The representation of the phase model algebra, is constructed using
+the vacuum state, defined by \(\ket{0}_i\) by \(\phi_i\ket{0}_i =
+0\). In this context, the state with \(n_i\) bosons (oscillators) is
+given by \(\ket{n_i}_i = \phi_i^\dagger \ket{0}_i\).
 
 Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
-\otimes \cdots \otimes  \ket{0}_M\),
-the Fock space is defined as 
+\otimes \cdots \otimes  \ket{0}_M\), the Fock space is defined as 
 \begin{equation}
   \mathcal{F} = \bigotimes_{i=0}^M \mathcal{F}_i = 
   \left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
-  \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; .
+  \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; ,
 \end{equation}
 where the states \(\ket{\vec{n}}\) are defined as 
 \begin{equation}
   \ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots \otimes \ket{n_M} 
- : =  (\phi_0^\dagger)^{n_0} (\phi_1^\dagger)^{n_1} \cdots  (\phi_M^\dagger)^{n_M} \ket{\bm{0}} \; ,
+ \equiv  (\phi_0^\dagger)^{n_0} (\phi_1^\dagger)^{n_1} \cdots  (\phi_M^\dagger)^{n_M} \ket{\bm{0}} \; ,
 \end{equation}
-where we write \(\phi_i^\dagger \equiv \bm{1} \otimes  \cdots \otimes
-\phi_i^\dagger \otimes \cdots \otimes \bm{1}\).
-These states are normalized, that is
-\(\bracket{\vec{n}}{\vec{m}}=\delta_{\vec{n}, \vec{m}}\). 
-
-Finally, the actions of the operators \(\mathcal{N}_i\) and \(\pi_i\) are
+with \(\phi_i^\dagger \equiv \bm{1} \otimes \cdots \otimes
+\phi_i^\dagger \otimes \cdots \otimes \bm{1}\).  Moreover, it is easy
+to see that these states are normalized, that is
+\(\bracket{\vec{n}}{\vec{m}}=\delta_{\vec{n}, \vec{m}}\).  Finally,
+the actions of the operators \(\mathcal{N}_i\) and \(\pi_i\) are
 \begin{equation}
     \pi_i\ket{\vec{n}}  = \delta_{n_i, 0} \ket{\vec{n}} \qquad 
     \mathcal{N}_i\ket{\vec{n}} = n_i \ket{\vec{n}}\; .
@@ -125,22 +127,23 @@ Finally, the actions of the operators \(\mathcal{N}_i\) and \(\pi_i\) are
  
 Given a state \(\ket{\vec{n}} = \ket{n_0, n_1, \dots, n_M}\), we
 associate a partition \( \lambda = (0^{n_0} 1^{n_1} 2^{n_2} \cdots
-M^{n_M})\). Observe that this correspondence is not unique, since the
-partition \(\lambda\) ignores the number \(n_0\) of particles in the
-site \(0\). From the total number of particles, we can, on the other hand,
-determine the number of particles \(n_0 = N - \ell(\lambda)\), where
-\(\ell(\lambda)\) is the number of rows in the Young diagram defined
-by \(\lambda\). This is very important, since in our consideations 
-below, the \(N\) particle sector is fixed, thanks to the integrability of 
-the model, therefore, the number \(n_0\) is known once we define the 
-partition \(\lambda\). 
+M^{n_M})\).  It's worth noting that this correspondence is not unique,
+as the partition \(\lambda\) does not account for the number of
+particles \(n_0\).  If the total number of particles \(N\) is known,
+we can determine \(n_0 = N - \ell(\lambda)\), where \(\ell(\lambda)\)
+represents the number of rows in the Young diagram defined by
+partition \(\lambda\). This determination is crucial, as in our
+subsequent considerations, the \(N\) particle sector remains fixed due
+to the integrability of the model. Consequently, the value of \(n_0\)
+becomes known once we specify the partition \(\lambda\).
 
-In fact, from the correspondence above, Wheeler~\cite{Wheeler:2010vmq}
-defines a map \(\mathcal{M}_\psi: \mathcal{F}\to
-\mathcal{F}^{(0)}_\psi\), where \(\mathcal{F}^{(0)}_\psi\) is the
-space Fock space of charged free fermions built upon the neutral
-(fermionic) vacuum. We will discuss a map from the bosonic space to
-the space of symmetric functions.
+Finally, based on the correspondence we mentioned above,
+Wheeler~\cite{Wheeler:2010vmq} defines a map \(\mathcal{M}_\psi:
+\mathcal{F} \to \mathcal{F}^{(0)}_\psi\), where
+\(\mathcal{F}^{(0)}_\psi\) denotes the Fock space of charged free
+fermions constructed from the neutral (fermionic) vacuum.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Bethe Ansatz}
 The \(L\)-matrix is given by 
@@ -150,8 +153,7 @@ The \(L\)-matrix is given by
 x^{ - 1/2} & \phi_n^\dagger \\ \phi_n & x^{1/2}
 \end{pmatrix}_a\; , 
 \end{equation}
-where \(x \in \mathbb{S}^1\). From where we can build the monodromy
-matrix
+where \(x \in \mathbb{S}^1\). We also have the monodromy matrix
 \begin{equation}
   T_a(x) = L_{aM}(x) \cdots L_{a0}(x) = 
 \begin{pmatrix}
@@ -165,14 +167,15 @@ With these expressions, one can finally build the Bethe states
   \bra{\Psi(y_1, \dots, y_N)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j) 
 \end{equation}
 where \(\mathbb{B}(x) = x^{M/2} B(x)\) and \(\mathbb{C}(x) = x^{M/2} C(1/x)\).
-When the set \(\{ y_j \ | \ j
-=1, \dots , N\}\) satisfies the Bethe equations
+
+When the set \(\{ y_j \ | \ j =1, \dots , N\}\) satisfies the Bethe equations
 \begin{equation}
 \label{eq:bethe_eq}
   y^{N + M}_i = (-1)^{N-1} \prod_{\substack{j = 1 \\ j \neq i}}^N y_j\; , \qquad i = 1, \dots, N\; , 
 \end{equation}
-we says that the Bethe states are \emph{on-sheel}. In what follows, we will 
-only consider \emph{off-shell} states. 
+we say that the Bethe states are \emph{on-shell}; otherwise, we have
+\emph{off-shell} states. In what follows, we will only consider
+\emph{off-shell} states.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
