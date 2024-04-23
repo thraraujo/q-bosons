@@ -44,6 +44,8 @@ its relations with integrable hierarchies.
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
 
+
+
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 \section{Phase Model and q-Bosons}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
@@ -59,6 +61,8 @@ a well-curated collection of references for further exploration.
 In structuring this discussion, we adopt certain conventions
 from~\cite{Wheeler:2010vmq}, while aligning our presentation style
 more closely with that of~\cite{Tsilevich:2006}.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,6 +99,8 @@ reason, it is referred to as the \emph{phase model}. It corresponds to
 the strongly correlated limit of the \(q\)-bosons
 model~\cite{Bogoliubov:1997soj}, which we will define shortly.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Representation}
@@ -144,6 +150,8 @@ Wheeler~\cite{Wheeler:2010vmq} defines a map \(\mathcal{M}_\psi:
 fermions constructed from the neutral (fermionic) vacuum.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Bethe Ansatz}
 The \(L\)-matrix is given by 
@@ -166,9 +174,9 @@ With these expressions, one can finally build the Bethe states
   \ket{\Psi(y_1, \dots, y_N)} = \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}} \qquad 
   \bra{\Psi(y_1, \dots, y_N)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j) 
 \end{equation}
-where \(\mathbb{B}(x) = x^{M/2} B(x)\) and \(\mathbb{C}(x) = x^{M/2} C(1/x)\).
+where \(\mathbb{B}(y) = y^{M/2} B(y)\) and \(\mathbb{C}(y) = y^{M/2} C(1/y)\).
 
-When the set \(\{ y_j \ | \ j =1, \dots , N\}\) satisfies the Bethe equations
+When the coordinates \(\{ y_j \ | \ j =1, \dots , N\}\) satisfy the Bethe equations
 \begin{equation}
 \label{eq:bethe_eq}
   y^{N + M}_i = (-1)^{N-1} \prod_{\substack{j = 1 \\ j \neq i}}^N y_j\; , \qquad i = 1, \dots, N\; , 
@@ -181,31 +189,38 @@ we say that the Bethe states are \emph{on-shell}; otherwise, we have
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{q-Bosons}
-The Hamiltonian for the q-boson model is
-given by
-\begin{equation}
-  \mathcal{H} = -\frac{1}{2} \sum_{n=0}^M
-  \left(b_n^\dagger b_{n+1} + b_n b_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; ,
-\end{equation}
-where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\), and as in
-the case of the phase mode, we impose periodic boundary conditions
-\(b_{M+1} = b_0\) and \(b_{M+1}^\dagger = b_0^\dagger\). The set of
-operators \(\{b_i, b^\dagger,\mathcal{N}_i\}_{i=0}^M\) form the
-\(M+1\) copies of independent q-boson algebras:
+The set of operators \(\{b_i, b^\dagger,\mathcal{N}_i\}_{i=0}^M\) constitute
+\(M+1\) independent q-boson algebras defined by
 \begin{equation}
 [\mathcal{N}_i, b_j^\dagger]=\delta_{i,j} b_i^\dagger\; , \quad 
 [\mathcal{N}_i, b_j]=-\delta_{i,j}b_i\; , \quad
 [b_i, b_j^\dagger]= \delta_{i,j} q^{-2\mathcal{N}_i}  \equiv \delta_{i,j} Q^{\mathcal{N}_i}\; , 
 \end{equation}
-where we write the deformation parameter as \(Q = q^{-2}\). 
-In the limit \(Q\to 1\), the q-bosons are ordinary bosons, and 
-the limit \(Q\to 0\) (\(q\to \infty\)) gives the phase model we have discussed above. 
+where we denote the deformation parameter as \(Q = q^{-2}\).
+
+The q-boson model is characterized by its Hamiltonian
+\begin{equation}
+  \mathcal{H} = -\frac{1}{2} \sum_{n=0}^M
+  \left(b_n^\dagger b_{n+1} + b_n b_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; ,
+\end{equation}
+where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\), and we also
+impose periodic boundary conditions \(b_{M+1} = b_0\) and
+\(b_{M+1}^\dagger = b_0^\dagger\).
+
+In the limit \(Q \to 1\), the q-bosons behave as ordinary bosons,
+while the limit \(Q \to 0\) (\(q \to \infty\)) corresponds to the
+phase model discussed earlier.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Representation}
-We build the representation of the q-boson algebra with some modifications of the phase 
-model we have just discussed. Let us define the i\(^{th}\)-vacuum \(\ket{0}_i\) by
-\(b_i\ket{0}_i = 0\). The representation of this Hilbert space, denoted by
-\(\mathcal{F}_i^Q\), is given by \(\ket{n_i}_i \propto b_i^\dagger \ket{0}_i\).
+We construct the representation of the q-boson algebra with
+modifications of the phase model discussed earlier. Let us define the
+\(i\)-th vacuum \(\ket{0}_i\) such that \(b_i\ket{0}_i = 0\). The
+representation of this Hilbert space, denoted by \(\mathcal{F}_i^Q\),
+is given by \(\ket{n_i}_i \propto b_i^\dagger \ket{0}_i\).
 
 Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
 \otimes \cdots \otimes  \ket{0}_M\),
@@ -213,10 +228,10 @@ the Fock space is defined as
 \begin{equation}
   \mathcal{F}_{Q} = \bigotimes_{i=0}^M \mathcal{F}_i^Q = 
   \left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
-  \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; .
+  \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; ,
 \end{equation}
-where the actions of the operators \(\{b_i, b_i^\dagger\}\) are given by 
-the following relations
+where the actions of the operators \(\{b_i, b_i^\dagger\}\) are given
+by the following relations
 \begin{subequations}
 \begin{alignat}{3}
     & b_0\ket{n_0} =(1 - \delta_{0, n_0}) \frac{(1 - Q^{n_0})}{(1 - Q)^{1/2}}\ket{n_0 - 1}
@@ -225,17 +240,15 @@ the following relations
     && b_i^\dagger \ket{n_0} =  \frac{(1 - Q^{n_i+1})}{(1 - Q)^{1/2}}\ket{n_0 + 1}\quad i\neq 0\; .
 \end{alignat}
 \end{subequations}
-Observe that the modes \(\{b_0, b_0^\dagger \}\) satisfies a slightly
-different relation.
 
-Therefore, the states \(\ket{\vec{n}} \in \mathcal{F}_Q\) are defined as 
+Consequently, the states \(\ket{\vec{n}} \in \mathcal{F}_Q\) are
 \begin{equation}
   \ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots \otimes \ket{n_M} 
  : =  (b_0^\dagger)^{n_0} (b_1^\dagger)^{n_1} \cdots  (b_M^\dagger)^{n_M} \ket{\bm{0}} \; ,
 \end{equation}
-where we write \(\phi_i^\dagger \equiv \bm{1} \otimes  \cdots \otimes
-\phi_i^\dagger \otimes \cdots \otimes \bm{1}\).
-Moreover, the norm of these states satisfy 
+where we write \(b_i^\dagger \equiv \bm{1} \otimes  \cdots \otimes
+b_i^\dagger \otimes \cdots \otimes \bm{1}\).
+Moreover, this space has an inner product that satisfies
 \begin{equation}
   \bracket{\vec{n}}{\vec{m}} = \frac{[m_0]!}{\prod_{i=1}^M[m_i]!} \delta_{\vec{n}\vec{m}}\qquad 
     [n]! =
@@ -245,20 +258,25 @@ Moreover, the norm of these states satisfy
     1 & \textrm{otherwise}
   \end{array}\right.\; .
 \end{equation}
-As before, we can associate to a given states \(\ket{\vec{n}} =
-\ket{n_0, n_1, \dots, n_M}\), a partition -- or Young diagram --
-\(\lambda = (1^{n_1} 2^{n_2} \cdots M^{n_M})\), but now we assume that 
-there is a proportionaly  factor relating these two objects, 
+
+Similar to the phase model, we can associate to a given states
+\(\ket{\vec{n}} = \ket{n_0, n_1, \dots, n_M}\), a Young diagram
+\(\lambda = (1^{n_1} 2^{n_2} \cdots M^{n_M})\). It is useful to define
+a proportionaly factor relating these two objects
 \begin{equation}
   \ket{\lambda}_Q  = b_\lambda(Q) \ket{\vec{n}}  \ \; , \qquad b_\lambda(Q) = \prod_i [p_i(\lambda)]! 
 \end{equation}
 where \(p_i(\lambda)\) denotes the number of parts of size \(i\) in
-the partition. These partition states satisfy \(
-\bracket{\lambda}{\mu}_Q = b_\lambda(Q) \delta_{\lambda,\mu}\). Once
-again, we see that the correspondence is not unique since the number
-of oscilators at the site \(i=0\) are completely ignored in the
-partition notation. And finally, if the number of particles is fixed,
-then \(n_0 = N - \ell(\lambda)\).
+the partition. These partition states satisfy
+\(\bracket{\lambda}{\mu}_Q = b_\lambda(Q) \delta_{\lambda,\mu}\). Once
+again, we see that the correspondence is not unique, as the number of
+oscillators at site \(i=0\) is completely ignored in the partition
+notation. Finally, if the number of particles is fixed, then \(n_0 = N
+- \ell(\lambda)\).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Bethe Ansatz}
 The \(L\)-operator for the q-boson is given by
@@ -266,9 +284,9 @@ The \(L\)-operator for the q-boson is given by
   L_{an}(x, Q) =
   \begin{pmatrix}
     x^{-1/2} & (1 - Q)^{\frac{1}{2}} b_n^\dagger \\ (1 - Q)^{\frac{1}{2}} b_n & x^{1/2}
-  \end{pmatrix}_a\; .
+  \end{pmatrix}_a\; ,
 \end{equation}
-The monodromy matrix is 
+and the monodromy matrix is 
 \begin{equation}
   T_a(x,Q) = L_{am}(x, Q)  \dots  L_{a0}(x, Q) = 
   \begin{pmatrix}
@@ -276,48 +294,46 @@ The monodromy matrix is
   \end{pmatrix}_a\; .
 \end{equation}
 
-The eigenstates of the Hamiltonian are of the form
+As before, the eigenstates of the Hamiltonian have the form
 \begin{equation}
   \ket{\Psi(y_1, \dots, y_N; Q)} = \prod_{j=1}^N \mathbb{B}(y_j, Q) \ket{\bm{0}}\qquad 
   \bra{\Psi(y_1, \dots, y_N; Q)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j, Q) \; .
 \end{equation}
-where \(\mathbb{B}(x, Q) = x^{M/2} B(x, Q)\) and \(\mathbb{C}(x, Q) =
-x^{M/2} C(1/x, Q)\).  When the set of parameters \(\{ y_j \ | \ j =1, \dots , N\}\)
-satisfies the Bethe equations
+where \(\mathbb{B}(y, Q) = y^{M/2} B(y, Q)\) and \(\mathbb{C}(y, Q) =
+y^{M/2} C(1/y, Q)\). When the parameters \(\{ y_j \ | \ j =1, \dots , N\}\)
+satisfy the Bethe equations given by
 \begin{equation}
   y^{N + M}_i =\prod_{\substack{j = 1 \\ j \neq i}}^N\frac{Q y_i - y_j}{y_i - Q y_j}\; , \qquad i = 1, \dots, N\; , 
 \end{equation}
-we say that the states \(\ket{\Psi(y_1, \dots, y_N; Q)}\) are \emph{on-shell} Bethe states, otherwise, 
-we have \emph{off-shell} Bethe states. 
+we have \emph{on-shell} Bethe states; otherwise, they are \emph{off-shell} states.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 \section{Tau functions in the phase model}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-This section discusses the presence of integrable hierarchies in the phase
-model.  We argue that it is also a Toda hierachy tau function, and we
-discuss some consequences of this fact, in particular, its connection
-with a matrix model. Moreover, we also point the presence of
-correlation functions in this model that also satisfy the KP hierarchy
-equations. We finally argue how these results also imply that these
-scalar products are also KP hierarchy tau functions, what is expected from 
-the results of Wheeler~\cite{Wheeler:2010vmq}.
+This section explores the presence of integrable hierarchies in the
+phase model. We demonstrate its correspondence to a Toda hierarchy tau
+function and discuss some implications, particularly its connection to
+a matrix model. Additionally, we highlight the existence of
+correlation functions in this model that satisfy the KP hierarchy
+equations. Finally, we argue that these results imply that these
+scalar products are also KP hierarchy tau functions, aligning with the
+findings of Wheeler~\cite{Wheeler:2010vmq}.
 
-Bogoliubov~\cite{Bogoliubov2005}, has shown that the scalar product of
-two vectors in the \(N\)-particles sector in a chain of length \(M+1\)
-is
+Bogoliubov~\cite{Bogoliubov2005} has demonstrated that the scalar
+product of two vectors in the \(N\)-particle sector of a chain with
+length \(M+1\) is
 \begin{equation}
 \begin{split}
 \label{eq:scalar}
   \mathcal{I}(N, M|\bm{x}, \bm{y}) & =
-  \bra{\bm{0}} \prod_{j=1}^N \mathbb{C}(x_j) \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}} \\ 
+  \bra{\bm{0}} \prod_{i=1}^N \mathbb{C}(x_i) \prod_{j=1}^N \mathbb{B}(y_j) \ket{\bm{0}} \\ 
  & = \frac{ \det H(\bm{x},\bm{y})}{ \prod_{i<j}(x_i - x_j)(y_i - y_j)} \; ,
 \end{split}
 \end{equation}
-where \(H\) is an \(N\times N\) matrix with components
+where \(H\equiv [H_{ij}]_{i,j=1}^N\) is an \(N\times N\) matrix with components
 \begin{equation}
 \label{eq:h-matrix}
   H_{ij} = H(x_i, y_j) 
@@ -328,19 +344,20 @@ where \(H\) is an \(N\times N\) matrix with components
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Toda tau functions}
-In this section, we argue that the scalar product defined above is a tau function 
-of the Toda hierarchy. Let us first write the function \(H(z,w)\) as the geometric sum 
+We now argue that the scalar product defined above is a tau function
+of the Toda hierarchy. Let us first write the function \(H(z,w)\) as
+the geometric sum
 \begin{equation}
 \label{eq:h-exp}
-  H(z,w) = \frac{1 - (zw)^{M+N}}{1 - zw} = \sum_{k=1}^{M+N} (zw)^{k-1} \; , 
+  H(z,w) = \frac{1 - (zw)^{M+N}}{1 - zw} = \sum_{k=1}^{M+N} (zw)^{k-1} \; .
 \end{equation}
-in such a way that 
-we can write
+Hence, we express the determinant of the \(H\) matrix as
 \begin{equation}
   \det_{i,j} \left(H(x_i, y_j)\right) = \det_{i,j} \left( \sum_{k=1}^{M+N} x_i^{k-1} y_j^{k-1}\right)
 \end{equation}
-and we can thing of this expression as the product of a \(N\times (N+M)\) matrix \(\mathcal{X}\)
-and another \((M + N)\times N\) matrix \(\mathcal{Y}\), given by
+Furthermore, we can interpret this expression as the result of
+multiplying an \(N\times (N+M)\) matrix \(\mathcal{X}\) by another
+\((M + N)\times N\) matrix \(\mathcal{Y}\), which are given by
 \begin{equation}
   \mathcal{X} = 
   \begin{pmatrix}
@@ -354,13 +371,14 @@ and another \((M + N)\times N\) matrix \(\mathcal{Y}\), given by
   y_1^0 & y_2^0 & \dots & y_N^0 \\  
   y_1^1 & y_2^1 & \dots & y_N^1 \\  
   \vdots & \vdots & & \vdots \\
-  y_1^{N+M-1} & y_2^{M+N-1} & \dots & y_N^{M+N-1} 
-  \end{pmatrix}
+  y_1^{N+M-1} & y_2^{M+N-1} & \dots & y_N^{M+N-1}
+  \end{pmatrix}\; ,
 \end{equation}
 therefore 
 \begin{equation}
-  \det_{i,j} \left(H(x_i, y_j)\right) =  \det_{i,j} \left( \mathcal{X}\mathcal{Y}\right)
-= \sum_{0 \leq \ell_{N} \leq \dots \leq \ell_1\leq N+M }  \det_{ik}(x_i^{\ell_k})  \det_{ik}(y_j^{\ell_k})\; .
+  \det_{i,j} \left(H(x_i, y_j)\right)
+  \equiv  \det_{i,j} \left( \mathcal{X}\mathcal{Y}\right)
+  = \sum_{0 \leq \ell_{N} \leq \dots \leq \ell_1\leq N+M } \det_{ik}(x_i^{\ell_k}) \det_{ik}(y_j^{\ell_k})\; .
 \end{equation}
 If we now define \(\ell_j = \lambda_k - k + N\), and
 using~(\ref{eq:scalar}), we have
@@ -374,34 +392,32 @@ where \(\Delta(\bm{x})\) and \(\Delta(\bm{x})\) are Vandermonde
 determinants. This formula agrees with the Schur expansion defined
 in~\cite{Bogoliubov2005}.
 
-Let us define two sets of Miwa coordinates \(\bm{t} = (t_1, t_2, \dots)\)
-and \(\bm{t}' = (t'_{-1}, t'_{-2}, \dots)\) by
+Define two sets of Miwa coordinates \(\bm{t} = (t_1, t_2, \dots)\) and
+\(\bm{t}' = (t'_{-1}, t'_{-2}, \dots)\) by
 \begin{equation}
   t_p = \frac{1}{p}\sum_{j=1}^N x_j^p\qquad 
-  t'_{-p} = \frac{1}{p}\sum_{j=1}^N y_j^p\; ,
+  t'_{-p} = \frac{1}{p}\sum_{j=1}^N y_j^p\; .
 \end{equation}
-therefore, we have 
+One can write the inner product in terms of these coordinates, that is
 \begin{equation}
   \mathcal{I}(N, M|\bm{t}, \bm{t}') = \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
 \end{equation}
 This expression is known to be a tau function for \(M, N\to \infty\).
-In fact, using the free fermions representation~\cite{Alexandrov:2012tr},
-it can be written as
+As such, utilizing the free fermions representation~\cite{Alexandrov:2012tr}, it can be written as
 \begin{equation}
-\sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
+  \lim_{M,N\to \infty}\mathcal{I}(N, M|\bm{t}, \bm{t}')
  = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} e^{-\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
 \end{equation}
-It is a tau function of the Toda hierarchy with trivial element \(1 \in GL(\infty)\).
-In fact, it is nothing but the Cauchy's identity
+It is a tau function of the Toda hierarchy with trivial element \(\mathbb{1} \in GL(\infty)\).
+It is nothing but the Cauchy's identity
 \begin{equation}
   \sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
     = \exp \left( \sum_{m\geq1} m t_m t'_{-m} \right) \; .
 \end{equation}
-where \(\bm{t}\) and \(\bm{t}'\) are two independent sets of Miwa coordinates.
 
-Putting all these facts together, the truncation for finite \(M\) and
-\(N\) are also tau functions of the Toda hierarchy. More specifically,
-according to~\cite{Alexandrov:2012tr, Kharchev:1991gd,
+Bringing all these facts together, the truncation for finite \(M\) and
+\(N\) also yields tau functions of the Toda hierarchy. More
+specifically, according to~\cite{Alexandrov:2012tr, Kharchev:1991gd,
   Zabrodin:2010ii}, the truncation of the tau function corresponds to
 the inclusion of a projection operator \(\mathrm{P}^+\) in the
 expectation value of the tau function written in the fermionic
@@ -413,28 +429,34 @@ As a final remark, we can also write
 \end{equation}
 with \(h_k=1\) if \(k\in [0, M+N-1]\) and \(0\) otherwise. In this
 case, one can define a diagonal \((N+M)\times (N+M)\) matrix
-\(\mathcal{H} = \textrm{diag}(h_0, \dots, h_{M+N-1})\). Therefore, if
-we repeat the arguments above, we find
+\(\mathcal{H} = \textrm{diag}(h_0, \dots, h_{M+N-1})\). Consequently,
+if we repeat the arguments above, we find
 \begin{equation}
 \mathcal{I}(N, M|\bm{t}, \bm{t}') = \sum_{\lambda} h_\lambda s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
 \end{equation}
-where \(h_\lambda = 1\) if \(\lambda \subset [N,M]\) and it vanishes
-otherwise.  In this case, we have that this tau function is of the
-type considered in~\cite{orlov:2001}. Evidently that it is a trivial
-example, but we expect that in the case of the \(q\)-Boson model,
-where \(q\) is finite, the diagonal terms \(h_\lambda\) are more
-interesting. We will discuss this case next section.
+Here, \(h_\lambda\) is equal to \(1\) if \(\lambda \in [N,M]\), and it
+is zero otherwise.
+
+In this case, we find that this tau function is a trivial example of
+the tau functions considered in~\cite{orlov:2001}. We anticipate that
+in the analysis of more general correlation functions, the diagonal
+terms \(h_\lambda\) will be more interesting. We will revisit this
+discussion soon.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Matrix Models}
-
-It is also interesting to notice that the particular case when \(M\to
-\infty\), but with a finite number of particles \(N\). The
-partitions \(\lambda \in [N, \infty]\) satisfy the condition
+It is also interesting to note the particular case when \(M\to
+\infty\), but with a finite number of particles \(N\). In this case,
+the partitions \(\lambda \in [N, \infty]\) satisfy the condition
 \(\ell(\lambda) \leq N\). Therefore, the scalar
 product~(\ref{eq:scalar_exp}) becomes
 \begin{equation}
-  \mathcal{I}_N(\bm{t}, \bm{t}') = \sum_{\substack{\lambda \\ \ell(\lambda) \leq N}}
-  s_\lambda(\bm{t})  s_\lambda(\bm{t}') \; .
+  \mathcal{I}_N(\bm{t}, \bm{t}')\equiv 
+  \lim_{M\to \infty}\mathcal{I}(N, M|\bm{t}, \bm{t}')
+  = \sum_{\substack{\lambda \\ \ell(\lambda) \leq N}} s_\lambda(\bm{t})  s_\lambda(\bm{t}') \; .
 \end{equation}
 From~\cite{Zabrodin:2010ii}, we know that this expression can be
 written as the following integral
@@ -451,60 +473,65 @@ where
 See also~\cite{Kharchev:1991gd} for a detailed proof of this relation,
 and~\cite{Orlov:2005} for other details. 
 
-What is very interesting about this result is what it implies when we 
-impose the Bethe equations~(\ref{eq:bethe_eq}). Suppose that 
-\(x_j = e^{-ip_j} \in \mathbb{S}^1\), and we set \(\bm{t}' = - \bm{t}^\star\).
-In this particular case, we have
+From the results of~\cite{Zabrodin:2010ii}, see citations therein, we
+have an interesting consequence of this representation. Impose the
+Bethe equations~(\ref{eq:bethe_eq}) to one set of variables, say \(x_j
+= e^{-ip_j} \in \mathbb{S}^1\). Additionally, let us set \(\bm{t}' = -
+\bm{t}^\star\). In this particular case, we have
 \begin{equation}
 \xi(\bm{t}, z) - \xi(\bm{t}', 1/z)  = 2 \ \textrm{Re}\left(\sum_k t_k z^k\right)\; .
 \end{equation}
 Then, the phase model is equivalent to an ensemble of \(N\) 2D Coulomb
-particles on a circle. In this case, we have that the quantities
+particles on a circle. In this case, we find that the quantities
 \(\lambda_{\ell}\) are eigenvalues of a matrix \(U\).
 
-Moreover, Zabrodin~\cite{Zabrodin:2010ii}, see citations therein, we also know
-that under the rescaling \(t_k \to T_k/ \hbar\), \(t'_k \to T_{-k}/ \hbar\)
-and \(N = T_0/ \hbar\), we get the dispersion limit tau function 
+Furthermore, according to Zabrodin~\cite{Zabrodin:2010ii}, see
+citations therein, we also know that under the rescaling \(t_k \to
+T_k/ \hbar\), \(t'_k \to T_{-k}/ \hbar\) and \(N = T_0/ \hbar\), we
+obtain the dispersion limit tau function
 \begin{equation}
   F_0(\bm{T}) = \log S_{T_0}(\bm{T}, \bm{T}') + \mathcal{O}(\hbar)\; ,
 \end{equation}
-a free energy, from the viewpoit of the matrix integral partition
-function.  It is not clear how one can use this fact to determine
-properties of the integrable model, but it might be possible to study
-the analytic structure of the free energy \(F_0\) to gain some
-understanding on the Bether roots \(\bm{x}\).  This problem is
-currently under further investigation, and we hope to report some new
-results elsewhere.
+that is a free energy, from the viewpoit of the matrix integral
+partition function.
 
+It remains unclear how one can use this fact to determine properties
+of the integrable model, but it might be possible to study the
+analytic structure of the free energy \(F_0\) to gain some
+understanding of the Bethe roots \(\bm{x}\). This problem is currently
+under further investigation, and we hope to report new results
+elsewhere.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{KP tau function}
-Finally, one may also observe that if we fix one set of coordinates,
-say \(\bm{y}\), then we write
+Lastly, one may also observe that if we fix one set of coordinates,
+say \(\bm{y}\), then we can write
 \begin{equation}
  \mathcal{I}(N,M|\bm{t}) 
  = \sum_{\lambda} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
  \equiv \sum_{\lambda} c_\lambda(\bm{y})  s_\lambda(\bm{t}) \; ,
 \end{equation}
-with coefficients \(c_\lambda(\bm{y}) = \det (h_{\lambda_i-i +j}(\bm{y}))\).
-But now, it is a trivial to notice that these are Plücker
-coordinates in the Jacobi-Trudi form, see~\cite{Miwa2000, Alexandrov:2012tr}. 
+with coefficients \(c_\lambda(\bm{y}) = \det (h_{\lambda_i-i
+  +j}(\bm{y}))\). But now, it is trivial to notice that these are
+Plücker coordinates in the Jacobi-Trudi form, as seen
+in~\cite{Miwa2000, Alexandrov:2012tr}.
 
-Therefore, the expression
+Hence, the following expression
 \begin{equation}
  \mathcal{I}(N,M|\bm{t}) = \sum_{\lambda \subseteq [N,M]} s_\lambda(\bm{y})  s_\lambda(\bm{t}) \; ,
 \end{equation}
-is also a KP tau function: A fact that we already know
-from~\cite{Wheeler:2010vmq}, where the author has proved this
-statement using the free fermions formalism.
-
+is also a KP tau function, a fact that we already know
+from~\cite{Wheeler:2010vmq}, where the author proved this statement
+using the free fermions formalism.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Correlation functions}
-In~\cite{Bogoliubov2005}, Bogoliubov has also shown that the
+Bogoliubov has also shown in~\cite{Bogoliubov2005}, that the
 correlation functions
 \begin{subequations}
 \begin{equation}
@@ -522,18 +549,19 @@ can be written as
   A_m(N, M|\bm{x}, \bm{y}\setminus \{y_N\}) = 
   \frac{(-1)^{N-1}}{y_N^{(N-1)/2}} \prod_{j=1}^N x_{j}^{M/2}
   \prod_{k=1}^{N-1} y_{j}^{M/2}
-  \left( \prod_{t<N} \frac{y_N - y_t}{y_t} \right) \frac{\det Q}{\det H} S(N,M|\bm{x}, \bm{y})
+  \left( \prod_{t<N} \frac{y_N - y_t}{y_t} \right)
+  \frac{\det Q}{\det H} \mathcal{I}(N,M|\bm{x}, \bm{y})
 \end{equation}
 \end{subequations}
-where the \(N\times N\) matrix \(Q\) has components 
+where \(Q\) is an \(N\times N\) matrix with components 
 \begin{equation}
  Q_{jN} = x_j^{(M + N - 1- 2m)/2} \quad  \textrm{and} \quad 
  Q_{jk} = H_{jk} \; , 
 \end{equation}
-where \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\) in~(\ref{eq:h-matrix}). 
-Since the components \(Q_{jN}\) are independent of the coordinates \(y\), 
-we cannot write the above expression as a Toda hierarchy tau
-function. 
+and \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\)
+in~(\ref{eq:h-matrix}). Since the components \(Q_{jN}\) are
+independent of the coordinates \(y\), we cannot express the above
+expression as a Toda hierarchy tau function.
 
 We already know from~(\ref{eq:scalar}) that 
 \begin{equation}
