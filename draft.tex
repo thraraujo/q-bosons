@@ -559,32 +559,33 @@ where \(Q\) is an \(N\times N\) matrix with components
  Q_{jk} = H_{jk} \; , 
 \end{equation}
 and \(H_{jk} = H(x_j, y_k)\) are the components of the matrix \(H\)
-in~(\ref{eq:h-matrix}). Since the components \(Q_{jN}\) are
-independent of the coordinates \(y\), we cannot express the above
+in~(\ref{eq:h-matrix}).  The components \(Q_{jN}\) are independent of
+the coordinates \(y\); therefore, we cannot express the above
 expression as a Toda hierarchy tau function.
 
 We already know from~(\ref{eq:scalar}) that 
 \begin{equation}
     \frac{\mathcal{I}(N,M|\bm{x}, \bm{y})}{\det H}=  \frac{1}{\Delta(x)\Delta(y)} \; ,
 \end{equation}
-therefore we have
+then
 \begin{equation}
-  A_m(N, M|\bm{x}, \bm{y}\setminus{y_N})  \propto
+  A_m(N, M|\bm{x}, \bm{y}\setminus \{y_N\})  \propto
   \frac{\det Q}{\Delta(x)} \equiv \mathcal{A}_m(N,M|\bm{x}, \bm{y})\; ,
 \end{equation}
-and we are going to treat the coordinates \(\{ \bm{y} \}\) as
-a set of \(N\) fixed parameters. Furthermore, we write \(N\)
-functions \(\bm{F}(z) = (F_1, \dots, F_N)\) defined as
+and we treat the coordinates \(\{ \bm{y} \}\) as a set of \(N\) fixed
+parameters.
+
+Furthermore, we define vector field \(\bm{F}(z) = (F_1, \dots, F_N)\),
+where the components are given by
 \begin{equation}
-  F_j (z) = H(z, y_j) \quad \textrm{if} \ j \neq N\; , \qquad \textrm{and}\qquad 
-   F_N (z)  = z^{(M + N - 1 - 2m)/2} \; .
+    F_j (z) = H(z, y_j) \quad \textrm{if} \ j \neq N\; , \qquad \textrm{and}\qquad 
+    F_N (z)  = z^{(M + N - 1 - 2m)/2} \; .
 \end{equation}
 As before, we expand \(F_j(z)\) as the geometric sum
 \begin{equation}
   F_j(z) = \frac{1 - (y_j z)^{M + N}}{1 - y_j z} = \sum_{n=0}^{N + M - 1} (y_j z)^n
-  \equiv \sum_{n=0}^{M + N -1} f_{j, n} z^n\; , 
+  \equiv \sum_{n=0}^{M + N -1} f_{j, n} z^n\; .
 \end{equation}
-where we will also assume the \(M + N - 1 \in 2 \mathbb{Z}\).
 
 With these definitions, we conclude that
 \begin{equation}
@@ -594,29 +595,36 @@ From the expansion
 \begin{equation}
   \det_{jk} F_j(x_k) = \det_{jk} \left(  \sum_{n=0}^{M + N -1} f_{j, n} x_k^n \right) \; .
 \end{equation}
-and with the aid of the Cauchy-Binet formula, we write  
+By utilizing the Cauchy-Binet formula, we can write
 \begin{equation}
     \mathcal{A}_m(N,M|\bm{x}, \bm{y})
   = \sum_{0\leq \ell_N\leq \dots \leq \ell_1 \leq N+M}
   \frac{\det_{jk}(f_{j, \ell_k}) \det_{jk}(x_k^{\ell_j})}{\Delta(x)}\; . 
 \end{equation}
-Now we basically use the definition of the Schur polynomials and the
-Jacobi-Trudi expression of Plücker coordinates, see~\cite{Alexandrov:2012tr}. 
-Finally, this last expression becomes
+
+We now employ the definition of the Schur polynomials and utilize the
+Jacobi-Trudi expression of Plücker coordinates, as detailed
+in~\cite{Alexandrov:2012tr}. Ultimately, this leads to the following
+expression:
 \begin{equation}
 \mathcal{A}_m(N,M|\bm{x}, \bm{y}) =
 \sum_{\lambda} c_\lambda(\bm{y}) s_\lambda(\bm{x}) \; ,
 \end{equation}
-where \(c_\lambda \equiv \det_{jk}(y_j^{\ell_k})\),  \(\ell_k = \lambda_k - k +N\). Therefore,
-we have that this expression is a KP tau function. 
+where \(c_\lambda \equiv \det_{jk}(y_j^{\ell_k})\),  \(\ell_k = \lambda_k - k +N\).
+Therefore, we have that this expression is a KP tau function. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Skew Schur polynomials expansion}
 From the coordinate expansion of the Bethe
 vectors~\cite{Bogoliubov2005, Tsilevich:2006}, it is easy to show that
 \begin{equation}
 \prod_{j=1}^N \mathbb{B}(x_j)\ket{\lambda}  = \sum_{\mu \supset \lambda } s_{\mu/\lambda}(\bm{x})\ket{\mu}\qquad 
  \bra{\lambda} \prod_{j=1}^N \mathbb{C}(x_j) = \sum_{\mu \supset \lambda } s_{\mu/\lambda}(\bm{x})\bra{\mu}
 \end{equation}
-where \(s_{\mu/\lambda}\) are Schur polynomials~\cite{Macdonald:1998}.
+where \(s_{\mu/\lambda}\) are skew Schur polynomials~\cite{Macdonald:1998}.
 Therefore, we can write the correlation function~(\ref{eq:correlation}) as 
 \begin{equation}
 \begin{split}
@@ -627,9 +635,8 @@ Therefore, we can write the correlation function~(\ref{eq:correlation}) as
 \end{equation}
 where we have used that \(\phi^\dagger \ket{\bm{0}} = \ket{(m)}\), and in the second line
 we sum over all partitions, since \(s_{\mu/(m)} = 0\), \(\forall \) \(\mu \not \supset (m)\).
-This expression also shows that the expression \(P_m\) can also be written as a tau function. 
+This expression also shows that the expression \(A_m\) can also be written as a tau function. 
 
-\subsubsection{Skew Schur polynomials expansion}
 More generally, let us consider the correlation functions 
 \begin{equation}
 \begin{split}
@@ -639,8 +646,8 @@ More generally, let us consider the correlation functions
   & = \sum_{\mu} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; .
 \end{split}
 \end{equation}
-where \(N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0\) and 
-we have also used that the expression for any Young diagram
+where \(N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0\) and
+we have also used that the skew Schur polynomial for any Young diagram
 \(\mu\) that does not contain \(\lambda_1\) and \(\lambda_2\)
 vanishes. Using the elementary property of skew Schur
 polynomials~\cite{Macdonald:1998}
@@ -657,43 +664,64 @@ and the Cauchy's identity, we have
 \end{split}
 \end{equation}
 Therefore, this correlation function is nothing but the off-shell
-norm~(\ref{eq:scalar}) times a finite sum over skew Schur functions.
-This expression shows that the existence of these tau functions is not
-a trivial fact of this model.
+norm~(\ref{eq:scalar}) times a finite sum over skew Schur
+functions. This expression illustrates that the existence of these tau
+functions is not a trivial aspect of this model.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Schur polynomials expansion of some correlation functions}
+Indeed, it is worth noting that other quantities, which are not tau
+functions, may have interesting Schur polynomial expansions. Consider
+the state calculated in~\cite{Bogoliubov2005}.
+\begin{equation}
+  \ket{\mathcal{Y}} =
+ \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j} = \sum_\mu \ket{\mu} \qquad \sum_j n_j = N\; .
+\end{equation}
+Then
+\begin{equation}
+ \bra{\mathcal{Y}} \prod_{j=1}^N B(\bm{x}) \ket{\nu} = 
+  \sum_{\lambda\subseteq (N,N,M)} s_{\lambda/\nu}(\bm{x})\; . 
+\end{equation}
+While it may not be a tau function, it has an interesting expansion as
+a sum of skew Schur polynomials.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{More tau functions}
-Based on the discussion we had so far, and on the general map between 
-the Phase model and the free fermions, one can understand the general form 
-of tau functions in this phase model context. 
+\subsection{General tau functions}
+Based on the discussion we have had so far, and on the general mapping
+between the Phase model and free fermions, one can grasp the general
+form of tau functions in the context of this phase model.
 
 Let us consider the vertex operator construction~\cite{Okounkov2001},
-see also~\cite{Alexandrov:2012tr, Wheeler:2010vmq}. Consider the
-vacuum \(\ket{\bm{0}}\), a ``Dirac sea'', defined by the conditions \(\psi_m\ket{\bm{0}}
-= \psi_n^\star\ket{\bm{0}} =0 \) for \(m<0\) and \(n \geq 0\), where 
-\(\psi_n\) are components of a holomorphic free fermionic field. 
-In this formalism, the partition states are given by 
+as also discussed in~\cite{Alexandrov:2012tr, Wheeler:2010vmq}. We
+consider the vacuum state \(\ket{\bm{0}}\), often referred to as a
+``Dirac sea'', defined by the conditions \(\psi_m\ket{\bm{0}} =
+\psi_n^\star\ket{\bm{0}} =0 \) for \(m<0\) and \(n \geq 0\), where
+\(\psi_n\) are components of a holomorphic free fermionic field. In
+this formalism, the partition states are given by
 \begin{equation}
   \ket{\mu} = \textrm{sign}(\sigma) \prod_{j=1}^d \psi_{a_j} \psi^\star_{-b_j}\ket{\bm{0}}\; ,
 \end{equation}
 where \(\textrm{sign}(\sigma) = \pm 1\) are defined in a such a way
-that the Shur coefficients of the vertex operators, defined below,
+that the Shur coefficients of the vertex operators (defined below)
 have positive coefficients.
 
-The pairs \((a_j|b_j)_{j=1}^d\) define the Frobenius notation of the
-partition \(\mu = (\mu_1, \mu_2, \dots, \mu_\ell)\), that is given by
-\(a_j = \mu_j - j\) and \(b_j = \mu'_j - j\), where \(d\) is the
-number of boxes in the diagonal of the Young diagram, and \(\mu'\) is
-its conjugate, or transpose.  From these definitions, we have the
-equivalence
+The pairs \(\{(a_j|b_j)\}_{j=1}^d\) define the Frobenius notation of
+the partition \(\mu = (\mu_1, \mu_2, \dots, \mu_\ell)\). In this
+notation, \(a_j\) is given by \(\mu_j - j\) and \(b_j\) is given by
+\(\mu'_j - j\), where \(d\) represents the number of boxes in the
+diagonal of the Young diagram, and \(\mu'\) is its conjugate, or
+transpose, diagram. From these definitions, we have the equivalence
 \begin{equation}
   \prod_{k\geq 1} (\phi_k^\dagger)^{n_k} \mapsto \textrm{sign}(\sigma) \prod_{j=1}^d
   \psi_{a_j} \psi^\star_{-b_j} \qquad |\mu| = \sum_k k n_k = \sum_j(a_j + b_j) + d\; .
 \end{equation}
 
-Finally, the \(\mathfrak{gl}(\infty)\) has generators given by the
+Finally, the \(\mathfrak{gl}(\infty)\) algebra has generators given by the
 bilinears \(X = \sum_{j, j \in \mathbb{Z}} x_{ij} \bm{\colon} \psi_i \psi_j^\star\bm{\colon}
 + c\), where \(c\in \mathbb{C}\), \(x_{ij} =
 0\) for large \(|j -i|\), say \(\geq M\), and the colons denote the normal ordering
@@ -704,13 +732,12 @@ bilinears \(X = \sum_{j, j \in \mathbb{Z}} x_{ij} \bm{\colon} \psi_i \psi_j^\sta
 The group \(GL(\infty)\) is defined through the \(\exp:
 \mathfrak{gl}(\infty) \to GL(\infty)\) as usual.
 
-Observe that these elements have finitely many non zero elements, and
-that these include diagonal terms \(\bm{\colon} \psi_i
-\psi_i^\star\bm{\colon}\), upper and lower triangular terms. These are
-equivalent to the Number operators \(\mathcal{N}\), annihilation
-\(\phi\) and creation \(\phi^\dagger\) , respectivelly.  The central
-charge is equivalent to the vaccum projection \(\pi =
-\ket{\bm{0}}\bra{\bm{0}}\). Therefore, the elements
+Note that these elements have finitely many non-zero entries,
+including diagonal terms, upper triangular terms, and lower triangular
+terms. These are equivalent to the number operators \(\mathcal{N}\),
+annihilation operators \(\phi\), and creation operators
+\(\phi^\dagger\), respectively. The central charge is equivalent to
+the vacuum projection \(\pi = \ket{\bm{0}}\bra{\bm{0}}\). Therefore,
 \begin{equation}
    GL(\infty) \ni G \mapsto
    \mathcal{G} = \exp \left[\sum_{i=1}^M \left( \sum_{a=1}^3
@@ -728,11 +755,10 @@ are related to the vertex operators
     \mathbb{C}(x) \mapsto \Gamma_+(x) & = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{n}\right) \; ,
   \end{split}
 \end{equation}
-where \(J_n \) is written, in terms of free fermions, as \(J_n =
+where \(J_n \) is written in terms of free fermions as \(J_n =
 \sum_{j\in \mathbb{Z}} \bm{\colon} \psi_j \psi_{j+n}^\ast
-\bm{\colon}\),
-These set of operators generate a Heisenberg subalgebra
-\(\widehat{\mathfrak{gl}}(1) \subset \mathfrak{gl}(\infty)\) given by
+\bm{\colon}\). These set of operators generate a Heisenberg subalgebra
+\(\widehat{\mathfrak{gl}}(1) \subset \mathfrak{gl}(\infty)\)
 \begin{equation}
   [J_m, J_n] = m \delta_{n+m,0}\; .
 \end{equation}
@@ -744,32 +770,60 @@ hierarchies, given by
 \end{equation}
 are mapped into objects of the form 
 \begin{equation}
+\label{eq:tau-corr}
 \begin{split}
-  \tau_0(\bm{x}, \bm{y}) & = \bra{\Psi(\bm{x})} \mathcal{G} \ket{\Psi(\bm{y})} \\
-  \\ & = \bra{\bm{0}} \prod_{i} \mathbb{C}(x_i)
+  \tau(\bm{x}, \bm{y}) & = \bra{\Psi(\bm{x})} \mathcal{G} \ket{\Psi(\bm{y})} \\
+  & = \bra{\bm{0}} \prod_{i} \mathbb{C}(x_i)
   \mathcal{G} \prod_j \mathbb{B}(y_j) \ket{\bm{0}}\; ,
 \end{split}
 \end{equation}
 where we necessarily have \(s=0\) in the phase model
 
-
-\subsubsection{Schur polynomials expansion of some correlation functions}
-In fact, it is worth noticing that other quantities, that are not tau
-functions, might have interesting Schur polynomials expansion.
-Consider the state calculated in~\cite{Bogoliubov2005}
-\begin{equation}
-  \ket{\mathcal{Y}} =
- \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j} = \sum_\mu \ket{\mu} \qquad \sum_j n_j = N\; .
-\end{equation}
-Then
-\begin{equation}
- \bra{\mathcal{Y}} \prod_{j=1}^N B(\bm{x}) \ket{\nu} = 
-  \sum_{\lambda\subseteq (N,N,M)} s_{\lambda/\nu}(\bm{x})\; . 
-\end{equation}
-And it is just a sum of skew Schur polynomials.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Hypergeometric tau functions}
+From these expressions, we can conclude that if we consider a diagonal
+group element \(\mathcal{G} = \exp \left( \sum_{i\geq 0} c_i
+\mathcal{N}_i\right)\), we have that~(\ref{eq:tau-corr}) becomes
+\begin{equation}
+\begin{split}
+  \tau(\bm{x}, \bm{y}) 
+  & = \bra{\bm{0}} \prod_{i} \mathbb{C}(x_i)
+  e^{\sum_i c_i \mathcal{N}_i} \prod_j \mathbb{B}(y_j) \ket{\bm{0}}\\
+  & = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu\nu} s_\mu(\bm{x}) s_\nu(\bm{x})
+\end{split}
+\end{equation}
+where
+\begin{equation}
+  c_{\mu \nu} = \bra{\mu} e^{\sum_i c_i \mathcal{N}_i}\ket{\nu} \; .
+\end{equation}
+From the representation of the phase model, we have that for the partition
+\(\mu = (1^{n_1} 2^{n_2} \dots M^{n_M})\), we have
+\begin{equation}
+  \mathcal{N}_i \ket{\mu} = n_i \ket{\mu} \qquad n_0 = N - \ell(\mu)\; .
+\end{equation}
+
+Consequently, we have
+\begin{equation}
+  c_{\mu \nu} \equiv \delta_{\mu\nu} c_{\mu}  =  \delta_{\mu\nu} \prod_i e^{c_i n_i}\; , 
+\end{equation}
+and we conclude that 
+\begin{equation}
+  \tau(\bm{x}, \bm{y}) 
+  = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu} s_\mu(\bm{x}) s_\mu(\bm{x})\; ,
+\end{equation}
+and we see that this tau function has diagonal coordinates
+\(c_\lambda\).  These tau functions are of the hypergeometric type,
+considered in~\cite{Orlov:2000, orlov:2001, Orlov:2001b, Orlov:2005}.
+
+
+
+
+
+
+
 
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 \section{Tau functions in the Q-bosons model}
