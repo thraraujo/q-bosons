@@ -683,7 +683,7 @@ the state calculated in~\cite{Bogoliubov2005}.
 Then
 \begin{equation}
  \bra{\mathcal{Y}} \prod_{j=1}^N B(\bm{x}) \ket{\nu} = 
-  \sum_{\lambda\subseteq (N,N,M)} s_{\lambda/\nu}(\bm{x})\; . 
+  \sum_{\lambda\subseteq [N,M]} s_{\lambda/\nu}(\bm{x})\; . 
 \end{equation}
 While it may not be a tau function, it has an interesting expansion as
 a sum of skew Schur polynomials.
@@ -814,8 +814,8 @@ and we conclude that
   \tau(\bm{x}, \bm{y}) 
   = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu} s_\mu(\bm{x}) s_\mu(\bm{x})\; ,
 \end{equation}
-and we see that this tau function has diagonal coordinates
-\(c_\lambda\).  These tau functions are of the hypergeometric type,
+We observe that this tau function has diagonal coordinates
+\(c_\lambda\). These tau functions belong to the hypergeometric type
 considered in~\cite{Orlov:2000, orlov:2001, Orlov:2001b, Orlov:2005}.
 
 
@@ -829,51 +829,54 @@ considered in~\cite{Orlov:2000, orlov:2001, Orlov:2001b, Orlov:2005}.
 \section{Tau functions in the Q-bosons model}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-We now move out attention to the case of the q-bosons. The 
-analysis is parallel to what we did before, but the  specific 
-details are very different. We start with the study of the norm of  
-two off-shell Bethe states. 
+We now shift our focus to the case of q-bosons. The analysis parallels
+what we did before, but the specific details are markedly
+different. We begin by examining the norm of two off-shell Bethe
+states.
 
-It has been shown~\cite{Tsilevich:2006} conf. \cite{Sulkowski:2008mx,
-  Wheeler:2010vmq}, that the Bethe states \(\ket{\Psi(\bm{x})}\) have 
-coordiante expansion given by
+It has been shown~\cite{Tsilevich:2006} (see
+also~\cite{Sulkowski:2008mx, Wheeler:2010vmq}) that the Bethe states
+\(\ket{\Psi(\bm{x})}\) have coordinate expansions
 \begin{equation}
-  \ket{\psi(\bm{x})} = \sum_{\mu \subset [N,M]} P_\mu(\bm{x}, Q) \ket{\mu}  \qquad 
-  \bra{\psi(\bm{x})} = \sum_{\mu \subset [N,M]} P_\mu(\bm{x}, Q) \bra{\mu}\; ,
+  \ket{\Psi(\bm{x})} = \sum_{\mu \subseteq [N,M]} P_\mu(\bm{x}, Q) \ket{\mu}_Q  \qquad 
+  \bra{\Psi(\bm{x})} = \sum_{\mu \subseteq [N,M]} P_\mu(\bm{x}, Q) \prescript{}{Q}{\bra{\mu}}\; ,
 \end{equation}
-where \(P_\lambda\) denote the Hall-Littlewood polynomials.  In this
-form, scalar product of two off-shell Bethe states in the q-boson
-model is easily calculated to be
+where \(P_\lambda\) denote Hall-Littlewood polynomials. In this form,
+the scalar product of two off-shell Bethe states in the q-boson model
+can be easily calculated to be
 \begin{equation}
 \label{eq:scalar-hl}
-\mathcal{I}_Q(N,M | \bm{x}, \bm{y}) = \bra{\bm{0}} \prod_{j=1}^N C(x_j, Q)
-\prod_{k=1}^N B(y_k, Q) \ket{\bm{0}}
-= \sum_{\lambda \subseteq
-  (N,N,M)} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
+\mathcal{I}_Q(N,M | \bm{x}, \bm{y}) = \bra{\bm{0}} \prod_{j=1}^N \mathbb{C}(x_j, Q)
+\prod_{k=1}^N \mathbb{B}(y_k, Q) \ket{\bm{0}}
+= \sum_{\lambda \subseteq [N,M]} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
 \end{equation}
 where we use that \(\bracket{\lambda}{\mu} = b_\lambda(Q)
-\delta_{\lambda, \mu}\).  It turns out that this expansion is also
-related to the Cauchy identity for Hall-Littlewood
-polynomials~\cite{Macdonald:1998}
+\delta_{\lambda, \mu}\) and the completeness relation
+\begin{equation}
+  \sum_{\lambda} \frac{1}{b_\lambda(Q)} \ket{\lambda}_Q {}_Q\bra{\lambda}  = \mathbb{1}\; .
+\end{equation}
+
+It turns out that this expansion is the Cauchy identity for
+Hall-Littlewood polynomials~\cite{Macdonald:1998}
 \begin{equation}
 \label{eq:cauchy_hl}
 \sum_{\lambda} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
 = \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k}\; ,
 \end{equation}
 
-Ourt goal is to consider some elementary properties of Hall-Littlewood polynomials 
-to understand aspects of this expansion. 
+Our goal is to explore some properties of Hall-Littlewood polynomials
+to gain insight into aspects of this expansion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Determinant formula}
-
-We would like to refine the expressions above.  Let us first consider
-a determinant expression for the scalar product~(\ref{eq:scalar-hl}).
-Let us continue with the case where \(M\) and \(N\) are very large,
-but finite. In this case, we write this scalar product as
+\subsection{Scalar product: determinant formula}
+We aim to refine the expressions above. First, we consider a
+determinant expression for the scalar product~(\ref{eq:scalar-hl}). We
+proceed with the scenario where \(M\) and \(N\) are very large but
+finite. In this case, we express this scalar product as
 \begin{equation}
+\label{eq:q-inner}
   \mathcal{I}_Q(N,M | \bm{x}, \bm{y})  
 = \prod_{j_1, j_2} (1-Q x_{j_1} y_{j_2}) \prod_{k_2, k_2}(1 - x_{k_1} y_{k_2})^{-1}\; .
 \end{equation}
@@ -882,29 +885,30 @@ Using the Cauchy's identity for Schur polynomials, that is
 \begin{equation}
   \sum_\lambda s_\lambda(\bm{x}) s_\lambda(\bm{y}) = \prod_{i,j} \frac{1}{1 - x_i y_j}\; ,
 \end{equation}
-and using the results we have derives in the Phase model, we have that 
+and from the results derived in the phase model, we find that
 \begin{equation}
   \prod_{i,j}\frac{1}{1 - x_i y_j}  \equiv \mathcal{I}(N,M|\bm{x}, \bm{y}) = 
   \frac{\det_{j,k}H(\bm{x},\bm{y})}{\Delta(\bm{x}) \Delta(\bm{y})}\; .
 \end{equation}
-where \(H\) is the matrix~(\ref{eq:h-matrix}). Therefore
+where \(H\) is the matrix~(\ref{eq:h-matrix}). Consequently, the scalar
+product~(\ref{eq:q-inner}) becomes
 \begin{equation}
   \mathcal{I}_Q(N,M | \bm{x}, \bm{y})  
 = \frac{\mathcal{I}(N,M|\bm{x}, \bm{y})}{\mathcal{I}(N,M|\bm{x}, Q\bm{y})}\; , 
 \end{equation}
-and we see that the scalar product of the q-boson model is the quotient of 
-scalar products of the phase model. Observe that in the case \(Q = 0\), we have 
-\(\mathcal{I}(N, M| \bm{x}, \bm{0}) = 1\), therefore
-\(\mathcal{I}_0(N,M | \bm{x}, \bm{y}) = \mathcal{I}(N,M | \bm{x}, \bm{y})\), 
-as expected. 
+and we see that it is the quotient of scalar products of the phase
+model. Hence, it is the quotient of two Toda tau functions.
+Observe that in the case \(Q = 0\), we have \(\mathcal{I}(N, M|
+\bm{x}, \bm{0}) = 1\), then \(\mathcal{I}_0(N,M | \bm{x}, \bm{y})
+= \mathcal{I}(N,M | \bm{x}, \bm{y})\), as expected.
 
-Moreover
+Additionally, we write
 \begin{equation}
   \mathcal{I}_Q(N,M | \bm{x}, \bm{y})  
   = \frac{\Delta(Q\bm{y})}{\Delta(\bm{y})}
   \frac{\det H(\bm{x}, \bm{y})}{\det H(\bm{x},Q \bm{y})} \; .
 \end{equation}
-Using that \(\Delta(Q\bm{y})/ \Delta(\bm{y}) = \prod_{j=1}^{N-1} Q^j\), we have 
+Using \(\Delta(Q\bm{y})/ \Delta(\bm{y}) = \prod_{j=1}^{N-1} Q^j\), we have 
 \begin{equation}
   \mathcal{I}_Q(N,M | \bm{x}, \bm{y}) =  Q^{N(N-1)/2}\;
   \frac{\det H(\bm{x}, \bm{y})}{\det H(\bm{x}, Q \bm{y})} \; .
@@ -920,14 +924,14 @@ where \(\mathcal{H} = H_{Q}^{-1} H\) is a matrix with components
   \mathcal{H}(z, w) = \sum_{k} \frac{(1 - z y_k)}{(1 - Q z y_k)} 
 \frac{(1 - Q x_k w)}{(1 - x_k w)}\; .
 \end{equation}
-Observe that from this expression, we cannot decompose this function
-as in~(\ref{eq:h-exp}) since the coefficients in this expansion are 
-are dependent on \(\bm{x}\) and \(\bm{y}\).
+Note that from this expression, we cannot decompose this function as
+in~(\ref{eq:h-exp}) since the coefficients in this expansion depend on
+\(\bm{x}\) and \(\bm{y}\).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Scalar product: Big Schur functions}
+\subsection{Scalar product: big Schur functions}
 
 Let us now recover the result originally derived
 in~\cite{Foda:2008hn} that shows how the scalar
@@ -954,8 +958,8 @@ argued~\cite{Foda:2008hn} in that if we interpret the big-Schur
 functions as Plücker coordinates, the expression
 \begin{equation}
   \mathcal{I}_Q(N,M | \bm{x}, \bm{y})
-  = \sum_{\lambda \subseteq (N,N,M)} \mathcal{S}_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y})
-  = \sum_{\lambda \subseteq (N,N,M)} \mathcal{S}_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x})\; ,
+  = \sum_{\lambda \subseteq [N,M]} \mathcal{S}_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y})
+  = \sum_{\lambda \subseteq [N,M]} \mathcal{S}_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x})\; ,
 \end{equation}
 is a restricted KP tau function with respect to both set of coordinates,
 that is \(\bm{x}\) and \(\bm{y}\).
