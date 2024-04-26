@@ -931,32 +931,32 @@ in~(\ref{eq:h-exp}) since the coefficients in this expansion depend on
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Scalar product: big Schur functions}
-
-Let us now recover the result originally derived
-in~\cite{Foda:2008hn} that shows how the scalar
-product~(\ref{eq:scalar-hl}) is a tau function of the KP hierarchy.
-From~\cite[see chap.3, sec. 4, eq. (4.7)]{Macdonald:1998}, we can
-expand the Cauchy identity~(\ref{eq:cauchy_hl}) as
+\subsection{Big Schur functions expansion}
+Now, let's revisit the result originally derived in~\cite{Foda:2008hn}
+which demonstrates that the scalar product~(\ref{eq:scalar-hl}) is a
+tau function of the KP hierarchy. According to~\cite[Chapter 3,
+  Section 4, Equation (4.7)]{Macdonald:1998}, we can expand the Cauchy
+identity~(\ref{eq:cauchy_hl}) as
 \begin{equation}
  \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k} = 
 \sum_{\lambda} \mathcal{S}_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y}) =
-\sum_{\lambda} \mathcal{S}_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x}) \; ,
+\sum_{\lambda} \mathcal{S}_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x}) \; .
 \end{equation}
-where the polynomials \(\mathcal{S}_\lambda\), the big-Schur
-functions, are given by a Jacobi-Trudi formula
+Here, the polynomials \(\mathcal{S}_\lambda\), known as the big-Schur
+functions, are defined by a Jacobi-Trudi formula:
 \begin{equation}
   \mathcal{S}_{\lambda} (\bm{y}, Q) = \det(q_{\lambda_i -i + j}(\bm{y}, Q))\; , 
 \end{equation}
-and the coefficients \(q_m\) can be obtained from the following expression
+and the coefficients \(q_m\) are obtained from the expression:
 \begin{equation}
  \sum_{m} q_m(\bm{y}, Q) z^m =
- \prod_{j} \frac{1-Q y_j z}{1 - y_j z}
+ \prod_{j} \frac{1-Q y_j z}{1 - y_j z}\; .
 \end{equation}
 where \(z\) is a formal variable. It has been
 argued~\cite{Foda:2008hn} in that if we interpret the big-Schur
 functions as Plücker coordinates, the expression
 \begin{equation}
+\label{eq:big-expansion}
   \mathcal{I}_Q(N,M | \bm{x}, \bm{y})
   = \sum_{\lambda \subseteq [N,M]} \mathcal{S}_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y})
   = \sum_{\lambda \subseteq [N,M]} \mathcal{S}_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x})\; ,
@@ -964,118 +964,132 @@ functions as Plücker coordinates, the expression
 is a restricted KP tau function with respect to both set of coordinates,
 that is \(\bm{x}\) and \(\bm{y}\).
 
+Based on these findings, we conclude that the inner product can be
+expressed as a quotient of two Toda tau functions or as a KP tau
+function with coefficients given by the big Schur
+polynomials. However, further exploration of these results is
+warranted.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Kostka-Foulkes expansion}
-Let us expand these polynomials in a Schur polynomials basis, that is
+In a Schur polynomial basis, we write
 \begin{equation}
 P_\lambda(\bm{x}, Q) = \sum_{\mu} K^{-1}_{\lambda \mu}(Q) s_\lambda(\bm{x})\; , 
 \end{equation}
 where \(K^{-1}_{\mu\nu}(Q) \in \mathbb{Z}[Q]\) are inverse
 Kostka-Foulkes polynomials~\cite{Macdonald:1998, Wheeler:2018}.
 
-Expanding now the big-Schur functions as
+If we now insert this expansion in the inner product, we have 
+\begin{equation}
+    \sum_\lambda b_\lambda(Q) P_\lambda(\bm{x}, Q) P_\lambda(\bm{y}, Q) = 
+    \sum_{\mu,\nu} \left(\sum_\lambda K_{\mu \lambda}^{-1 \; T} b_\lambda(Q)  K_{\lambda \nu}^{-1} \right)
+    s_{\mu}(\bm{x}) s_{\nu}(\bm{y}) 
+\end{equation}
+and we have the coefficients 
+\begin{equation}
+\label{eq:c-expan}
+ \tilde{c}_{\mu\nu}(Q) = \sum_\lambda K_{\mu \lambda}^{-1 \; T} b_\lambda(Q)  K_{\lambda \nu}^{-1} \; ,
+\end{equation}
+for the double expansion of the inner product in terms of Schur
+polynomials. Based on our discussion so far, we know that these
+coefficients are not Plücker coordinates of the Toda hierarchy.
+
+But we can say something interesting about these coefficients. Let us
+now expand the big-Schur functions as
 \begin{equation}
 \label{eq:kf-exp}
-  \mathcal{S}_\lambda(\bm{x}, Q) = \sum_{\mu} c_{\lambda\mu}(Q) s_\mu(\bm{x})\; ,
+  \mathcal{S}_\mu(\bm{x}, Q) = \sum_{\lambda} \mathcal{C}^{\mu}_\lambda(Q) s_\lambda(\bm{x})\; ,
 \end{equation}
-we can fix the coefficients \(c_{\lambda\mu}\) in terms of Kostka-Foulkes
-polynomials using the orthogonality relations of these polynomials~\cite{Macdonald:1998}. 
-In particular, there is an inner product in the ring of symmetric functions such that
+we can fix the coefficients \(\mathcal{C}_\lambda^\mu(Q)\) in terms of
+Kostka-Foulkes polynomials using the orthogonality relations of these
+polynomials~\cite{Macdonald:1998}. In particular, there is an inner
+product in the ring of symmetric functions such that
 \begin{equation}
-  \frac{1}{b_\mu}\langle P_\mu(\bm{x}, Q), P_\mu(\bm{x}, Q)\rangle = \langle
-  \mathcal{S}_\mu(\bm{x}, Q), s_\mu(\bm{x})\rangle = \delta_{\mu\nu}\; .
+  b_\mu \langle P_\mu(\bm{x}, Q), P_\nu(\bm{x}, Q)\rangle = \langle
+  \mathcal{S}_\mu(\bm{x}, Q), s_\nu(\bm{x})\rangle = \delta_{\mu\nu}\; .
 \end{equation}
 Therefore,
 \begin{equation}
   \begin{split}
-\delta_{\mu\nu} & = \sum_\lambda c_{\mu\lambda}  \langle s_\lambda(\bm{x}), s_\mu(\bm{x})\rangle\\
-& = \sum_\lambda \sum_{\pi_1, \pi_2} c_{\mu\lambda}  K_{\lambda \pi_1} K_{\mu \pi_2}
-\langle P_{\pi_1}(\bm{x}, Q), P_{\pi_2}(\bm{x}, Q)\rangle \\ 
-& = \sum_\lambda \sum_{\pi} c_{\mu\lambda} b_{\mu}^{-1}  K_{\lambda \pi} K_{\mu \pi}\; ,
+\delta_{\mu\nu} & = \sum_\lambda \mathcal{C}_\lambda^\mu \langle s_\lambda(\bm{x}), s_\nu(\bm{x})\rangle
+ = \sum_\lambda \sum_{\pi, \sigma} \mathcal{C}_\lambda^\mu K_{\lambda \pi} K_{\nu \sigma}
+\langle P_{\pi}(\bm{x}, Q), P_{\sigma}(\bm{x}, Q)\rangle \\ 
+& = \sum_\lambda \mathcal{C}_\lambda^\mu \sum_{\sigma}K_{\lambda \sigma} b_{\sigma}^{-1} K_{\nu \sigma}\; ,
   \end{split}
 \end{equation}
 and we conclude that 
 \begin{equation}
 \label{eq:indices}
-c_{\mu \nu} = \sum_\pi K_{\mu\pi}^{-1} b_\mu (K_{\nu\pi}^{-1})^T\; .
+(\mathcal{C}^{-1})^\lambda_\nu = \sum_\sigma K_{\lambda\sigma} b^{-1}_\sigma (K_{\sigma\nu})^T\; ,
 \end{equation}
-\marginpar[left]{\tiny Fix these \\ indices later.}
+and consistency with~(\ref{eq:c-expan}) implies that
+\(\mathcal{C}^\lambda_\nu \equiv \tilde{c}_{\lambda\nu}\).
 
 Hence, we conclude that 
 \begin{equation}
-\sum_{\mu} S_{\mu}(\bm{x},Q) s_{\nu}(\bm{y}) = 
-\sum_{\mu , \nu} c_{\mu\nu} s_{\mu}(\bm{x}) s_{\nu}(\bm{y}) 
+S_{\mu}(\bm{t},Q) = \sum_{\nu} \tilde{c}_{\mu\nu}(Q) s_{\mu}(\bm{t})\; ,
 \end{equation}
-and everything boils down to the analysis of the
-indices~(\ref{eq:indices}). In has been shown
-in~\cite{Necoechea:2019wbg} that the big Schur functions themselves
-are KP-tau functions\footnote{ We give a simple argument for this fact
-in the remark 2 below.} therefore, the coefficients \((c_\lambda)_\mu
-\equiv c_{\lambda\mu}\) must satisfy Plücker relations for the KP
-hierarchy.
+where we have written the big Schur polynomial in terms of the Miwa
+coordinates \(\bm{t}\).
 
 \begin{remark}
- This expression show somethign interesting. We can formulate this
-problem in terms of partitions defined in the phase
-model. Equivalently, we can use the usual vertex operator
-construction, and not the q-deformed version of Jing~\emph{\cite{Jing1991,
-  Jing1995}}, that is much harder to deal with.
+This expression also reveals something interesting. We can formulate
+this problem in terms of partitions defined in the phase
+model. Alternatively, we can utilize the conventional vertex operator
+construction rather than the q-deformed version proposed by
+Jing~\cite{Jing1991, Jing1995}, which is much more challenging to
+handle.
 \end{remark}
 
-If these coefficients satisfy the Toda hierarchy Plücker relations, then 
-one can find a \(Q\)-dependent group element \(G_Q\in GL(\infty)\) such that 
-\begin{equation}
-  c_{\mu\nu} = \bra{\mu} G_Q \ket{\nu}\; ,
-\end{equation}
-where \(\ket{\mu}\) and \(\ket{\nu}\) are phase model
-states. Unfortunatelly, we could not find any good reason to explore
-this expansion in a consistent way. In what follows, we try to explore
-alternative expansions that give a double Schur expansion.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Scalar product: Supersymmetric Schur polynomials}
+\subsection{Supersymmetric Schur polynomials expansion}
+With this result, we now argue that although~(\ref{eq:scalar-hl}) is
+not a Toda tau function with respect to the coordinates \(\{\bm{t};
+\bm{t}'\}\), we can define a new set of coordinates
+\(\{\bm{t};\bm{T}\}\) that render the inner product a trivial Toda tau
+function.
 
-With this result, we now argue that~(\ref{eq:scalar-hl}) is also a tau
-function of the Toda hierarchy in disguise. Let us decompose
+Let us first decompose
 \begin{equation}
  \sum_{m} q_m(\bm{y}, Q) z^m =
  \prod_j (1 + y_j (-Q z)) \prod_k (1 - y_k z)^{-1} = 
  \sum_{j, k} e_j(\bm{y}) h_k(\bm{y}) (- Q)^j z^{j+k}\; .
 \end{equation}
-And reorganizing this sum, we conclude that 
+Reorganizing this sum, we conclude that
 \begin{equation}
   q_m(\bm{y}, Q)  = \sum_{j=0}^m e_j(\bm{y}) h_{m-j}(\bm{y}) (- Q)^j =
  \sum_{j=0}^m e_j(-Q\bm{y}) h_{m-j}(\bm{y}) \; ,
 \end{equation}
-where in the last equality we have used the homogeneity of the elementary symmetric polynomials,
-and \( -Q\bm{y} = (-Qy_1, -Qy_2, \dots)\). 
+where in the last equality we have used the homogeneity of the
+elementary symmetric polynomials, and \( Q\bm{y} \equiv (Qy_1, Qy_2,
+\dots)\).
 
-It is easier to consider the following expansions 
+It is easy to see that
 \begin{subequations}
 \begin{equation}
   \begin{split}
-    \prod_{j=1}^N (1 - (Q y_i)z) & = \prod_{j=1}^N e^{ \ln  (1 - (Q y_i)z)} = 
+    \prod_{j=1}^N (1 - (Q y_j)z) & = \prod_{j=1}^N e^{ \ln  (1 - (Q y_j)z)} = 
     \prod_{j=1}^N \exp \left( - \sum_{n>0} \frac{Q^n y^n_j}{n} z^n \right) \\ 
     & = \exp \left( - \sum_{n>0} \sum_{j=1}^N \frac{Q^n y^n_j}{n} z^n \right)  =
     \exp \left( - \sum_{n>0} t^{(Q)}_n z^n \right)  
   \end{split}
 \end{equation}
-where \(t^{(Q)}_n = \frac{Q^n}{n} \sum_j y_j^n = Q^n t'_n\), and 
+where \(t^{(Q)}_n = \frac{Q^n}{n} \sum_j y_j^n = Q^n t'_n\). Additionally
 \begin{equation}
-    \prod_{j=1}^N \frac{1}{(1 - y_iz)} = \prod_{j=1}^N e^{- \ln  (1 - y_iz)} = 
+    \prod_{j=1}^N \frac{1}{(1 - y_jz)} = \prod_{j=1}^N e^{- \ln  (1 - y_jz)} = 
     \prod_{j=1}^N \exp \left( \sum_{n>0} \frac{y_j}{n} z^n \right)=
     \exp \left(\sum_{n>0} t_n z^n \right) \; . 
 \end{equation}
 \end{subequations}
 
-Therefore 
+Consequently
 \begin{equation}
  \sum_{m} q_m(\bm{y}, Q) z^m =
- \prod_j \frac{1 + y_j (-Q z)}{1 - y_k z}
+ \prod_j \frac{1 - Q y_j z}{1 - y_k z}
  = \exp \left( \sum_{n\geq 1} (t'_n - t_n^{(Q)})z^n \right)
  \equiv \exp \left( \sum_{n\geq 1} T_n z^n \right)\; ,
 \end{equation}
@@ -1086,117 +1100,130 @@ are homogeneous polynomials with respect the Miwa coordinates
   \mathcal{S}_\lambda(\bm{t}', Q) = \det \left(h_{\lambda_i - i +j}(\bm{T})\right) = s_\lambda(\bm{T})\; .
 \end{equation}
 All in all, we conclude that the big Schur functions
-\(S_\lambda(\bm{t}', Q)\) are ordinary Schur functions with respect
+\(S_\lambda(\bm{t}', Q)\) are ordinary Schur functions with respect to
 the coordinates \(\bm{T}\).
 
-In fact, we can do even better. Supersymmetric (or Hook) Schur
-functions~\cite{Berele:1983}, see also see~\cite{Macdonald:1998, Moens:2003},
-\(s_\lambda(\bm{\alpha}/\bm{\beta})\) are defined as ordinary schur
-functions evaluated at Miwa coodinates of the form
+Moreover, a more refined approach is also possible. Supersymmetric (or
+Hook) Schur functions~\cite{Berele:1983}, as discussed in works such
+as~\cite{Macdonald:1998, Moens:2003}, denoted by
+\(s_\lambda(\bm{\alpha}/\bm{\beta})\), are defined as ordinary Schur
+functions evaluated at Miwa coordinates of the form
 \begin{equation}
   T_n = \frac{1}{n} \left( \sum_{i=1}^{\dim(\alpha)} \alpha_i^n
-       - \sum_{i=1}^{\dim(\beta)} (-\beta_i)^n\right)\; ,
+       - \sum_{i=1}^{\dim(\beta)} (-\beta_i)^n\right)\; .
 \end{equation}
-and comparing with the results above, we can see that the big Schur functions
-\(S_\lambda(\bm{t}', Q)\)\; , is the supersymmetric Schur functions for \(\bm{\alpha} = \bm{y}\) 
-and \(\bm{\beta} = - Q \bm{y}\), that is 
+Comparing this expression with the results above, we can see that the
+big Schur functions \(S_\lambda(\bm{t}', Q)\) correspond to the
+supersymmetric Schur functions for \(\bm{\alpha} = \bm{y}\) and
+\(\bm{\beta} = - Q \bm{y}\), which is
 \begin{equation}
   S_\lambda(\bm{t}', Q) = s_\lambda[\bm{y}/(- Q\bm{y})]\; .
 \end{equation}
 
-Putting these facts together, we immediately conclude that since 
+Putting these facts together, we immediately conclude that
 \begin{equation}
-  \sum_\lambda s_\lambda(\bm{T}) s_\lambda (\bm{t}) \; ,
+\lim_{M,N\to \infty}\mathcal{I}_Q(N,M|\bm{x}, \bm{y}) = 
+  \sum_\lambda s_\lambda(\bm{T}) s_\lambda (\bm{t})
 \end{equation}
-is a Toda hierarchy tau function, we obviously have that 
+is a Toda hierarchy tau function with respect to
+\(\{\bm{t};\bm{T}\}\). As a result, we obviously have that
 \begin{equation}
-  S_Q(N,M| \bm{x}, \bm{y}) \equiv S_Q(N,M| \bm{t}, \bm{T})
-  = \sum_{\lambda \subseteq [N,N,M]} s_\lambda(\bm{T}) s_\lambda(\bm{t})\; , 
+  \mathcal{I}_Q(N,M| \bm{x}, \bm{y}) \equiv \mathcal{I}_Q(N,M| \bm{t}, \bm{T})
+  = \sum_{\lambda \subseteq [N,M]} s_\lambda(\bm{T}) s_\lambda(\bm{t})
 \end{equation}
 is also a restricted tau function of the Toda hierarchy with respect
 to \(\bm{t}\) and \(\bm{T}\).
 
-Now we can consider an expansion that differs from
-from~(\ref{eq:kf-exp}). Let us consider the supersymmetric Schur
-polynomials in terms of ordinary Schur functions as~\cite[Sec. I.5,
-  exerc. 23]{Macdonald:1998}
+Let us also express the supersymmetric Schur polynomials in terms of
+ordinary Schur functions, as shown in~\cite[Sec. I.5, exerc. 23]{Macdonald:1998}:
 \begin{equation}
   s_{\lambda}(\bm{x}/\bm{y}) = \sum_\mu s_{(\lambda/\mu)'}(\bm{y}) s_\mu(\bm{x})\; ,
 \end{equation}
-where the prime denotes the conjugate diagram. Then
+where the prime denotes the conjugate diagram. Compare this expansion
+with~(\ref{eq:kf-exp}). Then
 \begin{equation}
   \label{eq:tau-hl}
-  \sum_{\lambda } s_\lambda(\bm{y}/ (- Q\bm{y})) s_\lambda(\bm{x}) =
-  \sum_{\lambda,\mu } s_{(\lambda/\mu)'}(- Q\bm{y}) s_\lambda(\bm{x}) s_\mu(\bm{y})\; .
+  \sum_{\lambda } s_\lambda(\bm{T}) s_\lambda(\bm{t}) =
+  \sum_{\lambda,\mu } s_{(\lambda/\mu)'}(- Q\bm{y}) s_\lambda(\bm{t}) s_\mu(\bm{t}')\; .
 \end{equation}
 
 From this expression we conclude (and speculate) the following. 
 
 \begin{remark}
-Since the skew Schur polynomials have determinant expressions,
-therefore we have that the \(\bm{y}\)-dependent coefficients \(c_{\mu
-  \lambda} = s_{(\lambda/\mu)'}(-Q\bm{y})\) have Jacobi-Trudi
-expressions. It is tempting to think of these objects as
-\(\bm{y}\)-dependent Pl\"ucker coordinates. In this sense, we would have a curve in 
-the indinite Grassmannian, instead a point.
+Since the skew Schur polynomials have determinant expressions, we can
+deduce that the \(\bm{y}\)-dependent coefficients \(c_{\mu \lambda} =
+s_{(\lambda/\mu)'}(-Q\bm{y})\) have Jacobi-Trudi expressions. It is
+tempting to regard these objects as \(\bm{y}\)-dependent Plücker
+coordinates. In this sense, we would have a curve in the infinite
+Grassmannian instead of a point.
 \end{remark}
 
 \begin{remark}
-Remeber that one of the easiest nontrivial solutions of the KP
-hierarchies are the Schur functions
-themselves~\emph{\cite{Zabrodin2018}}. We have just seen that the
-big-Schur polynomials can be written as supersymmetric Shur
-polynomials, and these are nothing but ordinary Schur polynomials in a
-particular choice of Miwa coordiantes. Then, we also see that 
-the big Schur polynomials are also KP tau functions. This direct conclusion 
-is an alternative proof of this fact, see~\emph{\cite{Necoechea:2019wbg}}.
+It is worth noting that one of the simplest nontrivial solutions of
+the KP hierarchies are the Schur functions
+themselves~\emph{\cite{Zabrodin2018}}. As we have just demonstrated, the big
+Schur polynomials can be expressed as supersymmetric Schur
+polynomials, which are essentially ordinary Schur polynomials in a
+specific choice of Miwa coordinates. Therefore, we conclude that the
+big Schur polynomials are also KP tau functions. This direct
+conclusion serves as an alternative proof of this fact, originally derived in
+in~\emph{\cite{Necoechea:2019wbg}} using the KP bilinear identity.
 \end{remark}
 
-Putting these facts together, we have that the left-hand side
-of~(\ref{eq:tau-hl}) is a tau function with respect the coordinates
-\(\bm{T}\) and \(\bm{t}\). Furthermore, from the Vertex operator
-formalism, we write the Schur polynomials as
+Combining these observations, we conclude that the left-hand side of
+equation (\ref{eq:tau-hl}) serves as a tau function with respect to
+the coordinates \(\{\bm{t}; \bm{T}\}\). Additionally, utilizing the
+vertex operator formalism, we can express the Schur polynomials as
 \begin{equation}
-  s_{\lambda}(\bm{x}) = \bra{\lambda} e^{J_-}\ket{\bm{0}}\qquad
-  s_{\mu}(\bm{y}) = \bra{\bm{0}} e^{J_+}\ket{\mu}\; ,
+  s_{\lambda}(\bm{t}') = \bra{\lambda} e^{J_-(\bm{t}')}\ket{\bm{0}}\qquad
+  s_{\mu}(\bm{t}) = \bra{\bm{0}} e^{J_+(\bm{t})}\ket{\mu}\; ,
 \end{equation}
 we have
 \begin{equation}
-  \sum_{\lambda,\mu } s_\mu(\bm{y})c_{\mu\lambda}(Q,\bm{y}) s_\lambda(\bm{x}) = 
-  \sum_{\lambda,\mu } \bra{\bm{0}} e^{J_+}\ket{\mu} c_{\mu\lambda}(Q,\bm{y})
-  \bra{\lambda} e^{J_-}\ket{\bm{0}} \; ,
+  \sum_{\lambda,\mu } c_{\mu\lambda}(Q,\bm{y}) s_\mu(\bm{t}') s_\lambda(\bm{t}) = 
+  \sum_{\lambda,\mu } \bra{\bm{0}} e^{J_+(\bm{t})}\ket{\mu} c_{\mu\lambda}(Q,\bm{y})
+  \bra{\lambda} e^{J_-(\bm{t}')}\ket{\bm{0}} \; .
 \end{equation}
-therefore 
+It is important to emphasize once again that this expression does not
+constitute a tau function with respect to \(\{\bm{t},
+\bm{t}'\}\). Despite this crucial distinction, we proceed under the
+assumption that the coefficients can be expressed as
 \begin{equation}
   c_{\mu\lambda}(Q, \bm{y}) = \bra{\mu} G_Q(\bm{y}) \ket{\lambda}\; ,
 \end{equation}
-where \(G_Q(\bm{y}) \in GL(\infty)\). We can find the expression for
-this group element as follows. 
+where \(G_Q(\bm{y}) \in GL(\infty)\). Hence
+\begin{equation}
+  \lim_{N,M\to\infty} \mathcal{I}_Q(N, M| \bm{t}, \bm{t}'(\bm{y})) = 
+  \bra{\bm{0}} e^{J_+(\bm{t})} G_Q(\bm{y}) e^{J_-(\bm{t}')}\ket{\bm{0}}\; .
+\end{equation}
+where \(t'_n = \frac{1}{n}\sum_i y_i^n\). 
 
-Remember that \(T_m = t'_m - Q^m t'_m\), therefore we write
+To derive the expression for this group element, recall that \(T_m =
+t'_m - Q^m t'_m\). With this in mind, we can express the scalar
+product as follows:
 \begin{subequations}
 \begin{equation}
   \bra{\bm{0}} e^{J_+(\bm{t})} e^{J_-(\bm{T})} \ket{\bm{0}} = 
 \bra{\bm{0}} e^{J_+(\bm{t})} e^{J_-(\bm{t}')  - J_-(\bm{t}^{(Q)})} \ket{\bm{0}} \; .
 \end{equation}
-From the Heisenberg algebra, we conclude that \([J_-(\bm{t}),
+From the Heisenberg algebra, we deduce that \([J_-(\bm{t}),
   J_-(\bm{t}')] = 0\), therefore
 \begin{equation}
   \bra{\bm{0}} e^{J_+(\bm{t})} e^{J_-(\bm{T})} \ket{\bm{0}} = 
-\bra{\bm{0}} e^{J_+(\bm{t})} e^{-J_-(\bm{t}^{(Q)})} e^{J_-(\bm{t}')}  \ket{\bm{0}} \; ,
+\bra{\bm{0}} e^{J_+(\bm{t})} e^{-J_-(\bm{t}^{(Q)})} e^{J_-(\bm{t}')}  \ket{\bm{0}} \; .
 \end{equation}
 \end{subequations}
-from where we finally conclude that 
+We finally conclude that 
 \begin{equation}
   G_{Q}(\bm{y}) = \exp \left(-J_-(\bm{t}^{(Q)})\right) \qquad
   t^{(Q)}_n = \frac{Q^n}{n}\sum_j y_j^n\; . 
 \end{equation}
 
-In general, the expectation values with coordinate dependent group
-elements \(G_{Q}(\bm{y})\) are not Toda hierarchy tau functions. But
-in the above example, the coordinates combine among themselves and
-generate a tau function with respect the coordiantes \(\bm{T}\) and
-\(\bm{t}\).
+Generally, the expectation values involving coordinate-dependent group
+elements \(G_{Q}(\bm{y})\) do not form Toda hierarchy tau
+functions. However, in the example above, the coordinates combine in
+such a way that they generate a tau function with respect to the
+coordinates \(\bm{T}\) and \(\bm{t}\).
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1205,35 +1232,35 @@ generate a tau function with respect the coordiantes \(\bm{T}\) and
 \section{Conclusions and Perspectives}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-Let us now consider the fermionic construction of this tau function. We write 
-the limit \(N,M\to \infty\) of the scalar product
-\begin{subequations}
-\begin{equation}
-  S_Q(\bm{T}, \bm{t}') = \sum_{\mu} s_\mu(\bm{T}) s_\mu(\bm{t}')
-\end{equation}
-that is quite quite trivial from the viewpoint of the free fermion construction, 
-\begin{equation}
-  S_Q(\bm{T}, \bm{t}') = \bra{\bm{0}} e^{\bm{J}_+(\bm{T})} e^{\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
-\end{equation}
-
-Moreover, we also know that
-\begin{equation}
-  S_Q(\bm{t}, \bm{t}') = \sum_{\mu\nu} c_{\mu\nu} s_\mu(\bm{t}) s_\mu(\bm{t}')
-\end{equation}
-where \(n t = \sum_j x^n_j\) and \(n t' = \sum_j y^n_j\) are Miwa coordinates, then  
-\begin{equation}
-  S_Q(\bm{t}, \bm{t}') = \bra{\bm{0}} e^{J_+(\bm{t})} G_Q  e^{J_-(\bm{t}')} \ket{\bm{0}}
-\end{equation}
-and \(G_Q \in GL(\infty)\) that depends on \(Q\). We could also think of \(G_Q\)
-as a twist
-\(G_Q = e^{Q H} G e^{-Q H}\), with the action of \(H\in \mathfrak{gl}(\infty)\)
-on ordinary fermions generating the Q-fermions. 
-\marginpar[left]{\tiny Investigate this\\ twists}
-\end{subequations}
-
-It seems that we have some different representations for this tau function, 
-and it is worth investigating what is happening here. That is what we want 
-to do now. 
+%Let us now consider the fermionic construction of this tau function. We write 
+%the limit \(N,M\to \infty\) of the scalar product
+%\begin{subequations}
+%\begin{equation}
+%  S_Q(\bm{T}, \bm{t}') = \sum_{\mu} s_\mu(\bm{T}) s_\mu(\bm{t}')
+%\end{equation}
+%that is quite quite trivial from the viewpoint of the free fermion construction, 
+%\begin{equation}
+%  S_Q(\bm{T}, \bm{t}') = \bra{\bm{0}} e^{\bm{J}_+(\bm{T})} e^{\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
+%\end{equation}
+%
+%Moreover, we also know that
+%\begin{equation}
+%  S_Q(\bm{t}, \bm{t}') = \sum_{\mu\nu} c_{\mu\nu} s_\mu(\bm{t}) s_\mu(\bm{t}')
+%\end{equation}
+%where \(n t = \sum_j x^n_j\) and \(n t' = \sum_j y^n_j\) are Miwa coordinates, then  
+%\begin{equation}
+%  S_Q(\bm{t}, \bm{t}') = \bra{\bm{0}} e^{J_+(\bm{t})} G_Q  e^{J_-(\bm{t}')} \ket{\bm{0}}
+%\end{equation}
+%and \(G_Q \in GL(\infty)\) that depends on \(Q\). We could also think of \(G_Q\)
+%as a twist
+%\(G_Q = e^{Q H} G e^{-Q H}\), with the action of \(H\in \mathfrak{gl}(\infty)\)
+%on ordinary fermions generating the Q-fermions. 
+%\marginpar[left]{\tiny Investigate this\\ twists}
+%\end{subequations}
+%
+%It seems that we have some different representations for this tau function, 
+%and it is worth investigating what is happening here. That is what we want 
+%to do now. 
 
 \printbibliography
 
