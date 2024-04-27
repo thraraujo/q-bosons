@@ -1,7 +1,7 @@
 \documentclass[a4paper,11pt]{amsart}
 
-\usepackage{/home/thiago/.config/dot-files/latex/globaldef}
-\input{/home/thiago/.config/dot-files/latex/definitions.tex}
+\usepackage{globaldef}
+\input{definitions.tex}
 
 \bibliography{bib-database.bib}
 
@@ -19,7 +19,7 @@
 \address{\noindent 
 Instituto de Física Teórica, UNESP-Universidade Estadual Paulista,
 R. Dr. Bento T. Ferraz 271, Bl. II, Sao Paulo 01140-070, SP, Brazil\\
-\&
+\&\\
 Instituto de Física, Universidade de S\~ao Paulo,
 Rua do Matão Travessa 1371, 05508-090 São Paulo, SP. Brazil
 }
@@ -32,16 +32,88 @@ its relations with integrable hierarchies.
 \end{abstract}
 
 %\date{\today}
-\keywords{Integrability, Bethe, Schur}
+%\keywords{Integrability, Bethe, Schur}
 \subjclass[2020]{82B20, 82B23}
 \maketitle
 
 \setcounter{tocdepth}{2}
 \tableofcontents
 
+
+
+
+
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 \section{Introduction}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
+
+The exploration of connections between quantum and classical
+exactly solvable models constitutes a significant endeavor aimed at
+elucidating the overarching structure of integrable systems.  This
+research avenue has yielded fruitful insights, as evidenced
+by~\cite{Its:1992bj, Foda:2009zz, Alexandrov:2011aa, Araujo:2021ghu},
+to name a few.  The present work is situated within this research field.
+
+Here, we examine the emergence of classical integrable structures
+within correlation functions of the q-boson system. This quantum
+integrable system characterizes strongly correlated bosons confined to
+a one-dimensional chain~\cite{Bogoliubov:1992, Bogoliubov:1997soj,
+  Bogoliubov2005}. Notably, this model bears close relation to the AL
+(Ablowitz-Ladik) model, which is an integrable discretization of the
+nonlinear Schrödinger equation.
+
+In~\cite{Bogoliubov2005}, the author demonstrates that the \(q = 0\)
+limit of the q-boson, known as the \emph{phase model}, is associated
+with the enumeration of plane partitions. This connection allows for a
+Schur polynomials expansion for the Bethe states. Subsequently, this
+result was extended to \(q > 0\) in~\cite{Tsilevich:2006}, where the
+Bethe states are expressed in terms of Hall-Littlewood polynomials.
+
+Foda and Wheeler~\cite{Foda:2008hn, Wheeler:2010vmq} utilize a rich
+set of dualities between the ring of symmetric functions and
+\(q\)-deformations of the Heisenberg algebra~\cite{Jing1991, Jing1995}
+to explore the combinatorial properties of this spin chain. As a
+consequence, it has been shown that the scalar product of off-shell
+Bethe states are restricted tau functions of the KP
+(Kadomtsev-Petviashvili) hierarchy.
+
+This underlying combinatorial structure underscores the significance
+of this model in various physical phenomena, notably in the context of
+crystal melting and string theory~\cite{Okounkov:2003sp,
+  Saulina:2004da}. The application of the q-boson model in these
+contexts has been demonstrated in~\cite{Sulkowski:2008mx}, with the
+string data recoverable as the chain length approaches infinity.
+
+This paper builds upon these developments and aims to extend some of
+these results. Firstly, we delve deeper into the connection between
+the scalar product and tau functions, exploring them in a wider
+context, particularly in the case of the Toda
+hierarchy~\cite{Takasaki:2018wsv}. It is important to note that both
+the AL and the KP hierarchies are reductions of the Toda
+hierarchy. This paper takes steps towards resolving this problem,
+which is instrumental in understanding the finer details of these
+relationships.
+
+Additionally, we explore other correlation functions within this model
+and examine how they fit into the classical integrable context. It is
+noteworthy that even when the object is not a tau function itself, it
+may have an interesting expansion in terms of different classes of
+Schur polynomials, highlighting some of its combinatorial
+properties. We also investigate some of these expansions in this
+paper.
+
+In Section 2, we provide a review of the phase model and
+q-bosons. This section serves to establish notation and emphasize the
+key aspects relevant to our analysis.  Section 3 delves into the
+analysis of the Phase Model and its connections with the KP and Toda
+integrable hierarchies. We explore the general expansion of a phase
+model correlation function that yields a Toda system solution.  In
+Section 4, we shift our focus to the q-bosons. We discuss a
+determinantal formula for the scalar product of two off-shell Bethe
+states and its expansion in terms of big, supersymmetric Schur
+functions, as well as in terms of Kostka-Foulkes polynomials.
+Finally, in Section 5, we conclude with an overview of open problems.
+
 
 
 
@@ -1231,6 +1303,8 @@ coordinates \(\bm{T}\) and \(\bm{t}\).
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 \section{Conclusions and Perspectives}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
+
+% Ablowitz-Ladik and Toda hierarchy - reduction -- understands this problem 
 
 %Let us now consider the fermionic construction of this tau function. We write 
 %the limit \(N,M\to \infty\) of the scalar product
