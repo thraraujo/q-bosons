@@ -27,8 +27,13 @@ Rua do Matão Travessa 1371, 05508-090 São Paulo, SP. Brazil
 \email{\texttt{\href{tr.araujo@unesp.br}{tr.araujo@unesp.br}}}
 
 \begin{abstract}
-In this work, we study aspects of the \(Q\)-boson model, and 
-its relations with integrable hierarchies. 
+This work delves into the complex interplay between the q-boson model,
+a quantum integrable system, and classical integrable systems like the
+Toda and KP hierarchies. By analyzing scalar products of Bethe states
+and correlation functions, we investigate their connections to tau
+functions and explore Schur polynomial expansions. This exploration
+unravels the intricate relationship between quantum and classical
+integrable systems.
 \end{abstract}
 
 %\date{\today}
@@ -99,8 +104,10 @@ and examine how they fit into the classical integrable context. It is
 noteworthy that even when the object is not a tau function itself, it
 may have an interesting expansion in terms of different classes of
 Schur polynomials, highlighting some of its combinatorial
-properties. We also investigate some of these expansions in this
-paper.
+properties\footnote{Numerous results involving Schur and
+Hall-Littlewood polynomials have been confirmed using the
+software~\cite{Araujo:2024piv}.}. We also investigate some of these
+expansions in this paper.
 
 In Section 2, we provide a review of the phase model and
 q-bosons. This section serves to establish notation and emphasize the
@@ -562,7 +569,7 @@ citations therein, we also know that under the rescaling \(t_k \to
 T_k/ \hbar\), \(t'_k \to T_{-k}/ \hbar\) and \(N = T_0/ \hbar\), we
 obtain the dispersion limit tau function
 \begin{equation}
-  F_0(\bm{T}) = \log S_{T_0}(\bm{T}, \bm{T}') + \mathcal{O}(\hbar)\; ,
+  F_0(\bm{T}) = \log \mathcal{I}_{T_0}(\bm{T}, \bm{T}') + \mathcal{O}(\hbar)\; ,
 \end{equation}
 that is a free energy, from the viewpoit of the matrix integral
 partition function.
@@ -1304,37 +1311,66 @@ coordinates \(\bm{T}\) and \(\bm{t}\).
 \section{Conclusions and Perspectives}
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
-% Ablowitz-Ladik and Toda hierarchy - reduction -- understands this problem 
 
-%Let us now consider the fermionic construction of this tau function. We write 
-%the limit \(N,M\to \infty\) of the scalar product
-%\begin{subequations}
-%\begin{equation}
-%  S_Q(\bm{T}, \bm{t}') = \sum_{\mu} s_\mu(\bm{T}) s_\mu(\bm{t}')
-%\end{equation}
-%that is quite quite trivial from the viewpoint of the free fermion construction, 
-%\begin{equation}
-%  S_Q(\bm{T}, \bm{t}') = \bra{\bm{0}} e^{\bm{J}_+(\bm{T})} e^{\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
-%\end{equation}
-%
-%Moreover, we also know that
-%\begin{equation}
-%  S_Q(\bm{t}, \bm{t}') = \sum_{\mu\nu} c_{\mu\nu} s_\mu(\bm{t}) s_\mu(\bm{t}')
-%\end{equation}
-%where \(n t = \sum_j x^n_j\) and \(n t' = \sum_j y^n_j\) are Miwa coordinates, then  
-%\begin{equation}
-%  S_Q(\bm{t}, \bm{t}') = \bra{\bm{0}} e^{J_+(\bm{t})} G_Q  e^{J_-(\bm{t}')} \ket{\bm{0}}
-%\end{equation}
-%and \(G_Q \in GL(\infty)\) that depends on \(Q\). We could also think of \(G_Q\)
-%as a twist
-%\(G_Q = e^{Q H} G e^{-Q H}\), with the action of \(H\in \mathfrak{gl}(\infty)\)
-%on ordinary fermions generating the Q-fermions. 
-%\marginpar[left]{\tiny Investigate this\\ twists}
-%\end{subequations}
-%
-%It seems that we have some different representations for this tau function, 
-%and it is worth investigating what is happening here. That is what we want 
-%to do now. 
+
+
+In this work, we have explored the connections between a quantum
+integrable system, the q-boson model, and solutions of a classical
+integrable system, the Toda hierarchy. Our investigation has extended
+some early findings in this field and has also unveiled new research
+avenues, which we aim to explore in future studies.  Let us now delve
+into some of these promising directions.
+
+In Section 3, we delved into various facets of the phase model. We
+presented the scalar product of two off-shell Bethe states as an
+elementary example of the Toda system tau function. Additionally, we
+revealed an intriguing alternative portrayal of these scalar products
+using a matrix integral framework, which corresponds to an ensemble of
+Coulomb particles. This discovery opens up promising avenues for
+further inquiry. Specifically, it would be interesting to delve deeper
+into this subject and explore whether the matrix model description
+offers valuable insights into the phase model and its Bethe
+roots. Such an investigation promises to illuminate the underlying
+dynamics of the phase model and its relationship with classical
+integrable systems.
+
+We have elucidated how various correlation functions align with this
+framework, revealing a remarkably rich structure. Notably, we explored
+a mapping between the phase model data and the vertex operator
+representation of free bosons. An intriguing avenue for future
+research is to delve into the properties of the hypergeometric tau
+functions uncovered in Section 3.3.1. Investigating these functions
+promises to yield valuable insights, and comparing them with existing
+literature will further enhance our understanding of their
+characteristics and implications within the context of integrable
+systems.
+
+In Section 4, we addressed the same problem within the context of the
+q-boson model. Initially, we derived a determinant formula for the
+q-boson, followed by a discussion on its expression as a quotient of
+two phase model tau functions. This result establishes a connection
+between the q-boson and phase model scalar product. Furthermore, we
+explored three different expansions for these scalar products. Notably, we
+observed that they can be expanded in terms of Big Schur and
+supersymmetric tau functions. Consequently, we introduced a new set of
+coordinates and demonstrated that it can be expressed as a Toda tau
+function in terms of this new coordinate set.
+
+One of our most pressing challenges lies in elucidating the intricate
+connection between our findings and the Ablowitz-Ladik
+hierarchy. Since this hierarchy arises as a reduction of the Toda
+hierarchy, it becomes imperative to understand how we can capture the
+structure of the former using the results we've derived. Given that
+the q-boson model can be seen as a quantization of the Ablowitz-Ladik
+equation, it stands to reason that we should observe some resemblance of
+this classical problem within the framework of the q-boson
+system. Understanding this relationship promises valuable insights
+into the interplay between classical and quantum integrable systems.
+
+We hope to address some of these challenges in future publications.
+
+\subsection*{Acknowledgments}
+This work is supported by Fapesp through grant \textbf{2022/06599-0}.
 
 \printbibliography
 
