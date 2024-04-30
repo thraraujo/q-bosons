@@ -17,31 +17,33 @@
 \author{Thiago Araujo}
 
 \address{\noindent 
-Instituto de Física Teórica, UNESP-Universidade Estadual Paulista,
-R. Dr. Bento T. Ferraz 271, Bl. II, Sao Paulo 01140-070, SP, Brazil\\
-\&\\
-Instituto de Física, Universidade de S\~ao Paulo,
-Rua do Matão Travessa 1371, 05508-090 São Paulo, SP. Brazil
+Instituto de Física Teórica, UNESP-Universidade Estadual Paulista, \\
+Rua Dr. Bento T. Ferraz 271, Bl. II, São Paulo 01140-070, SP, Brazil
+\\ \& \\
+Instituto de Física, Universidade de São Paulo,\\
+Rua do Matão, Travessa 1371, 05508-090 São Paulo, SP. Brazil
 }
 
 \email{\texttt{\href{tr.araujo@unesp.br}{tr.araujo@unesp.br}}}
 
 \begin{abstract}
-This work delves into the complex interplay between the q-boson model,
-a quantum integrable system, and classical integrable systems like the
-Toda and KP hierarchies. By analyzing scalar products of Bethe states
-and correlation functions, we investigate their connections to tau
-functions and explore Schur polynomial expansions. This exploration
-unravels the intricate relationship between quantum and classical
-integrable systems.
+This work investigates the intricate relationship between the q-boson
+model, a quantum integrable system, and classical integrable systems
+such as the Toda and KP hierarchies. Initially, we analyze scalar
+products of off-shell Bethe states and explore their connections to
+tau functions of integrable hierarchies. Furthermore, we discuss
+correlation functions within this formalism, examining their
+representations in terms of tau functions, as well as their Schur
+polynomial expansions.
 \end{abstract}
 
-%\date{\today}
-%\keywords{Integrability, Bethe, Schur}
+\date{\today}
+\keywords{Integrability, Bethe states, Schur, Hall-Littlewood, Toda, KP}
 \subjclass[2020]{82B20, 82B23}
+
 \maketitle
 
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 \tableofcontents
 
 
@@ -61,7 +63,7 @@ to name a few.  The present work is situated within this research field.
 
 Here, we examine the emergence of classical integrable structures
 within correlation functions of the q-boson system. This quantum
-integrable system characterizes strongly correlated bosons confined to
+integrable system describes q-deformed bosons confined to
 a one-dimensional chain~\cite{Bogoliubov:1992, Bogoliubov:1997soj,
   Bogoliubov2005}. Notably, this model bears close relation to the AL
 (Ablowitz-Ladik) model, which is an integrable discretization of the
@@ -74,7 +76,7 @@ Schur polynomials expansion for the Bethe states. Subsequently, this
 result was extended to \(q > 0\) in~\cite{Tsilevich:2006}, where the
 Bethe states are expressed in terms of Hall-Littlewood polynomials.
 
-Foda and Wheeler~\cite{Foda:2008hn, Wheeler:2010vmq} utilize a rich
+The authors of~\cite{Foda:2008hn, Wheeler:2010vmq} utilize a rich
 set of dualities between the ring of symmetric functions and
 \(q\)-deformations of the Heisenberg algebra~\cite{Jing1991, Jing1995}
 to explore the combinatorial properties of this spin chain. As a
@@ -85,12 +87,12 @@ Bethe states are restricted tau functions of the KP
 This underlying combinatorial structure underscores the significance
 of this model in various physical phenomena, notably in the context of
 crystal melting and string theory~\cite{Okounkov:2003sp,
-  Saulina:2004da}. The application of the q-boson model in these
+  Saulina:2004da}.  The application of the q-boson model in these
 contexts has been demonstrated in~\cite{Sulkowski:2008mx}, with the
 string data recoverable as the chain length approaches infinity.
 
 This paper builds upon these developments and aims to extend some of
-these results. Firstly, we delve deeper into the connection between
+these results. Firstly, we investigate the connections between
 the scalar product and tau functions, exploring them in a wider
 context, particularly in the case of the Toda
 hierarchy~\cite{Takasaki:2018wsv}. It is important to note that both
@@ -102,17 +104,17 @@ relationships.
 Additionally, we explore other correlation functions within this model
 and examine how they fit into the classical integrable context. It is
 noteworthy that even when the object is not a tau function itself, it
-may have an interesting expansion in terms of different classes of
+may have an interesting expansion in terms of different types of
 Schur polynomials, highlighting some of its combinatorial
-properties\footnote{Numerous results involving Schur and
-Hall-Littlewood polynomials have been confirmed using the
+properties\footnote{Results involving Schur and Hall-Littlewood
+polynomials have been confirmed using the
 software~\cite{Araujo:2024piv}.}. We also investigate some of these
 expansions in this paper.
 
 In Section 2, we provide a review of the phase model and
 q-bosons. This section serves to establish notation and emphasize the
 key aspects relevant to our analysis.  Section 3 delves into the
-analysis of the Phase Model and its connections with the KP and Toda
+analysis of the phase model and its connections with the KP and Toda
 integrable hierarchies. We explore the general expansion of a phase
 model correlation function that yields a Toda system solution.  In
 Section 4, we shift our focus to the q-bosons. We discuss a
@@ -132,14 +134,12 @@ Finally, in Section 5, we conclude with an overview of open problems.
 This section introduces the \emph{phase} and \emph{\(q\)-boson}
 models~\cite{Bogoliubov:1992, Bogoliubov:1997soj, Bogoliubov2005,
   Tsilevich:2006}. It serves as a comprehensive review of existing
-literature, offering insights into established concepts. While the
-content may not be entirely original, its presentation adds value,
-particularly from a pedagogical standpoint. Additionally, it provides
-a well-curated collection of references for further exploration.
-
-In structuring this discussion, we adopt certain conventions
-from~\cite{Wheeler:2010vmq}, while aligning our presentation style
-more closely with that of~\cite{Tsilevich:2006}.
+literature, offering insights into established concepts.  While the
+content does not introduce novel ideas, its presentation adds value,
+particularly from a pedagogical standpoint.  In structuring this
+discussion, we adopt certain conventions from~\cite{Wheeler:2010vmq},
+while aligning our presentation style more closely with that
+of~\cite{Tsilevich:2006}.
 
 
 
@@ -148,7 +148,7 @@ more closely with that of~\cite{Tsilevich:2006}.
 
 \subsection{Phase model}
 Consider the \((M+1)\) set of operators \(\{\phi_i,
-\phi^\dagger,\mathcal{N}_i\}_{i=0}^M\) such that
+\phi_i^\dagger,\mathcal{N}_i\}_{i=0}^M\) such that
 \begin{equation}
  [\mathcal{N}_i, \phi_j] = - \phi_i \delta_{i,j} \quad
  [\mathcal{N}_i, \phi_j^\dagger] =  \phi_i^\dagger \delta_{i,j}  \quad 
@@ -174,7 +174,7 @@ number operator, and we also impose periodic boundary conditions
 \(\phi_{M+1} = \phi_0\) and \(\phi_{M+1}^\dagger = \phi_0^\dagger\).
 
 These operators appear in the context of quantum optics, and for this
-reason, it is referred to as the \emph{phase model}. It corresponds to
+reason, this model is referred to as the \emph{phase model}. It corresponds to
 the strongly correlated limit of the \(q\)-bosons
 model~\cite{Bogoliubov:1997soj}, which we will define shortly.
 
@@ -183,15 +183,15 @@ model~\cite{Bogoliubov:1997soj}, which we will define shortly.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Representation}
-The representation of the phase model algebra, is constructed using
-the vacuum state, defined by \(\ket{0}_i\) by \(\phi_i\ket{0}_i =
+The representation of the phase model algebra is constructed using
+the vacuum state defined by \(\ket{0}_i\) by \(\phi_i\ket{0}_i =
 0\). In this context, the state with \(n_i\) bosons (oscillators) is
-given by \(\ket{n_i}_i = \phi_i^\dagger \ket{0}_i\).
+given by \(\ket{n_i}_i = (\phi_i^\dagger)^{n_i} \ket{0}_i\).
 
 Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
 \otimes \cdots \otimes  \ket{0}_M\), the Fock space is defined as 
 \begin{equation}
-  \mathcal{F} = \bigotimes_{i=0}^M \mathcal{F}_i = 
+  \mathcal{F} = \bigotimes_{i=0}^M \mathcal{F}_i = \mathrm{span}
   \left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
   \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; ,
 \end{equation}
@@ -211,18 +211,18 @@ the actions of the operators \(\mathcal{N}_i\) and \(\pi_i\) are
 \end{equation}
  
 Given a state \(\ket{\vec{n}} = \ket{n_0, n_1, \dots, n_M}\), we
-associate a partition \( \lambda = (0^{n_0} 1^{n_1} 2^{n_2} \cdots
+associate a partition \( \lambda = (1^{n_1} 2^{n_2} \cdots
 M^{n_M})\).  It's worth noting that this correspondence is not unique,
 as the partition \(\lambda\) does not account for the number of
 particles \(n_0\).  If the total number of particles \(N\) is known,
 we can determine \(n_0 = N - \ell(\lambda)\), where \(\ell(\lambda)\)
 represents the number of rows in the Young diagram defined by
-partition \(\lambda\). This determination is crucial, as in our
-subsequent considerations, the \(N\) particle sector remains fixed due
-to the integrability of the model. Consequently, the value of \(n_0\)
-becomes known once we specify the partition \(\lambda\).
+partition \(\lambda\).  This aspect is crucial because, in our
+subsequent considerations, the \(N\) particle sector remains fixed
+owing to the integrability of the model. Consequently, the value of
+\(n_0\) becomes known once we specify the partition \(\lambda\).
 
-Finally, based on the correspondence we mentioned above,
+Finally, based on the correspondence we mentioned in the introduction,
 Wheeler~\cite{Wheeler:2010vmq} defines a map \(\mathcal{M}_\psi:
 \mathcal{F} \to \mathcal{F}^{(0)}_\psi\), where
 \(\mathcal{F}^{(0)}_\psi\) denotes the Fock space of charged free
@@ -268,7 +268,7 @@ we say that the Bethe states are \emph{on-shell}; otherwise, we have
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{q-Bosons}
-The set of operators \(\{b_i, b^\dagger,\mathcal{N}_i\}_{i=0}^M\) constitute
+The set of operators \(\{b_i, b_i^\dagger,\mathcal{N}_i\}_{i=0}^M\) constitute
 \(M+1\) independent q-boson algebras defined by
 \begin{equation}
 [\mathcal{N}_i, b_j^\dagger]=\delta_{i,j} b_i^\dagger\; , \quad 
@@ -295,18 +295,17 @@ phase model discussed earlier.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Representation}
-We construct the representation of the q-boson algebra with
-modifications of the phase model discussed earlier. Let us define the
-\(i\)-th vacuum \(\ket{0}_i\) such that \(b_i\ket{0}_i = 0\). The
-representation of this Hilbert space, denoted by \(\mathcal{F}_i^Q\),
-is given by \(\ket{n_i}_i \propto b_i^\dagger \ket{0}_i\).
+Let us define the \(i\)-th vacuum \(\ket{0}_i\) such that
+\(b_i\ket{0}_i = 0\). The representation of this Hilbert space,
+denoted by \(\mathcal{F}_i^Q\), is defined by the states
+\(\ket{n_i}_i \propto (b_i^\dagger)^{n_i} \ket{0}_i\).
 
 Given the vacuum \(\ket{\bm{0}} = \ket{0}_0\otimes \ket{0}_1
 \otimes \cdots \otimes  \ket{0}_M\),
 the Fock space is defined as 
 \begin{equation}
   \mathcal{F}_{Q} = \bigotimes_{i=0}^M \mathcal{F}_i^Q = 
-  \left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
+  \mathrm{span}\left\{\ket{\vec{n}} = \ket{n_0}\otimes \ket{n_1} \otimes \cdots
   \otimes \ket{n_M} \ | \ n_i \in \mathbb{N} \right\}\; ,
 \end{equation}
 where the actions of the operators \(\{b_i, b_i^\dagger\}\) are given
@@ -393,13 +392,14 @@ we have \emph{on-shell} Bethe states; otherwise, they are \emph{off-shell} state
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
 This section explores the presence of integrable hierarchies in the
-phase model. We demonstrate its correspondence to a Toda hierarchy tau
+phase model. We demonstrate its relations with the Toda hierarchy tau
 function and discuss some implications, particularly its connection to
-a matrix model. Additionally, we highlight the existence of
-correlation functions in this model that satisfy the KP hierarchy
-equations. Finally, we argue that these results imply that these
-scalar products are also KP hierarchy tau functions, aligning with the
-findings of Wheeler~\cite{Wheeler:2010vmq}.
+a matrix model. We also argue that these results imply that the scalar
+products in the model also serve as KP hierarchy tau functions,
+consistent with the findings of
+Wheeler~\cite{Wheeler:2010vmq}. Additionally, we highlight the
+existence of correlation functions in this model that satisfy the KP
+hierarchy equations.
 
 Bogoliubov~\cite{Bogoliubov2005} has demonstrated that the scalar
 product of two vectors in the \(N\)-particle sector of a chain with
@@ -487,8 +487,9 @@ As such, utilizing the free fermions representation~\cite{Alexandrov:2012tr}, it
   \lim_{M,N\to \infty}\mathcal{I}(N, M|\bm{t}, \bm{t}')
  = \bra{\bm{0}} e^{\bm{J}_+(\bm{t})} e^{-\bm{J}_-(\bm{t}')} \ket{\bm{0}}\; .
 \end{equation}
-It is a tau function of the Toda hierarchy with trivial element \(\mathbb{1} \in GL(\infty)\).
-It is nothing but the Cauchy's identity
+It is a tau function of the Toda hierarchy with trivial element
+\(\mathbb{1} \in GL(\infty)\), and it is nothing but the Cauchy's
+identity
 \begin{equation}
   \sum_{\lambda } s_{\lambda}(\bm{t}) s_{\lambda}(\bm{t}')
     = \exp \left( \sum_{m\geq1} m t_m t'_{-m} \right) \; .
@@ -498,20 +499,19 @@ Bringing all these facts together, the truncation for finite \(M\) and
 \(N\) also yields tau functions of the Toda hierarchy. More
 specifically, according to~\cite{Alexandrov:2012tr, Kharchev:1991gd,
   Zabrodin:2010ii}, the truncation of the tau function corresponds to
-the inclusion of a projection operator \(\mathrm{P}^+\) in the
-expectation value of the tau function written in the fermionic
-representation.
+the inclusion of a projection operator in the expectation value of the
+tau function written in the fermionic representation.
 
 As a final remark, we can also write
 \begin{equation}
-  H(z,w) = \sum_{k=0}^{M+N} h_k(zw)^{k-1} \; , 
+  H(z,w) = \sum_{k=0}^{M+N-1} h_k(zw)^{k} \; , 
 \end{equation}
 with \(h_k=1\) if \(k\in [0, M+N-1]\) and \(0\) otherwise. In this
 case, one can define a diagonal \((N+M)\times (N+M)\) matrix
 \(\mathcal{H} = \textrm{diag}(h_0, \dots, h_{M+N-1})\). Consequently,
 if we repeat the arguments above, we find
 \begin{equation}
-\mathcal{I}(N, M|\bm{t}, \bm{t}') = \sum_{\lambda} h_\lambda s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
+\mathcal{I}(N, M|\bm{t}, \bm{t}') = \sum_{\lambda \subseteq [N,M]} h_\lambda s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
 \end{equation}
 Here, \(h_\lambda\) is equal to \(1\) if \(\lambda \in [N,M]\), and it
 is zero otherwise.
@@ -562,7 +562,7 @@ Bethe equations~(\ref{eq:bethe_eq}) to one set of variables, say \(x_j
 \end{equation}
 Then, the phase model is equivalent to an ensemble of \(N\) 2D Coulomb
 particles on a circle. In this case, we find that the quantities
-\(\lambda_{\ell}\) are eigenvalues of a matrix \(U\).
+\(z_{\ell}\) are eigenvalues of a matrix \(U\).
 
 Furthermore, according to Zabrodin~\cite{Zabrodin:2010ii}, see
 citations therein, we also know that under the rescaling \(t_k \to
@@ -610,7 +610,7 @@ using the free fermions formalism.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Correlation functions}
-Bogoliubov has also shown in~\cite{Bogoliubov2005}, that the
+Bogoliubov has also shown, in~\cite{Bogoliubov2005}, that the
 correlation functions
 \begin{subequations}
 \begin{equation}
@@ -655,16 +655,19 @@ and we treat the coordinates \(\{ \bm{y} \}\) as a set of \(N\) fixed
 parameters.
 
 Furthermore, we define vector field \(\bm{F}(z) = (F_1, \dots, F_N)\),
-where the components are given by
+where its components are given by
 \begin{equation}
     F_j (z) = H(z, y_j) \quad \textrm{if} \ j \neq N\; , \qquad \textrm{and}\qquad 
     F_N (z)  = z^{(M + N - 1 - 2m)/2} \; .
 \end{equation}
-As before, we expand \(F_j(z)\) as the geometric sum
+As before, we expand \(F_j(z)\), \(j\neq N\), as the geometric sum
 \begin{equation}
   F_j(z) = \frac{1 - (y_j z)^{M + N}}{1 - y_j z} = \sum_{n=0}^{N + M - 1} (y_j z)^n
-  \equiv \sum_{n=0}^{M + N -1} f_{j, n} z^n\; .
+  \equiv \sum_{n=0}^{M + N -1} f_{j, n} z^n \; , \quad  f_{j, n} = y_j^n\; .
 \end{equation}
+We can also express the function \(F_N(z)\) in this form by setting
+\(f_{N,n} = \delta_{n,(M - N - 1 - 2m)/2}\) and requiring \((M - N -
+1)\) to be an even integer.
 
 With these definitions, we conclude that
 \begin{equation}
@@ -672,25 +675,31 @@ With these definitions, we conclude that
 \end{equation}
 From the expansion 
 \begin{equation}
-  \det_{jk} F_j(x_k) = \det_{jk} \left(  \sum_{n=0}^{M + N -1} f_{j, n} x_k^n \right) \; .
+  \det_{jk} F_j(x_k) = \det_{jk} \left(  \sum_{n=0}^{M + N -1} f_{j, n} x_k^n \right) \; ,
 \end{equation}
-By utilizing the Cauchy-Binet formula, we can write
+and utilizing the Cauchy-Binet formula, we get
 \begin{equation}
     \mathcal{A}_m(N,M|\bm{x}, \bm{y})
   = \sum_{0\leq \ell_N\leq \dots \leq \ell_1 \leq N+M}
   \frac{\det_{jk}(f_{j, \ell_k}) \det_{jk}(x_k^{\ell_j})}{\Delta(x)}\; . 
 \end{equation}
 
-We now employ the definition of the Schur polynomials and utilize the
+We now use the definition of the Schur polynomials and the
 Jacobi-Trudi expression of Plücker coordinates, as detailed
-in~\cite{Alexandrov:2012tr}. Ultimately, this leads to the following
-expression:
+in~\cite{Alexandrov:2012tr}, leading to the following expression:
 \begin{equation}
 \mathcal{A}_m(N,M|\bm{x}, \bm{y}) =
 \sum_{\lambda} c_\lambda(\bm{y}) s_\lambda(\bm{x}) \; ,
 \end{equation}
-where \(c_\lambda \equiv \det_{jk}(y_j^{\ell_k})\),  \(\ell_k = \lambda_k - k +N\).
-Therefore, we have that this expression is a KP tau function. 
+where \(c_\lambda \equiv \det_{jk}(y_j^{\ell_k})\), \(\ell_k =
+\lambda_k - k +N\).  Putting all these facts together, we conclude
+that this expression is also a KP tau function.
+
+This expression underscores the non-trivial nature of these tau
+functions within the model. However, it also implies the existence of
+other intriguing examples awaiting exploration. Let us now briefly
+investigate other cases.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -744,8 +753,7 @@ and the Cauchy's identity, we have
 \end{equation}
 Therefore, this correlation function is nothing but the off-shell
 norm~(\ref{eq:scalar}) times a finite sum over skew Schur
-functions. This expression illustrates that the existence of these tau
-functions is not a trivial aspect of this model.
+functions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1369,7 +1377,7 @@ into the interplay between classical and quantum integrable systems.
 
 We hope to address some of these challenges in future publications.
 
-\subsection*{Acknowledgments}
+\subsubsection*{Acknowledgments}
 This work is supported by Fapesp through grant \textbf{2022/06599-0}.
 
 \printbibliography
