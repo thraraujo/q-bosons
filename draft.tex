@@ -474,10 +474,11 @@ in~\cite{Bogoliubov2005}.
 Define two sets of Miwa coordinates \(\bm{t} = (t_1, t_2, \dots)\) and
 \(\bm{t}' = (t'_{-1}, t'_{-2}, \dots)\) by
 \begin{equation}
-  t_p = \frac{1}{p}\sum_{j=1}^N x_j^p\qquad 
-  t'_{-p} = \frac{1}{p}\sum_{j=1}^N y_j^p\; .
+  t_q = \frac{1}{q}\sum_{j=1}^N x_j^p\qquad 
+  t'_{-q} = \frac{1}{q}\sum_{j=1}^N y_j^p\; , 
 \end{equation}
-One can write the inner product in terms of these coordinates, that is
+where \(p_q(\bm{x}) = q t_q\) are power sums. One can write the inner
+product in terms of these coordinates, that is
 \begin{equation}
   \mathcal{I}(N, M|\bm{t}, \bm{t}') = \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{t}) s_\lambda(\bm{t}') \; .
 \end{equation}
@@ -589,7 +590,7 @@ elsewhere.
 Lastly, one may also observe that if we fix one set of coordinates,
 say \(\bm{y}\), then we can write
 \begin{equation}
- \mathcal{I}(N,M|\bm{t}) 
+ \lim_{M,N\to \infty}\mathcal{I}(N,M|\bm{t}) 
  = \sum_{\lambda} s_\lambda(\bm{y})  s_\lambda(\bm{t}) 
  \equiv \sum_{\lambda} c_\lambda(\bm{y})  s_\lambda(\bm{t}) \; ,
 \end{equation}
@@ -706,19 +707,24 @@ investigate other cases.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Skew Schur polynomials expansion}
-From the coordinate expansion of the Bethe
-vectors~\cite{Bogoliubov2005, Tsilevich:2006}, it is easy to show that
+It has also been demonstrated in~\cite{Bogoliubov2005, Tsilevich:2006}
+that the Bethe states exhibit a coordinate expansion
 \begin{equation}
-\prod_{j=1}^N \mathbb{B}(x_j)\ket{\lambda}  = \sum_{\mu \supset \lambda } s_{\mu/\lambda}(\bm{x})\ket{\mu}\qquad 
- \bra{\lambda} \prod_{j=1}^N \mathbb{C}(x_j) = \sum_{\mu \supset \lambda } s_{\mu/\lambda}(\bm{x})\bra{\mu}
+  \prod_{j=1}^N \mathbb{B}(x_j)\ket{\lambda}  =
+  \sum_{\substack{\mu \supset \lambda \\ \mu \subseteq [N,M]}} s_{\mu/\lambda}(\bm{x})\ket{\mu}\qquad 
+  \bra{\lambda} \prod_{j=1}^N \mathbb{C}(x_j) = \sum_{\substack{\mu \supset \lambda \\ \mu \subseteq [N,M]}} 
+  s_{\mu/\lambda}(\bm{x})\bra{\mu}\; ,
 \end{equation}
 where \(s_{\mu/\lambda}\) are skew Schur polynomials~\cite{Macdonald:1998}.
+
 Therefore, we can write the correlation function~(\ref{eq:correlation}) as 
 \begin{equation}
 \begin{split}
   A_m(N, M|\bm{x}, \bm{y}\setminus \{y_N\})
-  & = \sum_\lambda \sum_{\mu \supset (m)} s_{\lambda}(\bm{x}) s_{\mu/(m)}(\bm{y}\setminus\{y_N\})\\
-  & = \sum_\mu s_{\mu/(m)}(\bm{y}\setminus\{y_N\}) s_{\mu}(\bm{x})\; .
+  & = \sum_\lambda \sum_{\substack{\mu \supset (m)\\ \mu \subseteq [N-1, M]}}
+  s_{\lambda}(\bm{x}) s_{\mu/(m)}(\bm{y}\setminus\{y_N\})\\
+  & = \sum_{\substack{\mu \supset (m)\\ \mu \subseteq [N-1, M]}}
+  s_{\mu/(m)}(\bm{y}\setminus\{y_N\}) s_{\mu}(\bm{x})\; .
 \end{split}
 \end{equation}
 where we have used that \(\phi^\dagger \ket{\bm{0}} = \ket{(m)}\), and in the second line
@@ -731,29 +737,39 @@ More generally, let us consider the correlation functions
   A_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y}) & =
   \bra{\lambda_1} \prod_{j=1}^N \mathbb{C}(x_j)
   \prod_{k=1}^{N'} \mathbb{B}(y_k)\ket{\lambda_2} \\
-  & = \sum_{\mu} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; .
+  & = \sum_{\mu \subseteq [\min(N, N'), M]} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; .
 \end{split}
 \end{equation}
 where \(N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0\) and
 we have also used that the skew Schur polynomial for any Young diagram
-\(\mu\) that does not contain \(\lambda_1\) and \(\lambda_2\)
-vanishes. Using the elementary property of skew Schur
-polynomials~\cite{Macdonald:1998}
+\(\mu\) that does not contain \(\lambda_1\) and/or \(\lambda_2\)
+vanishes.
+
+In the limit \(M, N, N' \to \infty\), we can use the elementary
+properties of skew Schur polynomials~\cite{Macdonald:1998}
 \begin{equation}
   \sum_{\mu} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) = \prod_{i,j}\frac{1}{1 - x_i y_j}
  \sum_\nu s_{\lambda_1/\nu}(\bm{x}) s_{\lambda_2/\nu}(\bm{y})\; ,
 \end{equation}
-and the Cauchy's identity, we have 
+and the Cauchy's identity, we have that  
 \begin{equation}
 \begin{split}
-  A_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y}) & =
- \sum_\mu s_{\mu}(\bm{x}) s_{\mu}(\bm{y})
+  \lim_{M, N, N'\to \infty} A_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y})
+  & = \sum_\mu s_{\mu}(\bm{x}) s_{\mu}(\bm{y})
+ \sum_\nu s_{\lambda_1/\nu}(\bm{x}) s_{\lambda_2/\nu}(\bm{y})\\ 
+  & = \sum_\mu s_{\mu}(\bm{x}) s_{\mu}(\bm{y})
  \sum_\nu s_{\lambda_1/\nu}(\bm{x}) s_{\lambda_2/\nu}(\bm{y})\; .
 \end{split}
 \end{equation}
-Therefore, this correlation function is nothing but the off-shell
-norm~(\ref{eq:scalar}) times a finite sum over skew Schur
-functions.
+Therefore, we write the finite case as
+\begin{equation}
+  A_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y})
+  = \mathcal{I}(\min(N',N),M, \bm{x}, \bm{y})
+  \sum_\nu s_{\lambda_1/\nu}(\bm{x}) s_{\lambda_2/\nu}(\bm{y})\; .
+\end{equation}
+We observe that this correlation function can be expressed as the
+product of the off-shell norm~(\ref{eq:scalar}) and a finite sum over
+skew Schur functions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -762,7 +778,7 @@ functions.
 \subsubsection{Schur polynomials expansion of some correlation functions}
 Indeed, it is worth noting that other quantities, which are not tau
 functions, may have interesting Schur polynomial expansions. Consider
-the state calculated in~\cite{Bogoliubov2005}.
+the state calculated in~\cite{Bogoliubov2005}
 \begin{equation}
   \ket{\mathcal{Y}} =
  \sum_{\vec{n}} \prod_{j=0}^M \ket{n_j} = \sum_\mu \ket{\mu} \qquad \sum_j n_j = N\; .
@@ -780,13 +796,13 @@ a sum of skew Schur polynomials.
 
 \subsection{General tau functions}
 Based on the discussion we have had so far, and on the general mapping
-between the Phase model and free fermions, one can grasp the general
-form of tau functions in the context of this phase model.
+between the phase model and free fermions, one can grasp the general
+form of tau functions in the context of this integrable chain.
 
 Let us consider the vertex operator construction~\cite{Okounkov2001},
 as also discussed in~\cite{Alexandrov:2012tr, Wheeler:2010vmq}. We
 consider the vacuum state \(\ket{\bm{0}}\), often referred to as a
-``Dirac sea'', defined by the conditions \(\psi_m\ket{\bm{0}} =
+``Fermi sea'', defined by the conditions \(\psi_m\ket{\bm{0}} =
 \psi_n^\star\ket{\bm{0}} =0 \) for \(m<0\) and \(n \geq 0\), where
 \(\psi_n\) are components of a holomorphic free fermionic field. In
 this formalism, the partition states are given by
@@ -816,19 +832,19 @@ bilinears \(X = \sum_{j, j \in \mathbb{Z}} x_{ij} \bm{\colon} \psi_i \psi_j^\sta
   \bm{\colon} \psi_i \psi_j^\ast \bm{\colon} =  \psi_i \psi_j^\ast
   - \bra{0} \psi_i \psi_j^\ast \ket{0} \; .
 \end{equation}
-The group \(GL(\infty)\) is defined through the \(\exp:
-\mathfrak{gl}(\infty) \to GL(\infty)\) as usual.
+The group \(GL(\infty)\) is defined through the exponential map
+\(\bm{\exp}: \mathfrak{gl}(\infty) \to GL(\infty)\) as usual.
 
-Note that these elements have finitely many non-zero entries,
-including diagonal terms, upper triangular terms, and lower triangular
-terms. These are equivalent to the number operators \(\mathcal{N}\),
-annihilation operators \(\phi\), and creation operators
-\(\phi^\dagger\), respectively. The central charge is equivalent to
-the vacuum projection \(\pi = \ket{\bm{0}}\bra{\bm{0}}\). Therefore,
+Note that these elements have only finitely many non-zero entries: the
+diagonal terms represent number operators \(\mathcal{N}\), the upper
+triangular terms represent annihilation operators \(\phi\), and the
+lower triangular terms represent creation operators
+\(\phi^\dagger\). The central charge corresponds to the vacuum
+projection \(\pi = \ket{\bm{0}}\bra{\bm{0}}\).  Therefore,
 \begin{equation}
    GL(\infty) \ni G \mapsto
    \mathcal{G} = \exp \left[\sum_{i=1}^M \left( \sum_{a=1}^3
-   c_{i, a} T_i^{a}  + c \pi_i \right)\right]\; ,
+   c_{i, a} T_i^{a}  + c \pi_i \right)\right] \; \in  \mathrm{Aut}(\mathcal{F})\; ,
 \end{equation}
 where \(T^{a}_i \in \{ \mathcal{N}_i, \phi_i, \phi_i^\dagger \}_{i=1}^M\). 
 
@@ -837,14 +853,12 @@ for a large enough chain \(M\to \infty\),
 are related to the vertex operators
 \(\Gamma_-(x)\) and \(\Gamma_+(x)\), respectivelly, as
 \begin{equation}
-  \begin{split}
-    \mathbb{B}(x) \mapsto \Gamma_-(x) & = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{-n}\right) \\
-    \mathbb{C}(x) \mapsto \Gamma_+(x) & = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{n}\right) \; ,
-  \end{split}
+    \mathbb{B}(x) \mapsto \Gamma_-(x)  = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{-n}\right) \qquad 
+    \mathbb{C}(x) \mapsto \Gamma_+(x)  = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{n}\right) \; ,
 \end{equation}
 where \(J_n \) is written in terms of free fermions as \(J_n =
 \sum_{j\in \mathbb{Z}} \bm{\colon} \psi_j \psi_{j+n}^\ast
-\bm{\colon}\). These set of operators generate a Heisenberg subalgebra
+\bm{\colon}\). This set of operators generate a Heisenberg subalgebra
 \(\widehat{\mathfrak{gl}}(1) \subset \mathfrak{gl}(\infty)\)
 \begin{equation}
   [J_m, J_n] = m \delta_{n+m,0}\; .
@@ -937,7 +951,7 @@ can be easily calculated to be
 \prod_{k=1}^N \mathbb{B}(y_k, Q) \ket{\bm{0}}
 = \sum_{\lambda \subseteq [N,M]} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
 \end{equation}
-where we use that \(\bracket{\lambda}{\mu} = b_\lambda(Q)
+where we use that \(\bracket{\lambda}{\mu}_Q = b_\lambda(Q)
 \delta_{\lambda, \mu}\) and the completeness relation
 \begin{equation}
   \sum_{\lambda} \frac{1}{b_\lambda(Q)} \ket{\lambda}_Q {}_Q\bra{\lambda}  = \mathbb{1}\; .
@@ -1029,17 +1043,17 @@ identity~(\ref{eq:cauchy_hl}) as
 \sum_{\lambda} \mathcal{S}_{\lambda}(\bm{x}, Q) s_{\lambda}(\bm{y}) =
 \sum_{\lambda} \mathcal{S}_{\lambda}(\bm{y}, Q) s_{\lambda}(\bm{x}) \; .
 \end{equation}
-Here, the polynomials \(\mathcal{S}_\lambda\), known as the big-Schur
-functions, are defined by a Jacobi-Trudi formula:
+Here, the polynomials \(\mathcal{S}_\lambda\), which we will refer to as
+the big-Schur functions, are defined by a Jacobi-Trudi formula:
 \begin{equation}
   \mathcal{S}_{\lambda} (\bm{y}, Q) = \det(q_{\lambda_i -i + j}(\bm{y}, Q))\; , 
 \end{equation}
-and the coefficients \(q_m\) are obtained from the expression:
+where the coefficients \(q_m\) are obtained from the expression:
 \begin{equation}
  \sum_{m} q_m(\bm{y}, Q) z^m =
- \prod_{j} \frac{1-Q y_j z}{1 - y_j z}\; .
+ \prod_{j} \frac{1-Q y_j z}{1 - y_j z}\; ,
 \end{equation}
-where \(z\) is a formal variable. It has been
+and \(z\) is a formal variable. It has been
 argued~\cite{Foda:2008hn} in that if we interpret the big-Schur
 functions as Plücker coordinates, the expression
 \begin{equation}
@@ -1053,9 +1067,8 @@ that is \(\bm{x}\) and \(\bm{y}\).
 
 Based on these findings, we conclude that the inner product can be
 expressed as a quotient of two Toda tau functions or as a KP tau
-function with coefficients given by the big Schur
-polynomials. However, further exploration of these results is
-warranted.
+function with coefficients given by the big Schur polynomials.
+Nevertheless, further investigation of these results is necessary.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1123,7 +1136,7 @@ coordinates \(\bm{t}\).
 
 \begin{remark}
 This expression also reveals something interesting. We can formulate
-this problem in terms of partitions defined in the phase
+this problem in terms of partition statess defined in the phase
 model. Alternatively, we can utilize the conventional vertex operator
 construction rather than the q-deformed version proposed by
 Jing~\cite{Jing1991, Jing1995}, which is much more challenging to
@@ -1134,11 +1147,11 @@ handle.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Supersymmetric Schur polynomials expansion}
-With this result, we now argue that although~(\ref{eq:scalar-hl}) is
-not a Toda tau function with respect to the coordinates \(\{\bm{t};
-\bm{t}'\}\), we can define a new set of coordinates
-\(\{\bm{t};\bm{T}\}\) that render the inner product a trivial Toda tau
-function.
+Based on this result, we argue that although Equation
+\eqref{eq:scalar-hl} is not a Toda tau function with respect to the
+coordinates \( \{\bm{t}; \bm{t}'\} \), we can define a new set of
+coordinates \( \{\bm{t};\bm{T}\} \) such that the scalar product
+becomes a trivial Toda tau function.
 
 Let us first decompose
 \begin{equation}
@@ -1165,11 +1178,11 @@ It is easy to see that
     \exp \left( - \sum_{n>0} t^{(Q)}_n z^n \right)  
   \end{split}
 \end{equation}
-where \(t^{(Q)}_n = \frac{Q^n}{n} \sum_j y_j^n = Q^n t'_n\). Additionally
+where \(t^{(Q)}_n = \frac{Q^n}{n} \sum_j y_j^n = Q^n t'_{-n}\). Additionally
 \begin{equation}
     \prod_{j=1}^N \frac{1}{(1 - y_jz)} = \prod_{j=1}^N e^{- \ln  (1 - y_jz)} = 
     \prod_{j=1}^N \exp \left( \sum_{n>0} \frac{y_j}{n} z^n \right)=
-    \exp \left(\sum_{n>0} t_n z^n \right) \; . 
+    \exp \left(\sum_{n>0} t'_{-n} z^n \right) \; . 
 \end{equation}
 \end{subequations}
 
@@ -1177,10 +1190,10 @@ Consequently
 \begin{equation}
  \sum_{m} q_m(\bm{y}, Q) z^m =
  \prod_j \frac{1 - Q y_j z}{1 - y_k z}
- = \exp \left( \sum_{n\geq 1} (t'_n - t_n^{(Q)})z^n \right)
+ = \exp \left( \sum_{n\geq 1} (t'_{-n} - t_n^{(Q)})z^n \right)
  \equiv \exp \left( \sum_{n\geq 1} T_n z^n \right)\; ,
 \end{equation}
-with \(T_n = (1 - Q^n) t'_n\). Then, we conclude that \(q_m(\bm{y}, Q)\)
+with \(T_n = (1 - Q^n) t'_{-n}\). Then, we conclude that \(q_m(\bm{y}, Q)\)
 are homogeneous polynomials with respect the Miwa coordinates
 \(\bm{T} = (T_1, T_2, \dots)\). Then
 \begin{equation}
@@ -1239,10 +1252,12 @@ From this expression we conclude (and speculate) the following.
 \begin{remark}
 Since the skew Schur polynomials have determinant expressions, we can
 deduce that the \(\bm{y}\)-dependent coefficients \(c_{\mu \lambda} =
-s_{(\lambda/\mu)'}(-Q\bm{y})\) have Jacobi-Trudi expressions. It is
+s_{(\lambda/\mu)'}(-Q\bm{y})\) have Jacobi-Trudi expressions.  It is
 tempting to regard these objects as \(\bm{y}\)-dependent Plücker
-coordinates. In this sense, we would have a curve in the infinite
-Grassmannian instead of a point.
+coordinates.  In this sense, we would have a curve in the infinite
+Grassmannian instead of a point. Evidently, it is not a tau functions
+on any known integrable hierarchy, but it might suggest some new
+generalizations that are worth investigating.
 \end{remark}
 
 \begin{remark}
@@ -1258,23 +1273,23 @@ in~\emph{\cite{Necoechea:2019wbg}} using the KP bilinear identity.
 \end{remark}
 
 Combining these observations, we conclude that the left-hand side of
-equation (\ref{eq:tau-hl}) serves as a tau function with respect to
-the coordinates \(\{\bm{t}; \bm{T}\}\). Additionally, utilizing the
+equation \(\ref{eq:tau-hl}\) is a tau function with respect to
+the coordinates \(\{\bm{t}; \bm{T}\}\). Furthermore, by employing the
 vertex operator formalism, we can express the Schur polynomials as
 \begin{equation}
   s_{\lambda}(\bm{t}') = \bra{\lambda} e^{J_-(\bm{t}')}\ket{\bm{0}}\qquad
-  s_{\mu}(\bm{t}) = \bra{\bm{0}} e^{J_+(\bm{t})}\ket{\mu}\; ,
+  s_{\mu}(\bm{t}) = \bra{\bm{0}} e^{J_+(\bm{t})}\ket{\mu}\; . 
 \end{equation}
-we have
+Hence
 \begin{equation}
   \sum_{\lambda,\mu } c_{\mu\lambda}(Q,\bm{y}) s_\mu(\bm{t}') s_\lambda(\bm{t}) = 
   \sum_{\lambda,\mu } \bra{\bm{0}} e^{J_+(\bm{t})}\ket{\mu} c_{\mu\lambda}(Q,\bm{y})
   \bra{\lambda} e^{J_-(\bm{t}')}\ket{\bm{0}} \; .
 \end{equation}
-It is important to emphasize once again that this expression does not
-constitute a tau function with respect to \(\{\bm{t},
-\bm{t}'\}\). Despite this crucial distinction, we proceed under the
-assumption that the coefficients can be expressed as
+It is important to reiterate that this expression does not constitute
+a tau function with respect to \( \{\bm{t}, \bm{t}'\} \). Despite this
+crucial distinction, we proceed under the assumption that the
+coefficients can be expressed as
 \begin{equation}
   c_{\mu\lambda}(Q, \bm{y}) = \bra{\mu} G_Q(\bm{y}) \ket{\lambda}\; ,
 \end{equation}
@@ -1283,10 +1298,10 @@ where \(G_Q(\bm{y}) \in GL(\infty)\). Hence
   \lim_{N,M\to\infty} \mathcal{I}_Q(N, M| \bm{t}, \bm{t}'(\bm{y})) = 
   \bra{\bm{0}} e^{J_+(\bm{t})} G_Q(\bm{y}) e^{J_-(\bm{t}')}\ket{\bm{0}}\; .
 \end{equation}
-where \(t'_n = \frac{1}{n}\sum_i y_i^n\). 
+where \(t'_{-n} = \frac{1}{n}\sum_i y_i^n\). 
 
 To derive the expression for this group element, recall that \(T_m =
-t'_m - Q^m t'_m\). With this in mind, we can express the scalar
+t'_{-m} - Q^m t'_{-m}\). With this in mind, we can express the scalar
 product as follows:
 \begin{subequations}
 \begin{equation}
@@ -1320,60 +1335,59 @@ coordinates \(\bm{T}\) and \(\bm{t}\).
 %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
 
 
-
-
 In this work, we have explored the connections between a quantum
 integrable system, the q-boson model, and solutions of a classical
 integrable system, the Toda hierarchy. Our investigation has extended
 some early findings in this field and has also unveiled new research
-avenues, which we aim to explore in future studies.  Let us now delve
-into some of these promising directions.
+avenues, which we aim to explore in future studies. Let us now discuss
+some of these promising directions.
 
-In Section 3, we delved into various facets of the phase model. We
+In Section 3, we delved into some aspects of the phase model. We
 presented the scalar product of two off-shell Bethe states as an
 elementary example of the Toda system tau function. Additionally, we
 revealed an intriguing alternative portrayal of these scalar products
 using a matrix integral framework, which corresponds to an ensemble of
 Coulomb particles. This discovery opens up promising avenues for
-further inquiry. Specifically, it would be interesting to delve deeper
-into this subject and explore whether the matrix model description
-offers valuable insights into the phase model and its Bethe
-roots. Such an investigation promises to illuminate the underlying
-dynamics of the phase model and its relationship with classical
-integrable systems.
+further inquiry. Specifically, it would be intriguing to further
+explore this subject and investigate whether the matrix model
+description provides valuable insights into the phase model and its
+Bethe roots. Such an investigation promises to illuminate the
+underlying dynamics of the phase model and its relationship with
+classical integrable systems.
 
 We have elucidated how various correlation functions align with this
 framework, revealing a remarkably rich structure. Notably, we explored
 a mapping between the phase model data and the vertex operator
 representation of free bosons. An intriguing avenue for future
 research is to delve into the properties of the hypergeometric tau
-functions uncovered in Section 3.3.1. Investigating these functions
-promises to yield valuable insights, and comparing them with existing
-literature will further enhance our understanding of their
+functions uncovered in Section 3.3.1.  Exploring these functions is
+expected to provide significant understanding, and comparing them with
+existing literature will further enrich our comprehension of their
 characteristics and implications within the context of integrable
 systems.
 
 In Section 4, we addressed the same problem within the context of the
 q-boson model. Initially, we derived a determinant formula for the
-q-boson, followed by a discussion on its expression as a quotient of
-two phase model tau functions. This result establishes a connection
-between the q-boson and phase model scalar product. Furthermore, we
-explored three different expansions for these scalar products. Notably, we
+q-boson scalar products, followed by a discussion on their expression
+in terms of the phase model data. This result establishes a connection
+between the q-boson and phase model quantities. Furthermore, we
+explored different expansions for these scalar products. Notably, we
 observed that they can be expanded in terms of Big Schur and
-supersymmetric tau functions. Consequently, we introduced a new set of
-coordinates and demonstrated that it can be expressed as a Toda tau
-function in terms of this new coordinate set.
+supersymmetric tau functions. Hence, we introduced a new set of
+coordinates, demonstrating that scalar products can be precisely
+expressed as Toda tau functions within this transformed coordinate
+system.
 
 One of our most pressing challenges lies in elucidating the intricate
 connection between our findings and the Ablowitz-Ladik
 hierarchy. Since this hierarchy arises as a reduction of the Toda
 hierarchy, it becomes imperative to understand how we can capture the
-structure of the former using the results we've derived. Given that
-the q-boson model can be seen as a quantization of the Ablowitz-Ladik
-equation, it stands to reason that we should observe some resemblance of
-this classical problem within the framework of the q-boson
-system. Understanding this relationship promises valuable insights
-into the interplay between classical and quantum integrable systems.
+structure of the AL hierarchy using the results we have derived.
+Considering that the q-boson model effectively quantizes the
+Ablowitz-Ladik equation, it follows that we should detect some
+resemblance of this classical problem within the q-boson system.  This
+understanding holds the promise of shedding significant light on the
+interplay between classical and quantum integrable systems.
 
 We hope to address some of these challenges in future publications.
 
