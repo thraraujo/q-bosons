@@ -1,6 +1,6 @@
 # Q-Boson model and relations with integrable hierarchies
 
-Repository for the paper (arXiv:2405.01213 [math-ph])[https://arxiv.org/abs/2405.01213],
+Repository for the paper [arXiv:2405.01213 [math-ph]](https://arxiv.org/abs/2405.01213),
 see also [Inspire-HEP](https://inspirehep.net/literature/2782843).
 
 **Abstract**
