@@ -1,0 +1,96 @@
+Dear Editor,
+
+Below are my responses to the referee's assessment:
+
+Dear Referee,
+
+I agree that my results are somewhat buried in the manuscript. Let me
+start by saying that I was very careful not to claim credit for any
+previous derivations. Some discussions in my current paper have been
+addressed before, but not clearly enough. Therefore, this general
+exposition also highlights my work and the field in
+general. Additionally, there is pedagogical value in this.
+
+Now, let me explain my main new results.
+
+Section 3:
+
+This section has more overlap with existing literature, particularly
+with a paper by Wheeler that I cite in my work. In his paper, Wheeler
+shows that the inner product of two Bethe states are KP hierarchy tau
+functions. He finds the coefficients of the expansion and demonstrates
+that these coefficients satisfy Plücker relations. My Section 3.1
+improves on this result. I argue that besides the KP hierarchy, these
+scalar products are also Toda hierarchy tau functions, as they can be
+expanded as a Cauchy identity, with the coefficients being Schur
+functions (see equation (28)). If we fix one set of coefficients in
+this expression, Wheeler's results are recovered, as argued in
+equation (40).
+
+Section 3.2 is new and considers correlation functions. I wanted to
+determine when the correlation functions satisfy integrable hierarchy
+equations. Using expressions derived by Bogoliubov (see eq. (42.a)), I
+rewrote them in the appropriate form to check if the correlation
+functions are KP/Toda tau functions. For example, (42.b) cannot be
+written as a Toda tau function, but with some adjustments, it can be
+written as (51), which is a KP tau function. From the expansion (52),
+also derived by Bogoliubov, we find (56) and (57), showing that these
+expressions generally do not satisfy integrable hierarchy equations.
+
+Section 3.3 presents my main results. Here, I argue that the general
+form of tau functions associated with this phase model must be (67),
+where G is given by (63). I also mention that from this general
+expression, we can consider interesting cases, such as (68), which
+fall into the class of hypergeometric tau functions. These problems
+are currently under investigation in my follow-up paper.
+
+Section 4:
+
+This section attempts to replicate the analysis done in Section
+3. There aren't many known results in the literature regarding the
+relation between these objects and KP/Toda tau functions. I use known
+formulas to see if they are tau functions. Wheeler has shown that
+scalar products can be viewed as KP tau functions, as before.
+
+I then write these formulas in terms of simpler orthogonal
+polynomials. Firstly, I show that these scalar products cannot be
+naively written as Toda tau functions (see (84)). However, using some
+known expansions (see (85)), we can expand the inner products in
+different forms. In one of them, we define a new set of coordinates
+(equation (102)), making the scalar product of Q-Bosons Toda tau
+functions with respect to these new coordinates. This is my main
+result in this section. Additionally, I propose a conjecture worth
+investigating in the future, as mentioned in Remark 2, regarding the
+existence of 'functional' Plücker coordinates in the infinite
+Grassmannian.
+
+My Remark 3 also presents a new result. I emphasize that I do not wish
+to take undue credit. Reference [NR19] uses an intricate construction
+to show that the Big Schur functions are KP tau functions. Although
+significant, my results trivialize their analysis. Since a simple
+coordinate transformation makes the Big Schur functions ordinary Schur
+functions (see equation (101)), this fact is trivial. I have included
+this as a remark rather than stating it bluntly.
+
+Having said that, let me return to my previous assessment of other
+references. I am very interested in this field but have noticed that
+papers on these topics are scattered. For example, in section 3.1.1,
+the relation between the phase model and the ensemble of 2D Coulomb
+particles seems obvious, but there are no references. I hope this
+paper will draw attention to this particular problem. As I mentioned,
+I am currently exploring this topic, but it is more challenging than I
+previously thought.
+
+Overall, I do not view this work as a full collection of new results
+but as setting the stage for a research field that is somewhat
+inactive. I use previous results to organize and draw attention to
+open problems. In this process, I prove some new results, which,
+though not major, serve as a starting point to investigate those open
+problems.
+
+I have added comments to my conclusions and improved my introduction.
+
+I hope these clarifications are helpful.
+
+Best regards,
+Thiago
