@@ -1,6 +1,6 @@
 Dear Editor,
 
-Below are my responses to the referee's assessment:
+Below is my response to the referee's assessment.
 
 Dear Referee,
 
@@ -52,17 +52,17 @@ relation between these objects and KP/Toda tau functions. I use known
 formulas to see if they are tau functions. Wheeler has shown that
 scalar products can be viewed as KP tau functions, as before.
 
-I then write these formulas in terms of simpler orthogonal
-polynomials. Firstly, I show that these scalar products cannot be
-naively written as Toda tau functions (see (84)). However, using some
-known expansions (see (85)), we can expand the inner products in
-different forms. In one of them, we define a new set of coordinates
-(equation (102)), making the scalar product of Q-Bosons Toda tau
-functions with respect to these new coordinates. This is my main
-result in this section. Additionally, I propose a conjecture worth
-investigating in the future, as mentioned in Remark 2, regarding the
-existence of 'functional' Plücker coordinates in the infinite
-Grassmannian.
+Observe that the determinant formula 83 is new. From this expression
+we can conclude that these objects cannot be written as 'simple' Toda
+tau functions.  I then write these formulas in terms of simpler
+orthogonal polynomials. Using some known expansions (see (85)), we can
+expand the inner products in different forms. In one of them, we
+define a new set of coordinates (equation (102)), making the scalar
+product of Q-Bosons Toda tau functions with respect to these new
+coordinates. This is my main result in this section. Additionally, I
+propose a conjecture worth investigating in the future, as mentioned
+in Remark 2, regarding the existence of 'functional' Plücker
+coordinates in the infinite Grassmannian.
 
 My Remark 3 also presents a new result. I emphasize that I do not wish
 to take undue credit. Reference [NR19] uses an intricate construction
@@ -88,7 +88,8 @@ open problems. In this process, I prove some new results, which,
 though not major, serve as a starting point to investigate those open
 problems.
 
-I have added comments to my conclusions and improved my introduction.
+I have added these comments to my conclusions and I have also improved
+my introduction.
 
 I hope these clarifications are helpful.
 
