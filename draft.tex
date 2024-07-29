@@ -80,7 +80,7 @@ The authors of~\cite{Foda:2008hn, Wheeler:2010vmq} utilize a rich
 set of dualities between the ring of symmetric functions and
 \(q\)-deformations of the Heisenberg algebra~\cite{Jing1991, Jing1995}
 to explore the combinatorial properties of this spin chain. As a
-consequence, it has been shown that the scalar product of off-shell
+consequence, it has been shown that the scalar products of off-shell
 Bethe states are restricted tau functions of the KP
 (Kadomtsev-Petviashvili) hierarchy.
 
@@ -168,7 +168,7 @@ and it is easy to see that \(\phi^\dagger \phi = \bm{1} - \ket{0}
 The Hamiltonian is given by
 \begin{equation}
   H = - \frac{1}{2} \sum_{n =0}^M \left(\phi_n^\dagger \phi_{n+1}
-  + \phi_n \phi_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; .
+  + \phi_n \phi_{n+1}^\dagger \right) + \bar{\mathcal{N}}\; ,
 \end{equation}
 where \(\bar{\mathcal{N}} = \sum_{i=0}^M \mathcal{N}_i\) is the total
 number operator, and we also impose periodic boundary conditions
@@ -341,7 +341,7 @@ Moreover, this space has an inner product that satisfies
 Similar to the phase model, we can associate to a given states
 \(\ket{\vec{n}} = \ket{n_0, n_1, \dots, n_M}\), a Young diagram
 \(\lambda = (1^{n_1} 2^{n_2} \cdots M^{n_M})\). It is useful to define
-a proportionaly factor relating these two objects
+a proportionality factor relating these two objects
 \begin{equation}
   \ket{\lambda}_Q  = b_\lambda(Q) \ket{\vec{n}}  \ \; , \qquad b_\lambda(Q) = \prod_i [p_i(\lambda)]! 
 \end{equation}
@@ -376,7 +376,7 @@ and the monodromy matrix is
 As before, the eigenstates of the Hamiltonian have the form
 \begin{equation}
   \ket{\Psi(y_1, \dots, y_N; Q)} = \prod_{j=1}^N \mathbb{B}(y_j, Q) \ket{\bm{0}}\qquad 
-  \bra{\Psi(y_1, \dots, y_N; Q)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j, Q) \; .
+  \bra{\Psi(y_1, \dots, y_N; Q)} = \bra{\bm{0}}\prod_{j=1}^N \mathbb{C}(y_j, Q) \; ,
 \end{equation}
 where \(\mathbb{B}(y, Q) = y^{M/2} B(y, Q)\) and \(\mathbb{C}(y, Q) =
 y^{M/2} C(1/y, Q)\). When the parameters \(\{ y_j \ | \ j =1, \dots , N\}\)
@@ -466,7 +466,7 @@ using~(\ref{eq:scalar}), we have
 \label{eq:scalar_exp}
 \mathcal{I}(N, M|\bm{x}, \bm{y}) = \sum_{\lambda\subseteq [N,M]}
 \frac{\det_{ik}(x_i^{\lambda_k - k + N})}{\Delta(\bm{x})} \frac{ \det_{ik}(y_j^{\lambda_k - k + N})}{\Delta(\bm{y})}
-= \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{x}) s_\lambda(\bm{y}) \; .
+= \sum_{\lambda\subseteq [N,M]} s_\lambda(\bm{x}) s_\lambda(\bm{y}) \; ,
 \end{equation}
 where \(\Delta(\bm{x})\) and \(\Delta(\bm{x})\) are Vandermonde
 determinants. This formula agrees with the Schur expansion defined
@@ -573,7 +573,7 @@ obtain the dispersion limit tau function
 \begin{equation}
   F_0(\bm{T}) = \log \mathcal{I}_{T_0}(\bm{T}, \bm{T}') + \mathcal{O}(\hbar)\; ,
 \end{equation}
-that is a free energy, from the viewpoit of the matrix integral
+that is a free energy, from the viewpoint of the matrix integral
 partition function.
 
 It remains unclear how one can use this fact to determine properties
@@ -725,7 +725,7 @@ Therefore, we can write the correlation function~(\ref{eq:correlation}) as
   & = \sum_\lambda \sum_{\substack{\mu \supset (m)\\ \mu \subseteq [N-1, M]}}
   s_{\lambda}(\bm{x}) s_{\mu/(m)}(\bm{y}\setminus\{y_N\})\\
   & = \sum_{\substack{\mu \supset (m)\\ \mu \subseteq [N-1, M]}}
-  s_{\mu/(m)}(\bm{y}\setminus\{y_N\}) s_{\mu}(\bm{x})\; .
+  s_{\mu/(m)}(\bm{y}\setminus\{y_N\}) s_{\mu}(\bm{x})\; ,
 \end{split}
 \end{equation}
 where we have used that \(\phi^\dagger \ket{\bm{0}} = \ket{(m)}\), and in the second line
@@ -738,7 +738,7 @@ More generally, let us consider the correlation functions
   A_{\lambda_1 \lambda_2}(N', N, M|\bm{x}, \bm{y}) & =
   \bra{\lambda_1} \prod_{j=1}^N \mathbb{C}(x_j)
   \prod_{k=1}^{N'} \mathbb{B}(y_k)\ket{\lambda_2} \\
-  & = \sum_{\mu \subseteq [\min(N, N'), M]} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; .
+  & = \sum_{\mu \subseteq [\min(N, N'), M]} s_{\mu/\lambda_1}(\bm{x}) s_{\mu/\lambda_2}(\bm{y}) \; ,
 \end{split}
 \end{equation}
 where \(N' + \ell(\lambda_2) + n_0 = N' + \ell(\lambda_2) + n'_0\) and
@@ -852,14 +852,14 @@ where \(T^{a}_i \in \{ \mathcal{N}_i, \phi_i, \phi_i^\dagger \}_{i=1}^M\).
 The operators \(\mathbb{B}(x)\) and \(\mathbb{C}(x)\), 
 for a large enough chain \(M\to \infty\),
 are related to the vertex operators
-\(\Gamma_-(x)\) and \(\Gamma_+(x)\), respectivelly, as
+\(\Gamma_-(x)\) and \(\Gamma_+(x)\), respectively, as
 \begin{equation}
     \mathbb{B}(x) \mapsto \Gamma_-(x)  = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{-n}\right) \qquad 
     \mathbb{C}(x) \mapsto \Gamma_+(x)  = \exp \left( \sum_{n\geq 1} \frac{1}{n}x^n J_{n}\right) \; ,
 \end{equation}
 where \(J_n \) is written in terms of free fermions as \(J_n =
 \sum_{j\in \mathbb{Z}} \bm{\colon} \psi_j \psi_{j+n}^\ast
-\bm{\colon}\). This set of operators generate a Heisenberg subalgebra
+\bm{\colon}\). This set of operators generates a Heisenberg subalgebra
 \(\widehat{\mathfrak{gl}}(1) \subset \mathfrak{gl}(\infty)\)
 \begin{equation}
   [J_m, J_n] = m \delta_{n+m,0}\; .
@@ -894,7 +894,7 @@ group element \(\mathcal{G} = \exp \left( \sum_{i\geq 0} c_i
   \tau(\bm{x}, \bm{y}) 
   & = \bra{\bm{0}} \prod_{i} \mathbb{C}(x_i)
   e^{\sum_i c_i \mathcal{N}_i} \prod_j \mathbb{B}(y_j) \ket{\bm{0}}\\
-  & = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu\nu} s_\mu(\bm{x}) s_\nu(\bm{x})
+  & = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu\nu} s_\mu(\bm{x}) s_\nu(\bm{y})
 \end{split}
 \end{equation}
 where
@@ -914,7 +914,7 @@ Consequently, we have
 and we conclude that 
 \begin{equation}
   \tau(\bm{x}, \bm{y}) 
-  = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu} s_\mu(\bm{x}) s_\mu(\bm{x})\; ,
+  = \sum_{\mu, \nu \subseteq [N,M]} c_{\mu} s_\mu(\bm{x}) s_\mu(\bm{y})\; .
 \end{equation}
 We observe that this tau function has diagonal coordinates
 \(c_\lambda\). These tau functions belong to the hypergeometric type
@@ -963,7 +963,7 @@ Hall-Littlewood polynomials~\cite{Macdonald:1998}
 \begin{equation}
 \label{eq:cauchy_hl}
 \sum_{\lambda} b_\lambda(Q) P_{\lambda}(\bm{x}, Q) P_{\lambda}(\bm{y}, Q)
-= \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k}\; ,
+= \prod_{j, k=1}^\infty \frac{1-Q x_j y_k}{1 - x_j y_k}\; .
 \end{equation}
 
 Our goal is to explore some properties of Hall-Littlewood polynomials
@@ -990,7 +990,7 @@ Using the Cauchy's identity for Schur polynomials, that is
 and from the results derived in the phase model, we find that
 \begin{equation}
   \prod_{i,j}\frac{1}{1 - x_i y_j}  \equiv \mathcal{I}(N,M|\bm{x}, \bm{y}) = 
-  \frac{\det_{j,k}H(\bm{x},\bm{y})}{\Delta(\bm{x}) \Delta(\bm{y})}\; .
+  \frac{\det_{j,k}H(\bm{x},\bm{y})}{\Delta(\bm{x}) \Delta(\bm{y})}\; ,
 \end{equation}
 where \(H\) is the matrix~(\ref{eq:h-matrix}). Consequently, the scalar
 product~(\ref{eq:q-inner}) becomes
@@ -1269,7 +1269,7 @@ Schur polynomials can be expressed as supersymmetric Schur
 polynomials, which are essentially ordinary Schur polynomials in a
 specific choice of Miwa coordinates. Therefore, we conclude that the
 big Schur polynomials are also KP tau functions. This direct
-conclusion serves as an alternative proof of this fact, originally derived in
+conclusion serves as an alternative proof of this fact, originally derived
 in~\emph{\cite{Necoechea:2019wbg}} using the KP bilinear identity.
 \end{remark}
 
@@ -1297,7 +1297,7 @@ coefficients can be expressed as
 where \(G_Q(\bm{y}) \in GL(\infty)\). Hence
 \begin{equation}
   \lim_{N,M\to\infty} \mathcal{I}_Q(N, M| \bm{t}, \bm{t}'(\bm{y})) = 
-  \bra{\bm{0}} e^{J_+(\bm{t})} G_Q(\bm{y}) e^{J_-(\bm{t}')}\ket{\bm{0}}\; .
+  \bra{\bm{0}} e^{J_+(\bm{t})} G_Q(\bm{y}) e^{J_-(\bm{t}')}\ket{\bm{0}}\; ,
 \end{equation}
 where \(t'_{-n} = \frac{1}{n}\sum_i y_i^n\). 
 
@@ -1348,7 +1348,7 @@ presenting the scalar product of two off-shell Bethe states as an
 elementary example of a Toda system tau function. This section
 overlaps with existing literature, particularly a paper by Wheeler and
 Foda~\cite{Wheeler:2010vmq, Foda:2008hn}. In their work, they
-demonstrate that the inner product of two Bethe states are KP
+demonstrate that the inner products of two Bethe states are KP
 hierarchy tau functions. Our current work builds on this by arguing
 that these scalar products are also Toda hierarchy tau functions, as
 they can be expanded as a Cauchy identity, with the coefficients being
