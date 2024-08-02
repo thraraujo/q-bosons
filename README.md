@@ -1,7 +1,10 @@
 # Q-Boson model and relations with integrable hierarchies
 
-Repository for the paper [arXiv:2405.01213 [math-ph]](https://arxiv.org/abs/2405.01213),
-see also [Inspire-HEP](https://inspirehep.net/literature/2782843).
+Repository for the paper [arXiv:2405.01213
+[math-ph]](https://arxiv.org/abs/2405.01213), see
+[Inspire-HEP](https://inspirehep.net/literature/2782843) and its
+[published version](https://doi.org/10.1016/j.nuclphysb.2024.116640).
+.
 
 **Abstract**
 
@@ -19,11 +22,14 @@ polynomial expansions.
 ```
 @article{Araujo:2024klz,
     author = "Araujo, Thiago",
-    title = "{$Q$-Boson model and relations with integrable hierarchies}",
+    title = "{Q-boson model and relations with integrable hierarchies}",
     eprint = "2405.01213",
     archivePrefix = "arXiv",
     primaryClass = "math-ph",
-    month = "5",
+    doi = "10.1016/j.nuclphysb.2024.116640",
+    journal = "Nucl. Phys. B",
+    volume = "1006",
+    pages = "116640",
     year = "2024"
 }
 ```
